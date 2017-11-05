@@ -1,0 +1,6 @@
+body, h1, h2, h3, h4, h5, h6 { font-family: Arial, 微软正黑体, "Microsoft JhengHei", sans-serif; }
+
+.wy-nav-content { max-width: 1000px; }
+
+.rst-content blockquote { border-left: 2px solid #2980B9; background: #f6f6f6; padding: 10px 20px; margin-left: 0; }
+.rst-content blockquote p { margin-bottom: 0; }
