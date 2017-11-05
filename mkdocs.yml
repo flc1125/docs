@@ -3,3 +3,15 @@ repo_url: https://github.com/flc1125/docs
 theme: readthedocs
 extra_css: [static/css/extra.css]
 copyright: '<a href="http://flc.ren" target="_black">叶子坑</a>'
+pages:
+- 首页: 'index.md'
+- PHP:
+    - PHP PSR 编码规范:
+        - 概述: 'php/psr/index.md'
+        - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
+        - PHP PSR-1 基本代码规范: 'php/psr/psr-1.md'
+        - PHP PSR-2 代码风格规范: 'php/psr/psr-2.md'
+        - PHP PSR-3 日志接口规范: 'php/psr/psr-3.md'
+        - PHP PSR-4 自动载入Autoloader: 'php/psr/psr-4.md'
+        - PHP PSR-4 相关示例: 'php/psr/psr-4-examples.md'
+        - PHP PSR-7 HTTP消息接口: 'php/psr/psr-7.md'
