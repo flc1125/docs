@@ -5,16 +5,20 @@ python:
 
 install:
   - pip install mkdocs
+  - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
-deploy:
-  provider: releases
-  api_key:
-    secure: ${GITHUB_TOKEN}
-  skip_cleanup: true
-  script:
+script:
     - mkdocs gh-deploy --clean
-  on:
-    branch: master
+
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: ${GITHUB_TOKEN}
+#   skip_cleanup: true
+#   script:
+#     - mkdocs gh-deploy --clean
+#   on:
+#     branch: master
  
 #deploy:
 #  provider: pages
