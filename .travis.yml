@@ -7,8 +7,8 @@ install:
   - pip install mkdocs
 
 deploy:
-  # api_key:
-  #   secure: $GITHUB_SECURE
+  api_key:
+    secure: ${GITHUB_SECURE}
   script: mkdocs build --clean
   on:
     branch: master
