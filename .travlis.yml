@@ -1,0 +1,7 @@
+language: python
+
+install:
+  - pip install mkdocs
+
+script:
+  - mkdocs gh-deploy
