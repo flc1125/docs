@@ -6,11 +6,13 @@ python:
 install:
   - pip install mkdocs
   
-script: mkdocs build --clean
+script:
+  - mkdocs build --clean
+  - cp -R ./site ./tmp
 
 deploy:
   provider: pages
-  #local-dir: "site"
+  local-dir: "tmp"
   target-branch: "gh-pages"
   github_token: ${GITHUB_TOKEN}
   on:
