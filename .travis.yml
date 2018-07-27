@@ -7,7 +7,7 @@ install:
   - pip install mkdocs
 
 deploy:
-  provider: releases
+  provider: pages
   api_key:
     secure: ${GITHUB_TOKEN}
   script: mkdocs build --clean
