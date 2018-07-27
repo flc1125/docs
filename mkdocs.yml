@@ -15,3 +15,5 @@ pages:
         - PHP PSR-4 自动载入Autoloader: 'php/psr/psr-4.md'
         - PHP PSR-4 相关示例: 'php/psr/psr-4-examples.md'
         - PHP PSR-7 HTTP消息接口: 'php/psr/psr-7.md'
+
+    - PHPDoc 编码注释规范: 'php/phpdoc/index.md'
