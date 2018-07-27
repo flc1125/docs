@@ -10,7 +10,7 @@ script: mkdocs build --clean
 
 deploy:
   provider: pages
-  local-dir: "site"
+  #local-dir: "site"
   target-branch: "gh-pages"
   github_token: ${GITHUB_TOKEN}
   on:
