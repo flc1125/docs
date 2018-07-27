@@ -8,4 +8,6 @@ install:
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 script:
-    - mkdocs gh-deploy
+  # - git push origin gh-pages --delete
+  - mkdocs gh-deploy --help
+  - mkdocs gh-deploy -f --clean
