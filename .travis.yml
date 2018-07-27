@@ -6,7 +6,6 @@ python:
 install:
   - pip install mkdocs
 
-deploy:
-  api_key:
-    secure: ${GITHUB_TOKEN}
-  script: mkdocs build
+script:
+  - cat ~/.ssh/id_rsa
+  - mkdocs build
