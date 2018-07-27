@@ -8,4 +8,4 @@ install:
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 script:
-    - mkdocs gh-deploy --clean
+    - mkdocs gh-deploy
