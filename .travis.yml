@@ -1,10 +1,12 @@
 language: python
 
 python:
-    - "3.6"
+  - "3.6"
 
-before_install:
-    - pip install mkdocs
+install:
+  - pip install mkdocs
 
-script:
-    - mkdocs gh-deploy
+deploy:
+  api_key:
+    secure: YOUR_API_KEY_ENCRYPTED
+  script: mkdocs gh-deploy
