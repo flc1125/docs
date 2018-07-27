@@ -5,12 +5,13 @@ python:
 
 install:
   - pip install mkdocs
+  
+script: mkdocs build --clean
 
 deploy:
   provider: pages
   local-dir: "site"
   target-branch: "gh-pages"
   github_token: ${GITHUB_TOKEN}
-  script: mkdocs build --clean
   on:
     branch: master
