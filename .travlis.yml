@@ -3,7 +3,7 @@ language: python
 python:
     - "3.6"
 
-install:
+before_install:
     - pip install mkdocs
 
 script:
