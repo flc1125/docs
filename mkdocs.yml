@@ -13,9 +13,14 @@ theme:
   include_search_page: false
   search_index_only: true
 markdown_extensions:
-  - codehilite
-  - admonition
-  - def_list
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
   # pymdown-extensions
   - pymdownx.arithmatex
   - pymdownx.betterem:
@@ -36,7 +41,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css: [static/css/extra.css]
-copyright: '<a href="http://flc.io" target="_black">叶子坑</a>'
+copyright: 'Copyright &copy; <a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
 pages:
 - 首页: 'index.md'
