@@ -1,7 +1,7 @@
 language: python
 
 install:
-  - pip install mkdocs
+    - pip install mkdocs
 
 script:
-  - mkdocs build
+    - mkdocs build
