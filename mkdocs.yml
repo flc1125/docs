@@ -3,6 +3,7 @@ site_author: Flc
 repo_url: https://github.com/flc1125/docs
 theme:
   name: 'material'
+  language: 'zh'
   feature:
     tabs: true
   palette:
@@ -14,6 +15,7 @@ theme:
 markdown_extensions:
   - codehilite
   - admonition
+  - def_list
   # pymdown-extensions
   - pymdownx.arithmatex
   - pymdownx.betterem:
@@ -24,6 +26,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
+  - pymdownx.keys
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
