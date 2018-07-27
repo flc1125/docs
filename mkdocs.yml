@@ -2,7 +2,7 @@ site_name: 叶子坑-Docs
 repo_url: https://github.com/flc1125/docs
 theme: readthedocs
 extra_css: [static/css/extra.css]
-copyright: '<a href="http://flc.ren" target="_black">叶子坑</a>'
+copyright: '<a href="http://flc.io" target="_black">叶子坑</a>'
 pages:
 - 首页: 'index.md'
 - PHP:
