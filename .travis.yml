@@ -5,7 +5,7 @@ python:
 
 install:
   - pip install mkdocs
-  - pip install sphinx_rtd_theme
+  - pip install mkdocs-material
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 script:
