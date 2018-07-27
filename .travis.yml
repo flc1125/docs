@@ -9,6 +9,4 @@ install:
 deploy:
   api_key:
     secure: ${GITHUB_TOKEN}
-  script: mkdocs build --clean
-  on:
-    branch: master
+  script: mkdocs build
