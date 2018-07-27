@@ -6,7 +6,12 @@ python:
 install:
   - pip install mkdocs
   - pip install mkdocs-material
+  - pip install pygments
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 script:
   - mkdocs gh-deploy --force --clean
+
+branches:
+  only:
+    - master

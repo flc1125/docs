@@ -3,6 +3,9 @@ site_author: Flc
 repo_url: https://github.com/flc1125/docs
 theme:
   name: 'material'
+markdown_extensions:
+  - codehilite
+  - admonition
 extra_css: [static/css/extra.css]
 copyright: '<a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
