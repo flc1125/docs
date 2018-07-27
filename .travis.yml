@@ -8,8 +8,9 @@ install:
 
 deploy:
   provider: pages
-  api_key:
-    secure: ${GITHUB_TOKEN}
+  local-dir: "site"
+  target-branch: "gh-pages"
+  github_token: ${GITHUB_TOKEN}
   script: mkdocs build --clean
   on:
     branch: master
