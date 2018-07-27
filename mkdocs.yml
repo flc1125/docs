@@ -6,6 +6,8 @@ theme:
 markdown_extensions:
   - codehilite
   - admonition
+feature:
+    tabs: true
 extra_css: [static/css/extra.css]
 copyright: '<a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
