@@ -3,11 +3,32 @@ site_author: Flc
 repo_url: https://github.com/flc1125/docs
 theme:
   name: 'material'
+  feature:
+    tabs: true
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
 markdown_extensions:
   - codehilite
   - admonition
-feature:
-    tabs: true
+  # pymdown-extensions
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
 extra_css: [static/css/extra.css]
 copyright: '<a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
