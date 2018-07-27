@@ -5,16 +5,25 @@ python:
 
 install:
   - pip install mkdocs
- 
+
 deploy:
-  provider: pages
-  #local-dir: "tmp"
-  target-branch: "gh-pages"
-  github_token: ${GITHUB_TOKEN}
+  provider: releases
+  api_key:
+    secure: ${GITHUB_TOKEN}
+  skip_cleanup: true
+  script:
+    - mkdocs gh-deploy --clean
   on:
     branch: master
+ 
+#deploy:
+#  provider: pages
+#  #local-dir: "tmp"
+#  target-branch: "gh-pages"
+#  github_token: ${GITHUB_TOKEN}
+#  on:
+#    branch: master
 
-script:
-  - mkdocs gh-deploy
+
 
 
