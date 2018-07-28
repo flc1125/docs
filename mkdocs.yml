@@ -72,6 +72,7 @@ pages:
             - 原型模式（Prototype）: 'php/php-design-patterns/Prototype.md'
             - 简单工厂模式（Simple Factory）: 'php/php-design-patterns/SimpleFactory.md'
             - 单例模式（Singleton）: 'php/php-design-patterns/Singleton.md'
+            - 静态工厂模式（Static Factory）: 'php/php-design-patterns/StaticFactory.md'
         # - 结构型: 
         # - 行为型: 
         # - 更多类型: 
