@@ -62,4 +62,4 @@ pages:
     - PHPDoc 编码注释规范: 'php/phpdoc/index.md'
     - PHP Coding Standards Fixer: 'php/php-cs-fixer/index.md'
     - PHP 设计模式全集: 
-        - 概述： 'php/php-design-patterns/index.md'
+        - 概述: 'php/php-design-patterns/index.md'
