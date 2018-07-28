@@ -17,7 +17,7 @@ PHP编码标准修复程序（PHP CS修复程序）工具修复您的代码遵�
 
 ## 参考命令
 
-```shell
+```bash
 php-cs-fixer fix --config=.php_cs -v --using-cache=no --path-mode=intersection -- PHP文件路径
 ```
 
