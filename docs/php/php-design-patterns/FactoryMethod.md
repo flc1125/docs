@@ -1,5 +1,7 @@
 # 工厂方法模式（Factory Method）
 
+> 原文：https://laravel-china.org/docs/php-design-patterns/2018/FactoryMethod/1489
+
 ## 1. 目的
 
 对比简单工厂模式的优点是，您可以将其子类用不同的方法来创建一个对象。
