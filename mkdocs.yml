@@ -79,4 +79,6 @@ pages:
           - 组合模式（Composite）: 'php/php-design-patterns/Composite.md'
         # - 行为型: 
         # - 更多类型: 
-        # - 附录: 
+        - 附录: 
+          - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'
+          - PHP 设计模式阅读清单: 'php/php-design-patterns/design-pattern-reading.md'
