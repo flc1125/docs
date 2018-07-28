@@ -1,8 +1,8 @@
-## 概述
+# 概述
 
 ## 转载说明
 
-本文从 《[PHP 设计模式全集 2018](https://laravel-china.org/docs/php-design-patterns/2018)》 转载而来，经社区创始人确认，转载（**非商用**）时，需**备注原文地址**即可。
+本文从 《[PHP 设计模式全集](https://laravel-china.org/docs/php-design-patterns/2018)》 转载而来，经社区创始人确认，转载（**非商用**）时，需**备注原文地址**即可。
 
 感谢原文的译者辛苦贡献。
 

@@ -75,6 +75,7 @@ pages:
           - 静态工厂模式（Static Factory）: 'php/php-design-patterns/StaticFactory.md'
         - 结构型: 
           - 适配器模式（Adapter）: 'php/php-design-patterns/Adapter.md'
+          - 桥梁模式（Bridge）: 'php/php-design-patterns/Bridge.md'
         # - 行为型: 
         # - 更多类型: 
         # - 附录: 
