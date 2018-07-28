@@ -64,16 +64,17 @@ pages:
     - PHP 设计模式全集(转载): 
         - 概述: 'php/php-design-patterns/index.md'
         - 创建型: 
-            - 抽象工厂模式（Abstract Factory）: 'php/php-design-patterns/AbstractFactory.md'
-            - 建造者模式（Builder）: 'php/php-design-patterns/Builder.md'
-            - 工厂方法模式（Factory Method）: 'php/php-design-patterns/FactoryMethod.md'
-            - 多例模式（Multiton）: 'php/php-design-patterns/Multiton.md'
-            - 对象池模式（Pool）: 'php/php-design-patterns/Pool.md'
-            - 原型模式（Prototype）: 'php/php-design-patterns/Prototype.md'
-            - 简单工厂模式（Simple Factory）: 'php/php-design-patterns/SimpleFactory.md'
-            - 单例模式（Singleton）: 'php/php-design-patterns/Singleton.md'
-            - 静态工厂模式（Static Factory）: 'php/php-design-patterns/StaticFactory.md'
-        # - 结构型: 
+          - 抽象工厂模式（Abstract Factory）: 'php/php-design-patterns/AbstractFactory.md'
+          - 建造者模式（Builder）: 'php/php-design-patterns/Builder.md'
+          - 工厂方法模式（Factory Method）: 'php/php-design-patterns/FactoryMethod.md'
+          - 多例模式（Multiton）: 'php/php-design-patterns/Multiton.md'
+          - 对象池模式（Pool）: 'php/php-design-patterns/Pool.md'
+          - 原型模式（Prototype）: 'php/php-design-patterns/Prototype.md'
+          - 简单工厂模式（Simple Factory）: 'php/php-design-patterns/SimpleFactory.md'
+          - 单例模式（Singleton）: 'php/php-design-patterns/Singleton.md'
+          - 静态工厂模式（Static Factory）: 'php/php-design-patterns/StaticFactory.md'
+        - 结构型: 
+          - 适配器模式（Adapter）: 'php/php-design-patterns/Adapter.md'
         # - 行为型: 
         # - 更多类型: 
         # - 附录: 
