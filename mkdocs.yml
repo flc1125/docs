@@ -61,5 +61,11 @@ pages:
         - PHP PSR-7 HTTP消息接口: 'php/psr/psr-7.md'
     - PHPDoc 编码注释规范: 'php/phpdoc/index.md'
     - PHP Coding Standards Fixer: 'php/php-cs-fixer/index.md'
-    - PHP 设计模式全集: 
+    - PHP 设计模式全集(转载): 
         - 概述: 'php/php-design-patterns/index.md'
+        - 创建型: 
+            - 抽象工厂模式（Abstract Factory）: 'php/php-design-patterns/AbstractFactory.md'
+        - 结构型: 
+        - 行为型: 
+        - 更多类型: 
+        - 附录: 
