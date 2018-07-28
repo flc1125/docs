@@ -68,6 +68,7 @@ pages:
             - 建造者模式（Builder）: 'php/php-design-patterns/Builder.md'
             - 工厂方法模式（Factory Method）: 'php/php-design-patterns/FactoryMethod.md'
             - 多例模式（Multiton）: 'php/php-design-patterns/Multiton.md'
+            - 对象池模式（Pool）: 'php/php-design-patterns/Pool.md'
         # - 结构型: 
         # - 行为型: 
         # - 更多类型: 
