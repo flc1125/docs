@@ -44,8 +44,8 @@ markdown_extensions:
 extra_css: [static/css/extra.css]
 copyright: 'Copyright &copy; <a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
-extra:
-  disqus: 'flc-docs'
+# extra:
+#   disqus: 'flc-docs'
 
 pages:
 - 首页: 'index.md'
