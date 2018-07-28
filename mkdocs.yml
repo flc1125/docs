@@ -44,6 +44,7 @@ markdown_extensions:
 extra_css: [static/css/extra.css]
 copyright: 'Copyright &copy; <a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
+
 pages:
 - 首页: 'index.md'
 - PHP:
@@ -56,5 +57,5 @@ pages:
         - PHP PSR-4 自动载入Autoloader: 'php/psr/psr-4.md'
         - PHP PSR-4 相关示例: 'php/psr/psr-4-examples.md'
         - PHP PSR-7 HTTP消息接口: 'php/psr/psr-7.md'
-
     - PHPDoc 编码注释规范: 'php/phpdoc/index.md'
+    - PHP Coding Standards Fixer: 'php/php-cs-fixer/index.md'
