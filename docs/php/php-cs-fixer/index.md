@@ -23,6 +23,8 @@ php-cs-fixer fix --config=.php_cs -v --using-cache=no --path-mode=intersection -
 
 ## 参考配置
 
+文件另存为项目根目录的 `.php_cs`
+
 ```php
 <?php
 
