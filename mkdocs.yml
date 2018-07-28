@@ -76,6 +76,7 @@ pages:
         - 结构型: 
           - 适配器模式（Adapter）: 'php/php-design-patterns/Adapter.md'
           - 桥梁模式（Bridge）: 'php/php-design-patterns/Bridge.md'
+          - 组合模式（Composite）: 'php/php-design-patterns/Composite.md'
         # - 行为型: 
         # - 更多类型: 
         # - 附录: 
