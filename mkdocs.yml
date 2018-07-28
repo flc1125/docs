@@ -70,6 +70,7 @@ pages:
             - 多例模式（Multiton）: 'php/php-design-patterns/Multiton.md'
             - 对象池模式（Pool）: 'php/php-design-patterns/Pool.md'
             - 原型模式（Prototype）: 'php/php-design-patterns/Prototype.md'
+            - 简单工厂模式（Simple Factory）: 'php/php-design-patterns/SimpleFactory.md'
         # - 结构型: 
         # - 行为型: 
         # - 更多类型: 

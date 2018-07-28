@@ -12,7 +12,7 @@
 
 ## 2. UML 类图
 
-！[](https://lccdn.phphub.org/uploads/images/201803/19/1/25wLqKYU4b.png)
+![](https://lccdn.phphub.org/uploads/images/201803/19/1/25wLqKYU4b.png)
 
 ## 3. 代码
 
