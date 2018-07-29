@@ -16,7 +16,7 @@
 
 - PHPUnit: 模拟生成器
 
-## 3. UML Diagram
+## 3. UML 图
 
 ![](https://lccdn.phphub.org/uploads/images/201803/19/1/JFAXquMVD9.png)
 

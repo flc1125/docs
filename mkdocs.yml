@@ -85,7 +85,19 @@ pages:
           - 享元模式（Flyweight）: 'php/php-design-patterns/Flyweight.md'
           - 代理模式（Proxy）: 'php/php-design-patterns/Proxy.md'
           - 注册模式（Registry）: 'php/php-design-patterns/Registry.md'
-        # - 行为型: 
+        - 行为型: 
+          - 责任链模式（Chain Of Responsibilities）: 'php/php-design-patterns/ChainOfResponsibilities.md'
+          - 命令行模式（Command）: 'php/php-design-patterns/Command.md'
+          # - 迭代器模式（Iterator）: 'php/php-design-patterns/Iterator.md'
+          # - 中介者模式（Mediator）: 'php/php-design-patterns/Mediator.md'
+          # - 备忘录模式（Memento）: 'php/php-design-patterns/Memento.md'
+          # - 空对象模式（Null Object）: 'php/php-design-patterns/NullObject.md'
+          # - 观察者模式（Observer）: 'php/php-design-patterns/Observer.md'
+          # - 规格模式（Specification）: 'php/php-design-patterns/Specification.md'
+          # - 状态模式（State）: 'php/php-design-patterns/State.md'
+          # - 策略模式（Strategy）: 'php/php-design-patterns/Strategy.md'
+          # - 模板方法模式（Template Method）: 'php/php-design-patterns/TemplateMethod.md'
+          # - 访问者模式（Visitor）: 'php/php-design-patterns/Visitor.md'
         # - 更多类型: 
         - 附录: 
           - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'

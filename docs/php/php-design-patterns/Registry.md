@@ -15,7 +15,7 @@
 
 ![](https://lccdn.phphub.org/uploads/images/201803/19/1/bZaZEQ9ces.png)
 
-## 代码
+## 4. 代码
 
 你也可以在 [GitHub](https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/Registry) 上找到此代码
 

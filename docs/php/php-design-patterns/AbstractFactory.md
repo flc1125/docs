@@ -110,7 +110,7 @@ class HtmlText extends Text
 }
 ```
 
-## 4. Test
+## 4. 测试
 
 Tests/AbstractFactoryTest.php
 
