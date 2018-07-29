@@ -15,7 +15,7 @@
 
 ![](https://lccdn.phphub.org/uploads/images/201803/19/1/HsGmgG5UIm.png)
 
-## 代码
+## 4. 代码
 
 你也可以在 [GitHub](https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/Decorator) 上查看代码
 
