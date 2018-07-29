@@ -1,6 +1,7 @@
 site_name: 叶子坑-Docs
 site_author: Flc
 repo_url: https://github.com/flc1125/docs
+site_url: https://docs.flc.io
 theme:
   name: 'material'
   language: 'zh'
@@ -41,11 +42,17 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-extra_css: [static/css/extra.css]
-copyright: 'Copyright &copy; <a href="http://flc.io" target="_black">叶子坑</a>'
+extra_css: 
+  - static/css/extra.css
+copyright: 'Copyright &copy; 2017-2018 <a href="http://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
-# extra:
-#   disqus: 'flc-docs'
+extra:
+  social:
+    - type: 'home'
+      link: 'http://flc.io'
+    - type: 'github'
+      link: 'https://github.com/flc1125'
+  # disqus: 'flc-docs' # 需翻墙
 
 pages:
 - 首页: 'index.md'
