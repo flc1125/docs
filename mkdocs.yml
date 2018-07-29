@@ -81,11 +81,11 @@ pages:
           - 装饰模式（Decorator）: 'php/php-design-patterns/Decorator.md'
           - 依赖注入模式（Dependency Injection）: 'php/php-design-patterns/DependencyInjection.md'
           
-          - 门面模式（Facade）: 'php/php-design-patterns/Facade.md'
-          - 流接口模式（Fluent Interface）: 'php/php-design-patterns/FluentInterface.md'
-          - 享元模式（Flyweight）: 'php/php-design-patterns/Flyweight.md'
-          - 代理模式（Proxy）: 'php/php-design-patterns/Proxy.md'
-          - 注册模式（Registry）: 'php/php-design-patterns/Registry.md'
+          # - 门面模式（Facade）: 'php/php-design-patterns/Facade.md'
+          # - 流接口模式（Fluent Interface）: 'php/php-design-patterns/FluentInterface.md'
+          # - 享元模式（Flyweight）: 'php/php-design-patterns/Flyweight.md'
+          # - 代理模式（Proxy）: 'php/php-design-patterns/Proxy.md'
+          # - 注册模式（Registry）: 'php/php-design-patterns/Registry.md'
         # - 行为型: 
         # - 更多类型: 
         - 附录: 
