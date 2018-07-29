@@ -3,6 +3,7 @@
 > 原文：https://laravel-china.org/docs/php-design-patterns/2018/Memento/1511
 
 ## 1. 目的
+
 它提供了在不破坏封装（对象不需要具有返回当前状态的函数）的情况下恢复到之前状态（使用回滚）或者获取对象的内部状态。
 
 备忘录模式使用 3 个类来实现：`Originator`，`Caretaker` 和 `Memento`。
