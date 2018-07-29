@@ -48,7 +48,6 @@ google_analytics: ['UA-118478085-1', 'auto']
 #   disqus: 'flc-docs'
 
 pages:
-- << 返回叶子坑: 'http://flc.io'
 - 首页: 'index.md'
 - PHP: 
     - PHP PSR 编码规范:
