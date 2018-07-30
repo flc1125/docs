@@ -114,7 +114,7 @@ pages:
         - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'
         - PHP 设计模式阅读清单: 'php/php-design-patterns/design-pattern-reading.md'
 - Elasticsearch:
-  - Elasticsearch 6.3 - 中文版:
+  - Elasticsearch 6.3 - 中文版(进行中）:
     - 翻译说明: 'elasticsearch/elasticsearch-6.3/translation-instructions.md'
   - Elasticsearch-PHP:
     - 概述: 'elasticsearch/elasticsearch-php/overview.md'
