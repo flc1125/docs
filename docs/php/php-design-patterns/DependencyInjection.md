@@ -1,7 +1,5 @@
 # 依赖注入模式（Dependency Injection）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/DependencyInjection/1501
-
 ## 1. 目的
 
 用松散耦合的方式来更好的实现可测试、可维护和可扩展的代码。
@@ -145,3 +143,9 @@ class DependencyInjectionTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/DependencyInjection/1501

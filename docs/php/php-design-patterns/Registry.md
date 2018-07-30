@@ -1,7 +1,5 @@
 # 注册模式（Registry）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Registry/1506
-
 ## 1. 目的
 
 目的是能够存储在应用程序中经常使用的对象实例，通常会使用只有静态方法的抽象类来实现（或使用单例模式）。需要注意的是这里可能会引入全局的状态，我们需要使用依赖注入来避免它。
@@ -138,3 +136,9 @@ class RegistryTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Registry/1506

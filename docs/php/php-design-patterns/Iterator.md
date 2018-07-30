@@ -1,7 +1,5 @@
 # 迭代器模式（Iterator）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Iterator/1509
-
 ## 1. 目的
 
 让对象变得可迭代并表现得像对象集合。
@@ -214,3 +212,9 @@ class IteratorTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Iterator/1509

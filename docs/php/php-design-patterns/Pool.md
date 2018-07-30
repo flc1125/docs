@@ -1,7 +1,5 @@
 # 对象池模式（Pool）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Pool/1491
-
 ## 1. 目的
 
 **对象池模式**是一种提前准备了一组已经初始化了的对象『池』而不是按需创建或者销毁的创建型设计模式。对象池的客户端会向对象池中请求一个对象，然后使用这个返回的对象执行相关操作。当客户端使用完毕，它将把这个特定类型的工厂对象返回给对象池，而不是销毁掉这个对象。
@@ -129,3 +127,9 @@ class PoolTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Pool/1491

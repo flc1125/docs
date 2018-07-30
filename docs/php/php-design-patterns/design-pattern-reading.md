@@ -1,7 +1,5 @@
 # PHP 设计模式阅读清单
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/php-design-pattern-reading-list/1525
-
 ## 社区文章推荐
 
 - [S.O.L.I.D 面向对象设计和编程（OOD&OOP）笔记](https://laravel-china.org/articles/4160/solid-object-oriented-design-and-programming-oodoop-notes)
@@ -22,3 +20,9 @@
 ## 其他文章
 
 - [五种常见的 PHP 设计模式](https://www.ibm.com/developerworks/cn/opensource/os-php-designptrns/)
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/php-design-pattern-reading-list/1525

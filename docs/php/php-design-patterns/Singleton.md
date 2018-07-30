@@ -1,7 +1,5 @@
 # 单例模式（Singleton）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Singleton/1494
-
 **单例模式被公认为是 [反面模式](https://laravel-china.org/docs/php-design-patterns/2018/anti-pattern)，为了获得更好的可测试性和可维护性，请使用『[依赖注入模式](https://laravel-china.org/docs/php-design-patterns/2018/DependencyInjection)』。**
 
 ## 1. 目的
@@ -96,3 +94,9 @@ class SingletonTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Singleton/1494

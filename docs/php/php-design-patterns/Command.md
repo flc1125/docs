@@ -1,7 +1,5 @@
 # 命令行模式（Command）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Command/1508
-
 ## 1. 目的
 
 为了封装调用和解耦。
@@ -205,3 +203,9 @@ class CommandTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Command/1508

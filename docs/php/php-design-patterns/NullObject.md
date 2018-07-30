@@ -1,7 +1,5 @@
 # 空对象模式（Null Object）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/NullObject/1512
-
 ## 1. 目的
 
 空对象模式不属于 `GoF` 设计模式，但是它作为一种经常出现的套路足以被视为设计模式了。它具有如下优点：
@@ -160,3 +158,9 @@ class LoggerTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/NullObject/1512

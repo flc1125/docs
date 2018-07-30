@@ -1,7 +1,5 @@
 # 组合模式（Composite）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Composite/1498
-
 ## 1. 目的
 
 一组对象与该对象的单个实例的处理方式一致。
@@ -158,3 +156,9 @@ class CompositeTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Composite/1498

@@ -1,7 +1,5 @@
 # 代理模式（Proxy）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Proxy/1505
-
 ## 1. 目的
 
 链接任何具有高价值或无法复制的代码。
@@ -114,3 +112,9 @@ class RecordProxy extends Record
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Proxy/1505

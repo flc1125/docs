@@ -1,7 +1,5 @@
 # 桥梁模式（Bridge）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Bridge/1497
-
 ## 1. 目的
 
 将抽象与实现分离，这样两者可以独立地改变。
@@ -182,3 +180,9 @@ class BridgeTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Bridge/1497

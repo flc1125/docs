@@ -1,7 +1,5 @@
 # 静态工厂模式（Static Factory）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/StaticFactory/1495
-
 ## 1. 目的
 
 与抽象工厂模式类似，此模式用于创建一系列相关或相互依赖的对象。 『静态工厂模式』与『抽象工厂模式』的区别在于，只使用一个静态方法来创建所有类型对象， 此方法通常被命名为 `factory` 或 `build`。
@@ -126,3 +124,9 @@ class StaticFactoryTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/StaticFactory/1495

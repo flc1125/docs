@@ -1,7 +1,5 @@
 # 流接口模式（Fluent Interface）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/FluentInterface/1503
-
 ## 1. 目的
 
 用来编写易于阅读的代码，就像自然语言一样（如英语）
@@ -102,3 +100,9 @@ class FluentInterfaceTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/FluentInterface/1503

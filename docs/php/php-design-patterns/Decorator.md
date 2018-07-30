@@ -1,7 +1,5 @@
 # 装饰模式（Decorator）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Decorator/1500
-
 ## 1. 目的
 
 为类实例动态增加新的方法。
@@ -207,3 +205,9 @@ class DecoratorTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Decorator/1500

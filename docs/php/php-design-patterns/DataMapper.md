@@ -1,7 +1,5 @@
 # 数据映射模式（Data Mapper）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/DataMapper/1499
-
 ## 1. 目标
 
 数据映射器是一种数据访问层，它执行持久性数据存储（通常是关系数据库）和内存数据表示（域层）之间的数据双向传输。 该模式的目标是保持内存表示和持久数据存储相互独立，并保持数据映射器本身。 该层由一个或多个映射器（或数据访问对象）组成，执行数据传输。 映射器实现的范围有所不同。 通用映射器将处理许多不同的域实体类型，专用映射器将处理一个或几个。
@@ -198,3 +196,9 @@ class DataMapperTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/DataMapper/1499

@@ -1,7 +1,5 @@
 # 门面模式（Facade）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Facade/1502
-
 ## 1. 目的
 
 门面模式的最初目的并不是为了避免让你阅读复杂的 API 文档，这只是一个附带作用。其实它的本意是为了降低耦合性并且遵循 Demeter 定律。
@@ -180,3 +178,9 @@ class FacadeTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Facade/1502

@@ -1,7 +1,5 @@
 # 建造者模式（Builder）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Builder/1488
-
 ## 1. 目的
 
 建造者是创建一个复杂对象的一部分接口。
@@ -293,3 +291,9 @@ class DirectorTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Builder/1488

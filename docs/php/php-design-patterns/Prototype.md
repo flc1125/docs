@@ -1,7 +1,5 @@
 # 原型模式（Prototype）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Prototype/1492
-
 ## 1. 目的
 
 相比正常创建一个对象 `(new Foo())`，首先创建一个原型，然后克隆它会更节省开销。
@@ -125,3 +123,9 @@ class PrototypeTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Prototype/1492

@@ -1,7 +1,5 @@
 # 简单工厂模式（Simple Factory）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/SimpleFactory/1493
-
 ## 1. 目的
 
 简单工厂模式是一个精简版的工厂模式。
@@ -78,3 +76,9 @@ class SimpleFactoryTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/SimpleFactory/1493

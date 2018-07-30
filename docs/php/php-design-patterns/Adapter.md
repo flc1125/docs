@@ -1,7 +1,5 @@
 # 适配器模式（Adapter）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Adapter/1496
-
 ## 1. 目的
 
 将一个类的接口转换成可应用的兼容接口。适配器使原本由于接口不兼容而不能一起工作的那些类可以一起工作。
@@ -222,3 +220,9 @@ class AdapterTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Adapter/1496

@@ -1,7 +1,5 @@
 # 责任链模式（Chain Of Responsibilities）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/ChainOfResponsibilities/1507
-
 ## 1. 目的
 
 建立一个对象链来按指定顺序处理调用。如果其中一个对象无法处理命令，它会委托这个调用给它的下一个对象来进行处理，以此类推。
@@ -238,3 +236,9 @@ class ChainTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/ChainOfResponsibilities/1507

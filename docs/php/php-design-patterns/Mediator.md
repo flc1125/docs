@@ -1,7 +1,5 @@
 # 中介者模式（Mediator）
 
-> 原文：https://laravel-china.org/docs/php-design-patterns/2018/Mediator/1510
-
 ## 1. 目的
 
 本模式提供了一种轻松的多组件之间弱耦合的协同方式。如果你有个“情报中心”，观察者模式也是个好选择，类似于控制器（并非 MVC 意义上的控制器）。
@@ -232,3 +230,9 @@ class MediatorTest extends TestCase
     }
 }
 ```
+
+----
+
+原文：
+
+- https://laravel-china.org/docs/php-design-patterns/2018/Mediator/1510
