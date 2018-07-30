@@ -105,7 +105,11 @@ pages:
           - 策略模式（Strategy）: 'php/php-design-patterns/Strategy.md'
           - 模板方法模式（Template Method）: 'php/php-design-patterns/TemplateMethod.md'
           - 访问者模式（Visitor）: 'php/php-design-patterns/Visitor.md'
-        # - 更多类型: 
+        - 更多类型: 
+          - 委托模式（Delegation）: 'php/php-design-patterns/Delegation.md'
+          - 服务定位器模式（Service Locator）: 'php/php-design-patterns/ServiceLocator.md'
+          - 资源库模式（Repository）: 'php/php-design-patterns/Repository.md'
+          - 实体属性值模式（EAV 模式）: 'php/php-design-patterns/EAV.md'
         - 附录: 
           - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'
           - PHP 设计模式阅读清单: 'php/php-design-patterns/design-pattern-reading.md'
