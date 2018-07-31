@@ -118,7 +118,7 @@ pages:
     - 翻译说明: 'elasticsearch/elasticsearch-6.3/translation-instructions.md'
     - 入门: 
       - 入门: 'elasticsearch/elasticsearch-6.3/getting-started.md'
-      - Basic Concepts: 'elasticsearch/elasticsearch-6.3/basic_concepts.md'
+      - 基本概念: 'elasticsearch/elasticsearch-6.3/basic_concepts.md'
     # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
     # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
     # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'

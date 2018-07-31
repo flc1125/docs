@@ -1,13 +1,12 @@
-# Basic Concepts
+# 基本概念
 
-There are a few concepts that are core to Elasticsearch. Understanding these concepts from the outset will tremendously help ease the learning process.
+本文将介绍一些 Elasticsearch 的核心概念。从一开始就理解这些概念将极大地帮助你简化学习过程。
 
-## Near Realtime (NRT)
+## 近实时（NRT）
 
-Elasticsearch is a near real time search platform. What this means is there is a slight latency (normally one second) from the time you index a document until the time it becomes searchable.
+Elasticsearch 是一个近实时的搜索平台。这意味着您只需要花一点点时间（通常是一秒）从索引文档里搜索到可用的文档。
 
-
-## Cluster
+## 集群
 
 A cluster is a collection of one or more nodes (servers) that together holds your entire data and provides federated indexing and search capabilities across all nodes. A cluster is identified by a unique name which by default is "elasticsearch". This name is important because a node can only be part of a cluster if the node is set up to join the cluster by its name.
 
