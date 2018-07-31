@@ -116,6 +116,21 @@ pages:
 - Elasticsearch:
   - Elasticsearch 6.3 - 中文版:
     - 翻译说明: 'elasticsearch/elasticsearch-6.3/translation-instructions.md'
+    - 入门: 
+      - 入门: 'elasticsearch/elasticsearch-6.3/getting-started.md'
+      - Basic Concepts: 'elasticsearch/elasticsearch-6.3/basic_concepts.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
+    # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
   - Elasticsearch-PHP:
     - 概述: 'elasticsearch/elasticsearch-php/overview.md'
     - 快速开始: 'elasticsearch/elasticsearch-php/quickstart.md'
