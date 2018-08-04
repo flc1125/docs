@@ -54,7 +54,7 @@ extra:
       link: 'https://github.com/flc1125'
   # disqus: 'flc-docs' # 需翻墙
 
-nav:
+pages:
 - 首页: 'index.md'
 - PHP: 
     - PHP PSR 编码规范:
