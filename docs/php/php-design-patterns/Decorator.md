@@ -11,7 +11,7 @@
 
 ## 3. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/HsGmgG5UIm.png)
+![](assets/Decorator.png)
 
 ## 4. 代码
 

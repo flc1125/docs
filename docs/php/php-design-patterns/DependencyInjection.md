@@ -15,7 +15,7 @@ DatabaseConfiguration 被注入 `DatabaseConnection` 并获取所需的 `$config
 
 ## 4. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/MihvMhMofO.png)
+![](assets/DependencyInjection.png)
 
 ## 5. 代码
 

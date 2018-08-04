@@ -12,7 +12,7 @@
 
 ## 3. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/K6NHRBLVHw.png)
+![](assets/FluentInterface.png)
 
 ## 4. 代码
 
