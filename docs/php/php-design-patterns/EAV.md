@@ -8,7 +8,7 @@
 
 ## 2. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/21WieknlAg.png)
+![](assets/EAV.png)
 
 ## 4. 代码
 

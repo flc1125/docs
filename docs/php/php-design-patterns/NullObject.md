@@ -19,7 +19,7 @@
 
 ## 3. UML 类图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/2K7u0IRZDS.png)
+![](assets/NullObject.png)
 
 ## 4. 代码
 

@@ -14,7 +14,7 @@ PHP 标准库 (SPL) 定义了一个最适合此模式的接口迭代器！往往
 
 ## 4. UML 类图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/mqKM1434A9.png)
+![](assets/Iterator.png)
 
 ## 5. 代码
 

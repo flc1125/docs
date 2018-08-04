@@ -13,7 +13,7 @@
 
 ## 3. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/788RLCJGxg.png)
+![](assets/ChainOfResponsibilities.png)
 
 ## 4. 代码
 

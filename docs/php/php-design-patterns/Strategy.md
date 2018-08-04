@@ -17,7 +17,7 @@
 
 ## 4. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/ZALJKc6DB2.png)
+![](assets/Strategy.png)
 
 ## 5. 代码
 

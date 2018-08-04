@@ -20,7 +20,7 @@
 
 ## 3. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/3ZBanRSn95.png)
+![](assets/Memento.png)
 
 ## 4. 代码
 

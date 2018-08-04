@@ -14,7 +14,7 @@
 
 ## 2. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/5Brm3Ch0jM.png)
+![](assets/TemplateMethod.png)
 
 ## 3. 代码
 

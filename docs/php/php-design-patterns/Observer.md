@@ -14,7 +14,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：`SplObserver` �
 
 ## 4. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/sWK78CV3NN.png)
+![](assets/Observer.png)
 
 ## 5. 代码
 

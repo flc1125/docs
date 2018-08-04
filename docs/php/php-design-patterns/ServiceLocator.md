@@ -18,7 +18,7 @@
 
 ## 4. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/2pn0Utic36.png)
+![](assets/ServiceLocator.png)
 
 ## 5. 代码
 
