@@ -5,7 +5,7 @@ python:
   - "3.6"
 
 install:
-  - pip install mkdocs=='0.17.5'
+  - pip install mkdocs # =='0.17.5'
   - pip install mkdocs-material
   - pip install pygments
   - pip install pymdown-extensions
