@@ -12,7 +12,7 @@
 
 ## 2. UML图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/jlNtPkTLkL.png)
+![](assets/FactoryMethod.png)
 
 ## 3. 代码
 

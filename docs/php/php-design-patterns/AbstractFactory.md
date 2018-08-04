@@ -6,7 +6,7 @@
 
 ## 2. UML 图
 
-![](https://lccdn.phphub.org/uploads/images/201803/19/1/UMD5mQUIFw.png)
+![](assets/AbstractFactory.png)
 
 ## 3. 代码
 
