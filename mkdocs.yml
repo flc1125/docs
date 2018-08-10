@@ -152,4 +152,13 @@ pages:
     - 序列化器: 'elasticsearch/elasticsearch-php/serializers.md'
     - PHP 版本需求: 'elasticsearch/elasticsearch-php/php_version_requirement.md'
     - 社区 DSLs: 'elasticsearch/elasticsearch-php/community_dsls.md'
-
+- 更多
+  - 中文技术文档的写作规范
+    - [概述](more/document-style-guide/index.md)
+    - [标题](more/document-style-guide/title.md)
+    - [文本](more/document-style-guide/text.md)
+    - [段落](more/document-style-guide/paragraph.md)
+    - [数值](more/document-style-guide/number.md)
+    - [标点符号](more/document-style-guide/marks.md)
+    - [文档体系](more/document-style-guide/structure.md)
+    - [参考链接](more/document-style-guide/reference.md)
