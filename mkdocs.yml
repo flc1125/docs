@@ -22,7 +22,7 @@ markdown_extensions:
   - markdown.extensions.footnotes
   - markdown.extensions.meta
   - markdown.extensions.toc:
-      permalink: true
+      permalink: "#"
   # pymdown-extensions
   - pymdownx.arithmatex
   - pymdownx.betterem:
@@ -54,7 +54,7 @@ extra:
       link: 'https://github.com/flc1125'
   # disqus: 'flc-docs' # 需翻墙
 
-pages:
+nav:
 - 首页: 'index.md'
 - PHP: 
     - PHP PSR 编码规范:
