@@ -57,6 +57,8 @@ extra:
 nav:
 - 首页: 'index.md'
 - PHP: 
+    - PHP 各版本特性:
+      - PHP 7.1: 'php/features/7.2.x.md'
     - PHP PSR 编码规范:
       - 概述: 'php/psr/index.md'
       - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
