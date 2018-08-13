@@ -162,3 +162,4 @@ pages:
     - 标点符号: 'more/document-style-guide/marks.md'
     - 文档体系: 'more/document-style-guide/structure.md'
     - 参考链接: 'more/document-style-guide/reference.md'
+  - Git 常用命令: 'more/git/index.md'
