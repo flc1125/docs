@@ -60,6 +60,7 @@ nav:
     - PHP 各版本特性:
       - PHP 7.2.x: 'php/features/7.2.x.md'
       - PHP 7.1.x: 'php/features/7.1.x.md'
+      - PHP 7.0.x: 'php/features/7.0.x.md'
     - PHP PSR 编码规范:
       - 概述: 'php/psr/index.md'
       - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
