@@ -63,6 +63,7 @@ nav:
       - PHP 7.0.x: 'php/features/7.0.x.md'
       - PHP 5.6.x: 'php/features/5.6.x.md'
       - PHP 5.5.x: 'php/features/5.5.x.md'
+      - PHP 5.4.x: 'php/features/5.4.x.md'
     - PHP PSR 编码规范:
       - 概述: 'php/psr/index.md'
       - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
