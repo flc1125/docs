@@ -163,7 +163,8 @@ nav:
 - DevOps:
   - Docker: 
     - 概述: 'devops/docker/index.md'
-    - Docker: 'devops/docker/dockerfile/php.md'
+    - Dockerfile:
+      - PHP: 'devops/docker/dockerfile/php.md'
   - Redis: 'devops/redis/index.md'
 - 更多:
   - Git 常用命令: 'more/git/index.md'
