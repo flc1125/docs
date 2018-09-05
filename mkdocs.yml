@@ -162,6 +162,7 @@ nav:
     - 社区 DSLs: 'elasticsearch/elasticsearch-php/community_dsls.md'
 - DevOps:
   - Docker: 'devops/docker/index.md'
+    - Docker: 'devops/docker/dockerfile/php.md'
   - Redis: 'devops/redis/index.md'
 - 更多:
   - Git 常用命令: 'more/git/index.md'
