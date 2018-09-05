@@ -64,5 +64,5 @@ docker pull flc1125/php-7.2
 ## 3.2. 运行一个容器
 
 ```
-docker run -dit -v /data:/data --name php-7.2 flc1125/php-7.2 bash
+docker run -dit --name php-7.2 flc1125/php-7.2 bash
 ```
