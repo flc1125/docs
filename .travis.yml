@@ -4,14 +4,14 @@ cache: pip
 python:
   - "3.6"
 
-install:
+before_install:
   - pip install mkdocs
   - pip install mkdocs-material
   - pip install pygments
   - pip install pymdown-extensions
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
-after_install:
+install:
   - yum install -y golang
   - go get github.com/polym/upx
   - go version
