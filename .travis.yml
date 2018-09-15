@@ -19,8 +19,8 @@ install:
 script:
   - mkdocs -V
   - mkdocs gh-deploy --force --clean
-  - sudo ~/go/bin/upx login "${UPX-SERVICE-NAME}" "${UPX-OPERATOR}" "${UPX-PASSWORD}"
-  - sudo ~/go/bin/upx sync ./site/
+  - ~/go/bin/upx login "${UPX_SERVICE_NAME}" "${UPX_OPERATOR}" "${UPX_PASSWORD}"
+  - ~/go/bin/upx sync ./site/
 
 branches:
   only:
