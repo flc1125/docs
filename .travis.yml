@@ -20,6 +20,10 @@ script:
   - mkdocs -V
   - mkdocs gh-deploy --force --clean
 
+deploy:
+  - sudo ~/go/bin/upx login "${UPX-SERVICE-NAME}" "${UPX-OPERATOR}" "${UPX-PASSWORD}"
+  - ~/go/bin/upx sync ./
+
 branches:
   only:
     - master
