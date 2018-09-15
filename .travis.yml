@@ -11,6 +11,11 @@ install:
   - pip install pymdown-extensions
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
+after_install:
+  - yum install -y golang
+  - go get github.com/polym/upx
+  - go version
+
 script:
   - mkdocs -V
   - mkdocs gh-deploy --force --clean
