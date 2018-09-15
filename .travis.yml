@@ -12,7 +12,7 @@ before_install:
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 install:
-  - apt-get install -y golang
+  - sudo apt-get install -y golang
   - go get github.com/polym/upx
   - go version
 
