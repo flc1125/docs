@@ -18,10 +18,10 @@ install:
 
 script:
   - mkdocs -V
-  - mkdocs gh-deploy --force --clean
+  # - mkdocs gh-deploy --force --clean
+  - mkdocs build --clean
   - upx login "${UPX_SERVICE_NAME}" "${UPX_OPERATOR}" "${UPX_PASSWORD}"
   - upx sync ./site/
-  - ping v0.api.upyun.com -c 10
 
 branches:
   only:
