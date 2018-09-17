@@ -122,11 +122,11 @@ nav:
         - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'
         - PHP 设计模式阅读清单: 'php/php-design-patterns/design-pattern-reading.md'
 - Elasticsearch:
-  - Elasticsearch 6.3 - 中文版:
-    - 翻译说明: 'elasticsearch/elasticsearch-6.3/translation-instructions.md'
-    - 入门: 
-      - 入门: 'elasticsearch/elasticsearch-6.3/getting-started.md'
-      - 基本概念: 'elasticsearch/elasticsearch-6.3/basic_concepts.md'
+  # - Elasticsearch 6.3 - 中文版:
+  #   - 翻译说明: 'elasticsearch/elasticsearch-6.3/translation-instructions.md'
+  #   - 入门: 
+  #     - 入门: 'elasticsearch/elasticsearch-6.3/getting-started.md'
+  #     - 基本概念: 'elasticsearch/elasticsearch-6.3/basic_concepts.md'
     # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
     # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
     # - 翻译说明: 'elasticsearch/elasticsearch-6.3/11111111111.md'
@@ -160,6 +160,8 @@ nav:
     - 序列化器: 'elasticsearch/elasticsearch-php/serializers.md'
     - PHP 版本需求: 'elasticsearch/elasticsearch-php/php_version_requirement.md'
     - 社区 DSLs: 'elasticsearch/elasticsearch-php/community_dsls.md'
+  - Elasticsearch 全/增量同步:
+    - 概述: 'elasticsearch/elasticsearch-sync/index.md'
 - DevOps:
   - Docker: 
     - 概述: 'devops/docker/index.md'
