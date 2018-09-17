@@ -13,6 +13,11 @@
 - [Elasticsearch 6.3 - 中文版](elasticsearch/elasticsearch-6.3/translation-instructions.md)
 - [Elasticsearch-PHP](elasticsearch/elasticsearch-php/overview.md)
 
+## DevOps
+
+- [Docker](devops/docker/index.md)
+- [Redis](devops/redis/index.md)
+
 ## 更多
 
 - [Git 常用命令](more/git/index.md)
