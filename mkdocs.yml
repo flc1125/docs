@@ -1,5 +1,7 @@
 site_name: 叶子坑-文档库
 site_author: Flc
+site_keywords: 叶子坑,文档库,doc,docs,Flc,PHP,设计模式,Elasticsearch,docker,git,特性
+site_description: 叶子坑文档库，记录相关技术的教程、代码
 repo_url: https://github.com/flc1125/docs
 site_url: https://docs.flc.io
 theme:
