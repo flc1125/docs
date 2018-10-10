@@ -71,11 +71,76 @@ mkdocs gh-deploy
 
 ## Github
 
+### 版本库
+
+创建仓库，提交代码。
+
+> 注意忽略 `site` 目录
+
+### 申请 Token
+
+- 访问地址：https://github.com/settings/tokens
+- 点击右侧 `Generate new token` 按钮
+- `Token description` 输入 Token 描述，随意
+- 勾选权限 `Select scopes` 下的 `repo` 下所有
+- 点击生成，将生成的 `token` 留好备用
+
+**操作演示**
+
+![](assets/github-token.gif)
+
 ## Travis
+
+### Travis 设置
+
+- 进入集成服务列表： https://travis-ci.org/account/repositories
+
+    > PS: 如项目不存在，点击左侧的 `Sync account` 按钮。
+
+- 找到对应的仓库，点击右侧的开关，开启服务
+- 点击右侧 `Settings` 进入设置界面
+- 在 `Settings` 栏位下 `Environment Variables` 下新增环境变量名和对应值：
+    
+    |环境变量名|环境变量值|
+    |----|----|
+    |`GITHUB_TOKEN`|`980ff900b07d3efc78e1a6eaa1becb49ea5c9cab`|
+    
+    > 环境变量值为上步骤生成的 `Token`  
+    > PS: 注意禁用右侧的`Display value in build log` 选项，避免敏感信息暴露在构建日志中
+
+**相关操作如图**
+
+![](assets/legacy-services.png)
+
+### 配置 `.travis.yml`
+
+仓库根目录创建文件 `.travis.yml`, 内容如下：
+
+```yaml
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip install mkdocs
+  - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
+
+script:
+  - mkdocs gh-deploy --force --clean
+
+branches:
+  only:
+    - master
+```
 
 ## 附录
 
 - UPYUN
+
+### 自定义域名
+
+CNAME
 
 ## 结语
 
