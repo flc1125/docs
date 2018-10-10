@@ -53,7 +53,7 @@ mkdocs serve
 mkdocs serve -a 0.0.0.0:8000 # mkdocs serve -a [ip:port]
 ```
 
-> 支持编辑保存，自动编译
+> 支持编辑保存，自动编译渲染
 
 ### 2.4. 编译构建站点
 
