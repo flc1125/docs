@@ -1,7 +1,5 @@
 # Github + Travis + Mkdocs 搭建文档库
 
-[TOC]
-
 ## 1. 概述
 
 如何搭建一个免费的文档库站点？
@@ -35,7 +33,7 @@
 pip install mkdocs
 ```
 
-> 需安装Python，支持的版本：2.7,3.4,3.5,3.6,3.7
+> 需安装Python，支持的版本：2.7、3.4、3.5、3.6、3.7
 
 ### 2.2. 创建文档库
 
@@ -134,13 +132,25 @@ branches:
     - master
 ```
 
-## 附录
+## 5. 附录
 
-- UPYUN
+### 5.1. Github Pages 自定义域名
 
-### 自定义域名
+- 文档根目录新增文件：`CNAME`，内填写对应域名即可
+- 域名解析，通过添加 `CNAME` 类型，指向到 Github，[参考文档](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/)
 
-CNAME
+> Github Pages 会自动识别 `CNAME` 绑定域名（还提供免费的 HTTPS 服务 :smile: :smile:)
+
+### 5.2. 百度收录问题
+
+因依靠 Github Pages 服务提供 WEB 服务。而 Github Pages 服务对百度做了屏蔽处理，以至于百度无法收录（*谷歌正常*）。如介意，可使用**云存储**或自搭服务器方式存储。
+
+!!! note "参考"
+
+    https://docs.flc.io 使用的是 [又拍云](https://www.upyun.com/) 云存储， 服务接近免费，支持 CDN，WEBP等。还有免费的 HTTPS 证书申请。(不是广告 :flushed: :flushed:)  
+    对应 [构建配置参考](https://github.com/flc1125/docs/blob/eb7d7b6610b52895ba84ca51c24b1569a4c3e719/.travis.yml)
+
+    > 类似这样的**云存储**，还有阿里云 OSS，亚马逊 S3，腾讯云 COS，七牛云等
 
 ## 结语
 
