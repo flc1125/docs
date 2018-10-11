@@ -67,15 +67,15 @@ mkdocs build
 mkdocs gh-deploy
 ```
 
-## Github
+## 3. Github
 
-### 版本库
+### 3.1. 版本库
 
 创建仓库，提交代码。
 
 > 注意忽略 `site` 目录
 
-### 申请 Token
+### 3.2. 申请 Token
 
 - 访问地址：https://github.com/settings/tokens
 - 点击右侧 `Generate new token` 按钮
@@ -87,9 +87,9 @@ mkdocs gh-deploy
 
 ![](assets/github-token.gif)
 
-## Travis
+## 4. Travis
 
-### Travis 设置
+### 4.1. Travis 设置
 
 - 进入集成服务列表： https://travis-ci.org/account/repositories
 
@@ -110,7 +110,7 @@ mkdocs gh-deploy
 
 ![](assets/legacy-services.png)
 
-### 配置 `.travis.yml`
+### 4.2. 配置 `.travis.yml`
 
 仓库根目录创建文件 `.travis.yml`, 内容如下：
 
@@ -136,7 +136,7 @@ branches:
 
 ### 5.1. Github Pages 自定义域名
 
-- 文档根目录新增文件：`CNAME`，内填写对应域名即可
+- 文档根目录新增文件：`CNAME`，内填写对应域名即可，[参考文档](https://help.github.com/articles/setting-up-a-custom-subdomain/)
 - 域名解析，通过添加 `CNAME` 类型，指向到 Github，[参考文档](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/)
 
 > Github Pages 会自动识别 `CNAME` 绑定域名（还提供免费的 HTTPS 服务 :smile: :smile:)
@@ -147,13 +147,26 @@ branches:
 
 !!! note "参考"
 
-    https://docs.flc.io 使用的是 [又拍云](https://www.upyun.com/) 云存储， 服务接近免费，支持 CDN，WEBP等。还有免费的 HTTPS 证书申请。(不是广告 :flushed: :flushed:)  
+    https://docs.flc.io 使用的是 [又拍云](https://www.upyun.com/) 云存储， 服务接近免费，支持 CDN，WEBP 等。还有免费的 HTTPS 证书申请。(不是广告 :flushed: :flushed:)  
     对应 [构建配置参考](https://github.com/flc1125/docs/blob/eb7d7b6610b52895ba84ca51c24b1569a4c3e719/.travis.yml)
 
     > 类似这样的**云存储**，还有阿里云 OSS，亚马逊 S3，腾讯云 COS，七牛云等
 
-## 结语
+### 5.3. 主题：`Material`
 
-## 参考
+https://docs.flc.io 使用的开源主题 [Material](https://squidfunk.github.io/mkdocs-material/)，如何使用，请参考官网。
+
+> 感受：美观、响应式、扩展丰富
+
+## 6. 结语
+
+本方案提供的是一个实现 **自动化集成发布免费的WEB服务** 思路。而基于该方案，可实现更多的服务，如 [Hexo](https://hexo.io/) 等第三方框架的自动化搭建，自动化测试等。
+
+## 7. 参考
 
 - Mkdocs 官网：https://www.mkdocs.org/
+- Material 主题：https://squidfunk.github.io/mkdocs-material/
+- Github： https://github.com
+- Travis: https://travis-ci.org
+- Python: https://www.python.org/
+- Travis git 权限问题：https://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/
