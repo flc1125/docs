@@ -149,7 +149,7 @@ branches:
 
 !!! note "参考"
 
-    https://docs.flc.io 使用的是 [又拍云](https://www.upyun.com/) 云存储， 服务接近免费，支持 CDN，WEBP 等。还有免费的 HTTPS 证书申请。(不是广告 :flushed: :flushed:)  
+    https://docs.flc.io 使用的是 [又拍云](https://www.upyun.com/) 云存储， 服务接近免费，支持 CDN，WEBP 等。还有免费的 HTTPS 证书申请。(不是广告 :joy: :joy:)  
     对应 [构建配置参考](https://github.com/flc1125/docs/blob/eb7d7b6610b52895ba84ca51c24b1569a4c3e719/.travis.yml)
 
     > 类似这样的**云存储**，还有阿里云 OSS，亚马逊 S3，腾讯云 COS，七牛云等
