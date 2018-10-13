@@ -10,7 +10,6 @@
 
 ## Elasticsearch
 
-- [Elasticsearch 6.3 - 中文版](elasticsearch/elasticsearch-6.3/translation-instructions.md)
 - [Elasticsearch-PHP](elasticsearch/elasticsearch-php/overview.md)
 
 ## DevOps
