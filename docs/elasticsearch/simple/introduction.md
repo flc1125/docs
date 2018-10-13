@@ -208,6 +208,58 @@ select * from table where age >=10 and age <= 20;
 
 ### 复合查询
 
+#### bool
+
+与其他查询构建语句进行组合的查询，构建语句包括：
+
+|构建语句|说明
+|----|----|
+|`must`|**必须**出现在匹配的文档中的条件。有助于计算得分|
+|`filter`|**必须**出现在匹配的文档中的条件。但是不同于 `must` 查询的分数将被忽略。忽略评分并考虑使用子句进行**高速缓存**|
+|`should`|应出现在匹配的文档中的条件，即满足即可|
+|`must_not`|不得出现在匹配的文档中的条件|
+
+```json tab="Elasticsearch"
+POST _search
+{
+  "query": {
+    "bool" : {
+      "must" : {
+        "term" : { "user" : "kimchy" }
+      },
+      "filter": {
+        "term" : { "tag" : "tech" }
+      },
+      "must_not" : {
+        "range" : {
+          "age" : { "gte" : 10, "lte" : 20 }
+        }
+      },
+      "should" : [
+        { "term" : { "tag" : "wow" } },
+        { "term" : { "tag" : "elasticsearch" } }
+      ]
+    }
+  }
+}
+```
+
+```sql tab="SQL"
+select * from table
+where user = "kimchy"
+    and tag = "tech"
+    and (age < 10 or age > 20) -- not (age >= 10 and age <= 20)
+    and (tag = "wow" or tag = "elasticsearch");
+```
+
+
+!!! info ""
+
+    **个人理解：** `bool` 类似 `()`，而 `must(filter)` 类似 `and`；`should` 类似 `or`，`must_not` 类似 `not`。
+
+    > **注：** `bool` 支持无限极嵌套，但 `bool` 下仅能编写以上四种构建语句。 
+
+
 ### 调试
 
 ## 实例讲解
