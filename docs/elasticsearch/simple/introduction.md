@@ -135,6 +135,8 @@ where subject like '%this%'
 
 通过倒排索引查找**确切**的值。 相当于 `=`，但不只是 `=`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html) 
 
+> 需要整理数组的情况，是否可查询***************************
+
 ```json tab="Elasticsearch"
 POST _search
 {
@@ -155,6 +157,54 @@ select * from table where user = 'Kimchy';
     > 官方文档谷歌翻译...仅供参考
 
     **个人总结:** 日常应用中，`term` 查询相对更适合 `int` 类型的数据，如字符串可使用 `keyword` 类型。 而 Elasticsearch 默认在生成 `mapping` 映射时，会对字符串自动添加 `keyword` 类型。 如字段 `name`，可使用 `name.keyword`
+
+#### terms
+
+通过倒排索引中查找多个**确切**的值，相当于 `in`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html) 
+
+```json tab="Elasticsearch"
+GET /_search
+{
+    "query": {
+        "terms" : { "user" : ["kimchy", "elasticsearch"]}
+    }
+}
+```
+
+```sql tab="SQL"
+select * from table where user in ('Kimchy', 'elasticsearch');
+```
+
+#### range
+
+范围区间查询，[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html) 
+
+```json tab="Elasticsearch"
+GET _search
+{
+    "query": {
+        "range" : {
+            "age" : {
+                "gte" : 10,
+                "lte" : 20
+            }
+        }
+    }
+}
+```
+
+```sql tab="SQL"
+select * from table where age >=10 and age <= 20;
+```
+
+参数说明
+
+|参数|说明|
+|----|----|
+|`gte`|>=|
+|`gt`|>|
+|`lte`|<=|
+|`lt`|<|
 
 ### 复合查询
 
