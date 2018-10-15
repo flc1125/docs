@@ -1,6 +1,21 @@
 # Elasticsearch 入门
 
-## 概念
+## 简介
+
+### 什么是 Elasticsearch
+
+### 应用场景
+
+### 哪些企业在用
+
+
+----
+
+!!! tip ""
+
+    **Tips：** 以下部分会列出 Elasticsearch 方式和 SQL “等价”方式便于理解。但实际应用中，部分场景，数据结果，不完全等价，仅供参考。
+
+## 基础概念
 
 ### index
 
@@ -25,23 +40,167 @@
 
 文档数据，类似数据库 “行” 数据。
 
-### 分析器
+## 基本使用
 
-## 增删改查
+### 请求与输出
 
-### 新增
+#### 请求
 
-### 更新
+- 接口 API 使用 `RESTful` 规范，URI格式：`http://localhost:9200/index/<type>/<document_id>`
+- `?pretty=true`：JSON 格式化
 
-### 删除
+#### 输出
 
-### 查找
+数据格式：`json`（也支持 `yaml`，接口地址：`?format=yaml`）
+
+|字段|说明|
+|----|----|
+|`took`|请求耗时，单位：毫秒|
+|`timed_out`|是否超时|
+|`_shards.total`|总共查询了多少分片，含跨`index`|
+|`_shards.successful`|查询成功的分片，含跨`index`|
+|`hits`|匹配文档的数据结果|
+|`hits.total`|匹配文档的总记录数|
+|`hits.max_score`|匹配文档的最高分值|
+|`hits.hits`|匹配文档的文档数据|
+|`hits.hits._index`|文档所对应的索引|
+|`hits.hits._type`|文档所对应的索引类型|
+|`hits.hits._id`|文档所对应的文档ID|
+|`hits.hits._score`|文档根据匹配对的分值|
+|`hits.hits._source`|文档原始数据|
+|更多...||
+
+
+### 索引
+
+- 创建/设置索引
+
+    ```
+    PUT /twitter
+    ```
+
+- 删除索引
+
+    ```
+    DELETE /twitter
+    ```
+
+- 查看索引
+
+    ```
+    GET /twitter
+    ```
+
+### 文档
+
+- 新增文档
+    
+    ```js
+    PUT twitter/_doc/1
+    {
+        "user" : "kimchy",
+        "post_date" : "2009-11-15T14:12:12",
+        "message" : "trying out Elasticsearch"
+    }
+    ```
+
+
+- 更新文档
+
+    ```js
+    // 指定文档 ID
+    PUT twitter/_doc/1
+    {
+        "counter" : 1,
+        "tags" : ["red"]
+    }
+
+    // 脚本更改（如递增）
+    POST twitter/_doc/1/_update
+    {
+        "script" : {
+            "source": "ctx._source.counter += params.count",
+            "lang": "painless",
+            "params" : {
+                "count" : 4
+            }
+        }
+    }
+    ```
+
+- 删除文档
+
+    ```js
+    // 指定文档 ID
+    DELETE /twitter/_doc/1
+    
+    // 指定条件
+    POST twitter/_delete_by_query
+    {
+      "query": { 
+        "match": {
+          "message": "some message"
+        }
+      }
+    }
+    ```
+
+- 获取文档
+    
+    ```js
+    GET twitter/_doc/1
+    ```
+
+- 搜索文档： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-uri-request.html)
+
+    ```js
+    GET twitter/_search?q=user:kimchy
+    ```
+
+### 指定字段
+
+```js tab="Elasticsearch"
+{
+    "_source": ["*", "user", "user.age"]
+}
+```
+
+```sql tab="SQL"
+select *, user from table;
+```
+
+### From / Size ： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-uri-request.html)
+
+```js tab="Elasticsearch"
+GET /_search
+{
+    "from" : 10,
+    "size" : 20
+}
+```
+
+```sql tab="SQL"
+select * from table limit 10, 20;
+```
+
+### 排序
+
+```js
+GET /my_index/_search
+{
+    "sort" : [
+        {"post_date" : {"order" : "asc"}},
+        "user",
+        {"name" : "desc"},
+        {"age" : "desc" },
+        "_score"
+    ]
+}
+```
+
+> 不设置 `sort`, 默认按 `_score` 从高到低排序
 
 ## 常用 DSL
-
-!!! tip ""
-
-    **Tips：** 以下会列出 Elasticsearch 方式和 SQL “等价”方式查询便于理解。但实际应用中，部分场景，数据结果，不一定完全等价。
 
 ### Match 全文查询
 
@@ -49,7 +208,7 @@
 
 默认匹配：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)
     
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 GET /_search
 {
     "query": {
@@ -74,7 +233,7 @@ where message like '%this%'
 
 短语匹配：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase.html)
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 GET /_search
 {
     "query": {
@@ -95,7 +254,7 @@ select * from table where message like '%this is a test%';
 
 > 一般用于搜索框：建议搜索
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 GET /_search
 {
     "query": {
@@ -116,7 +275,7 @@ select * from table where message like 'quick brown f%';
 
 > 一般用于关键字搜索
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 GET /_search
 {
   "query": {
@@ -154,7 +313,7 @@ where subject like '%this%'
 
 > 需要整理数组的情况，是否可查询***************************
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 POST _search
 {
   "query": {
@@ -179,7 +338,7 @@ select * from table where user = 'Kimchy';
 
 通过倒排索引中查找多个**确切**的值，相当于 `in`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html) 
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 GET /_search
 {
     "query": {
@@ -196,7 +355,7 @@ select * from table where user in ('Kimchy', 'elasticsearch');
 
 范围区间查询，[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html) 
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 GET _search
 {
     "query": {
@@ -236,7 +395,7 @@ select * from table where age >=10 and age <= 20;
 |`should`|应出现在匹配的文档中的条件，即满足即可|
 |`must_not`|不得出现在匹配的文档中的条件|
 
-```json tab="Elasticsearch"
+```js tab="Elasticsearch"
 POST _search
 {
   "query": {
