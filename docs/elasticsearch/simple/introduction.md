@@ -4,10 +4,22 @@
 
 ### 什么是 Elasticsearch
 
+- 基于 **Apache Lucene** 构建的**开源搜索引擎**
+- 采用 **Java** 编写，提供简单易用的 **RESTful API**
+- 轻松的**横向扩展**，可支持**PB级**的结构化或非结构化数据处理
+
 ### 应用场景
 
-### 哪些企业在用
+- 海量数据分析引擎
+- 站内搜索引擎
+- 数据仓库
 
+一线公司实际应用场景：
+
+- 维基百科、Github - 站内实时搜索
+- 百度 - 实时日志监控平台
+
+> 简介部分描述摘自：[瓦力老师的《ElasticSearch入门》](https://www.imooc.com/learn/889)。—— 教程版本为 5.x。本文内容基于 6.4 版本整理。
 
 ----
 
@@ -187,7 +199,7 @@ select * from table limit 10, 20;
     
     **`from` 默认为 0，`size` 默认为 10。 这点与 SQL 不同。**
 
-    > 请注意，`from + size` 不能超过索引设置 [`index.max_result_window`](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/index-modules.html), 该值默认为10,000。
+    请注意，`from + size` 不能超过索引设置 [`index.max_result_window`](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/index-modules.html), 该值默认为10,000。
 
 ### 排序
 
