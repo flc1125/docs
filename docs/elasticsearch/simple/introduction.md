@@ -183,7 +183,7 @@ GET /_search
 select * from table limit 10, 20;
 ```
 
-!!! warn ""
+!!! warning ""
     
     **`from` 默认为 0，`size` 默认为 10。 这点与 SQL 不同。**
 
