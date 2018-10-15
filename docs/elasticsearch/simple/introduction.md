@@ -75,19 +75,19 @@
 
 - 创建/设置索引
 
-    ```
+    ```js
     PUT /twitter
     ```
 
 - 删除索引
 
-    ```
+    ```js
     DELETE /twitter
     ```
 
 - 查看索引
 
-    ```
+    ```js
     GET /twitter
     ```
 
