@@ -169,7 +169,7 @@
 select *, user from table;
 ```
 
-### From / Size ： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-uri-request.html)
+### From / Size ： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-request-from-size.html)
 
 ```js tab="Elasticsearch"
 GET /_search
