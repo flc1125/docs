@@ -183,6 +183,12 @@ GET /_search
 select * from table limit 10, 20;
 ```
 
+!!! warn ""
+    
+    **`from` 默认为 0，`size` 默认为 10。 这点与 SQL 不同。**
+
+    > 请注意，`from + size` 不能超过索引设置 [`index.max_result_window`](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/index-modules.html), 该值默认为10,000。
+
 ### 排序
 
 ```js
