@@ -411,9 +411,9 @@ select * from table where age >=10 and age <= 20;
 |构建语句|说明
 |----|----|
 |`must`|**必须**出现在匹配的文档中的条件。有助于计算得分|
-|`filter`|**必须**出现在匹配的文档中的条件。但是不同于 `must` 查询的分数将被忽略。忽略评分并考虑使用子句进行**高速缓存**|
-|`should`|应出现在匹配的文档中的条件，即满足即可|
-|`must_not`|不得出现在匹配的文档中的条件|
+|`filter`|**必须**出现在匹配的文档中的条件。但是不同于 `must` 查询的分数将被忽略。忽略评分并考虑使用[子句](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/query-filter-context.html)进行**高速缓存**|
+|`should`|应出现在匹配的文档中的条件，即满足即可。计算分值|
+|`must_not`|不得出现在匹配的文档中的条件，不计算分值|
 
 ```js tab="Elasticsearch"
 POST _search
@@ -448,14 +448,20 @@ where user = "kimchy"
     and (tag = "wow" or tag = "elasticsearch");
 ```
 
-
 !!! info ""
 
     **个人理解：** `bool` 类似 `()`，而 `must(filter)` 类似 `and`；`should` 类似 `or`，`must_not` 类似 `not`。
 
     > **注：** `bool` 支持无限极嵌套，但 `bool` 下仅能编写以上四种构建语句。 
 
+
+!!! info "补充：Elasticsearch会自动缓存经常使用的过滤器，以加快性能。"
+
+    只要将查询子句传递给 `filter` 参数（例如查询中的 `filter`或 `must_not` 参数， `bool` 查询中的`filter` 参数 `constant_score` 或 `filter` 聚合）， 过滤器上下文就会生效。
+
 ## 实例讲解
+
+> 本段培训使用，非培训人员可无视
 
 ??? question "查询 nginx 数据，条件为状态码为 301 和 302，结果只显示 `status,host,require_uri,geoip.ip` 字段，数量为 20 条的数据"
 
@@ -478,7 +484,7 @@ where user = "kimchy"
     - `index` 索引支持通配符查询
     - `type` 可不指定查询
 
-??? question "查询建案数据，户型匹配“三房”(`in_array('三房', search.room_name)`)，且为预售屋或新成屋(`build_type=1 或 2`)，且在售状态(`sell_status = 1`)；排除关闭建案(`closed = 1`)；满足建案名中含“大”或“小”；按`status asc`和分值高到低排序。（其中三房和预售/新成屋、在售状态三个条件，不计算分值）"
+??? question "查询建案数据，户型匹配“三房”(`search.room_name含三房`)，且为预售屋或新成屋(`build_type=1 或 2`)，且在售状态(`sell_status = 1`)；排除关闭建案(`closed = 1`)；满足建案名中含“大”或“小”；按`status asc`和分值高到低排序。（其中三房和预售/新成屋、在售状态三个条件，不计算分值）"
 
     ```json
     GET build/_search
@@ -521,4 +527,4 @@ where user = "kimchy"
 
 ??? question "作业"
 
-    查询 nginx 数据，匹配
+    待整理
