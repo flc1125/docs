@@ -327,9 +327,7 @@ where subject like '%this%'
 
 #### term
 
-通过倒排索引查找**确切**的值。 相当于 `=`，但不只是 `=`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html) 
-
-> 需要整理数组的情况，是否可查询***************************
+通过倒排索引查找**确切**的值。 相当于 `=`，但不只是 `=`，更像是 PHP 的 `in_array` 的概念：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html) 
 
 ```js tab="Elasticsearch"
 POST _search
@@ -351,6 +349,10 @@ select * from table where user = 'Kimchy';
     > 官方文档谷歌翻译...仅供参考
 
     **个人总结:** 日常应用中，`term` 查询相对更适合 `int` 类型的数据，如字符串可使用 `keyword` 类型。 而 Elasticsearch 默认在生成 `mapping` 映射时，会对字符串自动添加 `keyword` 类型。 如字段 `name`，可使用 `name.keyword`
+
+!!! warning ""
+    
+    **数组说明：** 当文档的字段值为数组形式，如： `{"a": [1, 2]}`，`{"term": {"a": 1}}` 也能搜索到此文档，—— `in_array` 的理解。
 
 #### terms
 
@@ -453,16 +455,70 @@ where user = "kimchy"
 
     > **注：** `bool` 支持无限极嵌套，但 `bool` 下仅能编写以上四种构建语句。 
 
-
-### 调试
-
 ## 实例讲解
 
-??? question "查询状态码：200和301"
+??? question "查询 nginx 数据，条件为状态码为 301 和 302，结果只显示 `status,host,require_uri,geoip.ip` 字段，数量为 20 条的数据"
 
-    tests
-    tests
+    ```json
+    GET logstash-nginx_*/_search/
+    {
+      "query": {
+        "terms": {
+          "status": [301, 302]
+        }
+      },
+      "_source": ["status", "host", "require_uri", "geoip.ip"],
+      "size": 20
+    }
+    ```
 
-## Elasticsearch - PHP
+    **内容要点：**
+    
+    - Kibana 简单使用：`Discover` 和 `Dev Tools`
+    - `index` 索引支持通配符查询
+    - `type` 可不指定查询
 
-## Kibana 使用
+??? question "查询建案数据，户型匹配“三房”(`in_array('三房', search.room_name)`)，且为预售屋或新成屋(`build_type=1 或 2`)，且在售状态(`sell_status = 1`)；排除关闭建案(`closed = 1`)；满足建案名中含“大”或“小”；按`status asc`和分值高到低排序。（其中三房和预售/新成屋、在售状态三个条件，不计算分值）"
+
+    ```json
+    GET build/_search
+    {
+      "query": {
+        "bool": {
+          "filter": [
+            {"term": {"search.room_name.keyword": "三房"}},
+            {"term": {"sell_status": 1}},
+            {"bool": {
+              "should": [
+                {"term": {"build_type": 1}},
+                {"term": {"build_type": 2}}
+              ]
+            }}
+          ],
+          "must_not": [
+            {"term": {"closed": 1}}
+          ],
+          "should": [
+            {"match": {"build_name": "大"}},
+            {"match": {"build_name": "小"}}
+          ]
+        }
+      },
+      "_source": ["id", "build_name", "build_type", "search.room_name", "status", "closed", "sell_status"],
+      "sort": [
+        {"status": "asc"},
+        {"_score": "desc"}
+      ]
+    }
+    ```
+
+    **内容要点：**
+    
+    - `bool` 使用，及嵌套使用
+    - `must` 和 `filter` 区别（含分值排序）
+    - `must_not` / `should` 理解
+    - `term` 的理解：确切的值（`in_array`和`keyword`）
+
+??? question "作业"
+
+    查询 nginx 数据，匹配
