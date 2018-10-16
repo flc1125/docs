@@ -85,6 +85,36 @@
 
 ### 索引
 
+- 倒排索引
+
+    Elasticsearch 使用一种称为 **倒排索引** 的结构，它适用于快速的全文搜索。一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的文档列表。
+
+    例如，假设我们有两个文档，每个文档的 `content` 域包含如下内容：
+
+    - The quick brown fox jumped over the lazy dog
+    - Quick brown foxes leap over lazy dogs in summer
+    
+    ```
+    Term      Doc_1  Doc_2
+    -------------------------
+    Quick   |       |  X
+    The     |   X   |
+    brown   |   X   |  X
+    dog     |   X   |
+    dogs    |       |  X
+    fox     |   X   |
+    foxes   |       |  X
+    in      |       |  X
+    jumped  |   X   |
+    lazy    |   X   |  X
+    leap    |       |  X
+    over    |   X   |  X
+    quick   |   X   |
+    summer  |       |  X
+    the     |   X   |
+    ------------------------
+    ```
+
 - 创建/设置索引
 
     ```js
