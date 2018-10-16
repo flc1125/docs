@@ -195,7 +195,7 @@
     GET twitter/_doc/1
     ```
 
-- 搜索文档： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-uri-request.html)
+- 搜索文档： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-uri-request.html)、[语法](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/query-dsl-query-string-query.html#query-string-syntax)
 
     ```js
     GET twitter/_search?q=user:kimchy
