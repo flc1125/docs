@@ -162,7 +162,7 @@ https://docs.flc.io 使用的开源主题 [Material](https://squidfunk.github.io
 
 ## 6. 结语
 
-本方案提供的是一个实现 **自动化集成发布免费的WEB服务** 思路。而基于该方案，可实现更多的服务，如 [Hexo](https://hexo.io/) 等第三方框架的自动化搭建，自动化测试等。
+本方案提供的是一个实现 **自动化集成发布 & 免费的 WEB 服务** 思路。而基于该方案，可衍生出更多的服务，如 [Hexo](https://hexo.io/) 等第三方框架的自动化搭建，自动化测试等。
 
 ## 7. 参考
 
@@ -172,3 +172,4 @@ https://docs.flc.io 使用的开源主题 [Material](https://squidfunk.github.io
 - Travis: https://travis-ci.org
 - Python: https://www.python.org/
 - Travis git 权限问题：https://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/
+- Netlify WEB 项目平台（构建、部署、管理） : https://www.netlify.com/   *—— Github 官方博客有推荐*
