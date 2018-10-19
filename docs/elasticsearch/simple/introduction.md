@@ -558,5 +558,5 @@ where user = "kimchy"
     - `term` 的理解：确切的值（`in_array`和`keyword`）
 
 ??? question "作业"
-
-    待整理
+    
+    ![](assets/bqb.jpg)  **大家都是成年人，哪里有什么作业，又不是小学生...**
