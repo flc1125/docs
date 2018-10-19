@@ -324,12 +324,16 @@ GET /_search
 select * from table where message like '%quick brown f%';
 ```
 
-> **`match_phrase_prefix` 与 `match_phrase` 区别：**如本例中 `f`， `match_phrase_prefix` 从分析器的后的索引词中进行查找 `f` 开头的索引词。而 `match_phrase` 是直接查找 `f` 索引词。如下面例子
+!!! note "`match_phrase_prefix` 与 `match_phrase` 区别："
 
-- 字段值：`我是中国人`
-- 分词后的索引词：`我`, `是`, `中国`, `人`
-- 搜索词：`是中`
-- `match_phrase_prefix` 能匹配； `match_phrase` 无法匹配
+    如上面例子中 `f`， `match_phrase_prefix` 从分析器的后的索引词中进行查找 `f` 开头的索引词。而 `match_phrase` 是直接查找 `f` 索引词。
+
+    > 例子如下：
+
+    - 字段值：`我是中国人`
+    - 分词后的索引词：`我`, `是`, `中国`, `人`
+    - 搜索词：`是中`
+    - `match_phrase_prefix` 能匹配； `match_phrase` 无法匹配
 
 #### multi_match
 
@@ -570,5 +574,7 @@ where user = "kimchy"
     - `term` 的理解：确切的值（`in_array`和`keyword`）
 
 ??? question "作业"
+    
+    ![](assets/bqb.jpg)
 
     大家都是成年人，哪里有什么作业，又不是小学生...
