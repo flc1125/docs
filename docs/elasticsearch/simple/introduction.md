@@ -205,7 +205,7 @@
 
 ```js tab="Elasticsearch"
 {
-    "_source": ["*", "user", "user.age"]
+    "_source": ["*", "user", "user.age", 'user*']
 }
 ```
 
@@ -216,7 +216,6 @@ select *, user from table;
 ### From / Size ： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-request-from-size.html)
 
 ```js tab="Elasticsearch"
-GET /_search
 {
     "from" : 10,
     "size" : 20
@@ -229,14 +228,13 @@ select * from table limit 10, 20;
 
 !!! warning ""
     
-    **`from` 默认为 0，`size` 默认为 10。 这点与 SQL 不同。**
+    `from` 默认为 0，**`size` 默认为 10。 这点与 SQL 不同。**
 
-    请注意，`from + size` 不能超过索引设置 [`index.max_result_window`](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/index-modules.html), 该值默认为10,000。
+    请注意，`from + size` 不能超过索引设置 [`index.max_result_window`](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/index-modules.html), 该值默认为 10,000。
 
 ### 排序
 
-```js
-GET /my_index/_search
+```js  tab="Elasticsearch"
 {
     "sort" : [
         {"post_date" : {"order" : "asc"}},
@@ -246,6 +244,10 @@ GET /my_index/_search
         "_score"
     ]
 }
+```
+
+```sql tab="SQL"
+select * from table order by post_date asc, user, name desc, age desc;
 ```
 
 > 不设置 `sort`, 默认按 `_score` 从高到低排序
@@ -277,7 +279,7 @@ where message like '%this%'
     or message like '%test%';
 ```
 
-> 不等价匹配的示例：如 `message` 值为 `this`。去搜索 `is`，Elasticsearch 无法匹配上；但 SQL 可匹配
+> 不等价匹配的示例：如 `message` 值为 `this is a test`。去搜索 `st`，Elasticsearch 无法匹配上；但 SQL 可匹配
 
 #### match_phrase
 
@@ -298,6 +300,8 @@ GET /_search
 select * from table where message like '%this is a test%';
 ```
 
+> 不等价匹配的示例：如 `message` 值为 `Mozilla/5.0 Windows`。去搜索 `Mozilla 5.0`，Elasticsearch 能匹配上；但 SQL 无法匹配
+
 #### match\_phrase\_prefix
 
 短语前缀匹配：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html)
@@ -310,14 +314,22 @@ GET /_search
     "query": {
         "match_phrase_prefix" : {
             "message" : "quick brown f"
+            // "max_expansions": 10
         }
     }
 }
 ```
 
 ```sql tab="SQL"
-select * from table where message like 'quick brown f%';
+select * from table where message like '%quick brown f%';
 ```
+
+> **`match_phrase_prefix` 与 `match_phrase` 区别：**如本例中 `f`， `match_phrase_prefix` 从分析器的后的索引词中进行查找 `f` 开头的索引词。而 `match_phrase` 是直接查找 `f` 索引词。如下面例子
+
+- 字段值：`我是中国人`
+- 分词后的索引词：`我`, `是`, `中国`, `人`
+- 搜索词：`是中`
+- `match_phrase_prefix` 能匹配； `match_phrase` 无法匹配
 
 #### multi_match
 
@@ -516,7 +528,7 @@ where user = "kimchy"
     - `index` 索引支持通配符查询
     - `type` 可不指定查询
 
-??? question "查询建案数据，户型匹配“三房”(`search.room_name含三房`)，且为预售屋或新成屋(`build_type=1 或 2`)，且在售状态(`sell_status = 1`)；排除关闭建案(`closed = 1`)；满足建案名中含“大”或“小”；按`status asc`和分值高到低排序。（其中三房和预售/新成屋、在售状态三个条件，不计算分值）"
+??? question "查询建案数据，户型匹配“三房”(`search.room_name 含三房`)，且为预售屋或新成屋(`build_type=1 或 2`)，且在售状态(`sell_status = 1`)；排除关闭建案(`closed = 1`)；满足建案名中含“大”或“小”；按`status asc`和分值高到低排序。（其中三房和预售/新成屋、在售状态三个条件，不计算分值）"
 
     ```json
     GET build/_search
@@ -558,5 +570,5 @@ where user = "kimchy"
     - `term` 的理解：确切的值（`in_array`和`keyword`）
 
 ??? question "作业"
-    
-    ![](assets/bqb.jpg)  **大家都是成年人，哪里有什么作业，又不是小学生...**
+
+    !!! warning "大家都是成年人，哪里有什么作业，又不是小学生..."
