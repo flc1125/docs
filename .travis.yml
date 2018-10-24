@@ -12,6 +12,8 @@ before_install:
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 install:
+  - sudo echo '165.254.60.149 v0.api.upyun.com' >> /etc/hosts
+  - ping v0.api.upyun.com -c 5
   - sudo apt-get install -y golang
   - go get github.com/polym/upx
   - go version
