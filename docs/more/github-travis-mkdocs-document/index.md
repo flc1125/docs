@@ -33,6 +33,8 @@
 
 ```sh
 pip install mkdocs
+
+mkdocs -V # 检测是否安装成功
 ```
 
 > 需安装Python，支持的版本：2.7、3.4、3.5、3.6、3.7
@@ -63,21 +65,21 @@ mkdocs build
 
 ### 2.5. Github Pages
 
-自动编译发布至 Github `gh-pages` 分支
+编译并发布至 Github `gh-pages` 分支（前提配置使用 Github 仓库）
 
 ```sh
 mkdocs gh-deploy
 ```
 
+> 提交版本库（`master` 分支），注意忽略 `site` 目录。`echo '/site' > .gitignore`
+
+!!! tip "如果只是搭建文档库，编辑后手动发布，那么你已经具备此技能了..."
+
+    而下面则将开始介绍 “手动” 改为 “自动” 发布
+
 ## 3. Github
 
-### 3.1. 版本库
-
-创建仓库，提交代码。
-
-> 注意忽略 `site` 目录
-
-### 3.2. 申请 Token
+### 3.1 申请 Token
 
 - 访问地址：https://github.com/settings/tokens
 - 点击右侧 `Generate new token` 按钮
@@ -103,16 +105,16 @@ mkdocs gh-deploy
     
     |环境变量名|环境变量值|
     |----|----|
-    |`GITHUB_TOKEN`|`980ff900b07d3efc78e1a6eaa1becb49ea5c9cab`|
+    |`GITHUB_TOKEN`|`d19b9d0e7fdc5095ed1f47cb04d19b69af2dc10c`|
     
     > 环境变量值为上步骤生成的 `Token`  
-    > PS: 注意禁用右侧的`Display value in build log` 选项，避免敏感信息暴露在构建日志中
+    > 注意禁用右侧的`Display value in build log` 选项，避免敏感信息暴露在构建日志中
 
-**相关操作如图**
+**操作演示**
 
-![](assets/legacy-services.png)
+![](assets/legacy-services.gif)
 
-### 4.2. 配置 `.travis.yml`
+### 4.2. 构建配置 `.travis.yml`
 
 仓库根目录创建文件 `.travis.yml`, 内容如下：
 
