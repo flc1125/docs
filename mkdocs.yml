@@ -155,6 +155,7 @@ nav:
       - PHP: 'devops/docker/dockerfile/php.md'
   - Redis: 'devops/redis/index.md'
 - 更多:
+  - Github + Travis + Mkdocs 搭建文档库: 'more/github-travis-mkdocs-document/index.md'
   - Git 常用命令: 'more/git/index.md'
   - 中文技术文档的写作规范:
     - 概述: 'more/document-style-guide/index.md'
