@@ -1,8 +1,8 @@
 # Elasticsearch 入门（二）
 
-## 官方扩展：Elasticsearch PHP
+## 1. 官方扩展：Elasticsearch PHP
 
-### 安装
+### 1.1. 安装
 
 ```bash
 composer require elasticsearch/elasticsearch
@@ -18,7 +18,7 @@ composer require elasticsearch/elasticsearch
 | >= 1.0, < 2.0         | 1.0 or 2.0               |
 | <= 0.90.x             | 0.4                      |
 
-### 配置
+### 1.2. 配置
 
 ```php
 <?php
@@ -41,9 +41,9 @@ $client = ClientBuilder::create()           // Instantiate a new ClientBuilder
                     ->build();              // Build the client object
 ```
 
-### 使用
+### 1.3. 使用
 
-#### 索引文档
+#### 1.3.1. 索引文档
 
 ```php
 <?php
@@ -71,7 +71,7 @@ Array
 )
 ```
 
-#### 获取文档
+#### 1.3.2. 获取文档
 
 ```php
 <?php
@@ -103,7 +103,7 @@ Array
 )
 ```
 
-#### 搜索文档
+#### 1.3.3. 搜索文档
 
 ```php
 <?php
@@ -157,12 +157,38 @@ Array
 )
 ```
 
-
-### 参考
+### 1.4. 参考
 
 - 最新版文档：https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html
 - 中译文档：https://www.elastic.co/guide/cn/elasticsearch/php/current/index.html
 
-## 自研扩展：Laravel Elasticsearch
+## 2. 自研扩展：Laravel Elasticsearch
+
+### 2.1. 安装
+
+```bash
+composer require flc/laravel-elasticsearch
+```
+
+### 2.2. 配置
+
+```php
+///
+```
+
+### 2.3. 使用
+
+#### 2.3.1 基础
+
+```php
+<?php
+
+use Elasticsearch;
+
+Elasticsearch::index('index_name');
+```
+
+#### 2.3.2 搜索
+
 
 ## Elasticsearch 同步
