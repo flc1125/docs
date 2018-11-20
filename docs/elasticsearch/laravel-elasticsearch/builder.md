@@ -4,14 +4,18 @@
 
 ```php
 Elasticsearch::index('users');
+
+Elasticsearch::index('user*');
 ```
 
-> `index()`方法中的值为字符串时候，即调用本扩展的查询构造器。否则为官方扩展 `elasticsearch/elasticsearch` 的语法
+> `index()`方法中的值为字符串时，即调用本扩展的查询构造器。否则为官方扩展 `elasticsearch/elasticsearch` 的语法。
 
 ## 指定 type
 
 ```php
 Elasticsearch::index('users')->type('_doc');
+
+Elasticsearch::index('users')->type('*doc');
 ```
 
 > 根据官方的描述，`type` 后续版本会弃用，建议在使用中，弱化此参数。
