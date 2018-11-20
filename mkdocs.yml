@@ -39,6 +39,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
+  # PHP 不需要<?php 高亮
+  - pymdownx.highlight:
+        extend_pygments_lang:
+          - name: php
+            lang: php
+            options:
+              startinline: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde

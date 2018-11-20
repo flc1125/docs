@@ -3,8 +3,6 @@
 ## 指定 index
 
 ```php
-<?php
-
 Elasticsearch::index('users');
 ```
 
@@ -13,8 +11,6 @@ Elasticsearch::index('users');
 ## 指定 type
 
 ```php
-<?php
-
 Elasticsearch::index('users')->type('_doc');
 ```
 
@@ -23,8 +19,6 @@ Elasticsearch::index('users')->type('_doc');
 ## 指定字段
 
 ```php
-<?php
-
 Elasticsearch::index('users')->select('id', 'username')->first();
 
 Elasticsearch::index('users')->select(['id', 'username'])->get();
@@ -49,29 +43,24 @@ Elasticsearch::index('users')->where('id', 1)->get(['id', 'username']);
 我们先看个简单的例子，查询 `age` 等于 10 的数据：
 
 ```php
-<?php
-
 Elasticsearch::index('users')->where('age', '=', 10)->get();
 ```
 
 当操作/运算符为 `=` 时，我们也可以简写为：
 
 ```php
-<?php
-
 Elasticsearch::index('users')->where('age', 10)->get();
 ```
 
 如果你想指定符合查询的构造类型也可以使用第四个参数：
 
 ```php
-<?php
-
 // 获取 age = 10 并使用 must
 Elasticsearch::index('users')->where('age', '=', 10, 'must')->get();
 
 // 获取 age != 10，即使用 must_not 即可
 Elasticsearch::index('users')->where('age', '=', 10, 'must_not')->get();
+
 // 当然 age != 10 也等同于下面写法
 Elasticsearch::index('users')->where('age', '!=', 10)->get();
 ```
@@ -79,8 +68,6 @@ Elasticsearch::index('users')->where('age', '!=', 10)->get();
 当然，不仅仅支持 `=` 的操作/运算符，我们还支持很多其他的操作/运算符，他们有：`>`、`<`、`>=`、`<=`、`!=`、`<>`、`match`、`not match`、`like`、`not like`。
 
 ```php
-<?php
-
 // 获取 age >= 10
 Elasticsearch::index('users')->where('age', '>=', 10)->get();
 
@@ -100,8 +87,6 @@ Elasticsearch::index('users')->where('username', 'like', '张')->get();
 多个条件进行匹配的时候，我们可以：
 
 ```php
-<?php
-
 // 获取 status = 1 和 closed = 0
 Elasticsearch::index('users')->where([
     'status' => 1,
@@ -112,8 +97,6 @@ Elasticsearch::index('users')->where([
 也可以：
 
 ```php
-<?php
-
 // 获取 status = 1 和 closed = 0 （其中 closed 使用 must）
 Elasticsearch::index('users')->where([
     ['status', 1],
@@ -138,8 +121,6 @@ Elasticsearch::index('users')->where([
 `orderBy` 方法允许你通过给定字段对结果集进行排序。`orderBy` 的第一个参数是排序的字段，第二个参数是排序的方向，可以是 `asc`(默认) 或 `desc`。等同于 Elasticsearch 的 `sort`
 
 ```php
-<?php
-
 Elasticsearch::index('users')->orderBy('id', 'asc')->first();
 
 Elasticsearch::index('users')->orderBy('id', 'asc')->orderBy('username', 'desc')->first();
@@ -150,16 +131,12 @@ Elasticsearch::index('users')->orderBy('id', 'asc')->orderBy('username', 'desc')
 要限制结果的返回数量，或跳过指定数量的结果，你可以使用 `skip` 和 `take` 方法，等同于 Elasticsearch 的 `from` 和 `size`，范例如下：
 
 ```php
-<?php
-
 Elasticsearch::index('users')->skip(10)->size(20)->first();
 ```
 
 或者使用 `offset` 和 `limit` 代替
 
 ```php
-<?php
-
 Elasticsearch::index('users')->offset(10)->limit(20)->first();
 ```
 
@@ -170,8 +147,6 @@ Elasticsearch::index('users')->offset(10)->limit(20)->first();
 `forPage` 方法是分页数据查询，它允许你按每页多少数量，去查询指定页的数据。`forPage` 的第一个参数是指定页数，第二个参数是每页的数据量（默认为 15），范例如下：
 
 ```php
-<?php
-
 Elasticsearch::index('users')->forPage(2, 15)->get();
 ```
 
@@ -182,8 +157,6 @@ Elasticsearch::index('users')->forPage(2, 15)->get();
 ### paginate 分页
 
 ```php
-<?php
-
 Elasticsearch::index('users')->paginate();
 ```
 

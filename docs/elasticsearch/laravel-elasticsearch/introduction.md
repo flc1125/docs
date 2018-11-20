@@ -1,5 +1,9 @@
 # 概述
 
+## 开源地址
+
+https://github.com/flc1125/laravel-elasticsearch
+
 ## 安装
 
 ```bash
