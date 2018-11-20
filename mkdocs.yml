@@ -16,9 +16,6 @@ theme:
   search_index_only: true
 markdown_extensions:
   - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      guess_lang: false
-      # linenums: true # 显示行号
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
   - markdown.extensions.meta
@@ -39,13 +36,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  # PHP 不需要<?php 高亮
-  - pymdownx.highlight:
-        extend_pygments_lang:
-          - name: php
-            lang: php
-            options:
-              startinline: true
+  - pymdownx.highlight
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
