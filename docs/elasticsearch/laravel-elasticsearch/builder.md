@@ -88,10 +88,7 @@ Elasticsearch::index('users')->where('username', 'like', '张')->get();
 
 ```php
 // 获取 status = 1 和 closed = 0
-Elasticsearch::index('users')->where([
-    'status' => 1,
-    'closed' => 0,
-])->get();
+Elasticsearch::index('users')->where(['status' => 1, 'closed' => 0])->get();
 ```
 
 也可以：
@@ -106,6 +103,14 @@ Elasticsearch::index('users')->where([
 
 ### orWhere
 
+`orWhere` 方法为或查询。它作用基本为 `where($column, $operator, $value, 'should')`的变种（即：第四个参数为 `should`)：
+
+```php
+Elasticsearch::index('users')->orWhere('status', 1)->get();
+
+Elasticsearch::index('users')->orWhere(['status' => 1, 'closed' => 1])->get();
+```
+
 ### whereIn / orWhereIn / whereNotIn
 
 ### whereTerm / whereTerms
@@ -115,6 +120,8 @@ Elasticsearch::index('users')->where([
 ### whereRange / whereBetween
 
 ### whereExists / whereNotExists / whereNull
+
+### addWhere
 
 ## orderBy 排序
 
