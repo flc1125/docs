@@ -8,9 +8,26 @@ composer require flc/laravel-elasticsearch
 
 ## 配置
 
-```
+**加入服务提供者**
+
+在 `config/app.php` 文件下加入服务提供者：
 
 ```
+'providers' => [
+
+    ...
+
+    Flc\Laravel\Elasticsearch\ElasticsearchServiceProvider::class,
+]
+```
+
+**发布配置**
+
+```bash
+php artisan vendor:publish --provider="Flc\Laravel\Elasticsearch\ElasticsearchServiceProvider"
+```
+
+你可以通过 `config/elasticsearch.php` 文件中修改 Elasticsearch 的连接配置。
 
 ## 示例
 

@@ -133,8 +133,6 @@ Elasticsearch::index('users')->where([
 
 ### whereExists / whereNotExists / whereNull
 
-### 
-
 ## orderBy 排序
 
 `orderBy` 方法允许你通过给定字段对结果集进行排序。`orderBy` 的第一个参数是排序的字段，第二个参数是排序的方向，可以是 `asc`(默认) 或 `desc`。等同于 Elasticsearch 的 `sort`
@@ -190,3 +188,6 @@ Elasticsearch::index('users')->paginate();
 ```
 
 > 等同于 laravel 的 `Model` 或 `DB` 分页
+
+## toSearch / toBody
+

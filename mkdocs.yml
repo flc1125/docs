@@ -126,7 +126,7 @@ nav:
   - Elasticsearch 简易教程:
     - Elasticsearch 入门: 'elasticsearch/simple/introduction.md'
   - Laravel-Elasticsearch 扩展文档:
-      - 概述: 'elasticsearch/laravel-elasticsearch/introduction.md'
+      - 安装与配置: 'elasticsearch/laravel-elasticsearch/introduction.md'
       - 查询构造器: 'elasticsearch/laravel-elasticsearch/builder.md'
   - Elasticsearch-PHP:
     - 概述: 'elasticsearch/elasticsearch-php/overview.md'
