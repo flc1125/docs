@@ -36,7 +36,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      # css_class: codehilite # https://github.com/facelessuser/pymdown-extensions/blob/master/mkdocs.yml
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
