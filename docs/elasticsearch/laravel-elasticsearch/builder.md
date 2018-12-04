@@ -8,7 +8,9 @@ Elasticsearch::index('users');
 Elasticsearch::index('user*');
 ```
 
-> `index()`方法中的值为字符串时，即调用本扩展的查询构造器。否则为官方扩展 `elasticsearch/elasticsearch` 的语法。
+!!! tip ""
+
+    **注：** `index()`方法中的值为字符串时，即调用本扩展的查询构造器。否则为官方扩展 `elasticsearch/elasticsearch` 的语法。
 
 ## 指定 type
 
@@ -18,7 +20,9 @@ Elasticsearch::index('users')->type('_doc');
 Elasticsearch::index('users')->type('*doc');
 ```
 
-> 根据官方的描述，`type` 后续版本会弃用，建议在使用中，弱化此参数。
+!!! tip ""
+
+    根据官方的描述，`type` 后续版本会弃用，建议在使用中，弱化此参数。
 
 ## 指定字段
 
@@ -117,17 +121,102 @@ Elasticsearch::index('users')->orWhere(['status' => 1, 'closed' => 1])->get();
 
 ### whereIn / orWhereIn / whereNotIn
 
+`whereIn` 方法为查询指定数组内的值。它总共有三个参数：第一个参数是字段名；第二个是数组值，第三个是构造类型。
+
+```php
+Elasticsearch::index('users')->whereIn('status', [1, 2])->get();
+
+Elasticsearch::index('users')->whereIn('status', [1, 2], 'must')->get();
+
+Elasticsearch::index('users')->whereIn('status', [1, 2], 'must_not')->get();
+
+Elasticsearch::index('users')->whereIn('status', [1, 2], 'should')->get();
+```
+
+`orWhereIn / whereNotIn` 方法分别是或查询和不在数组内的值。
+
+```php
+// 等同：whereIn('status', [1, 2], 'should')
+Elasticsearch::index('users')->orWhereIn('status', [1, 2])->get();
+
+// 等同：whereIn('status', [1, 2], 'must_not')
+Elasticsearch::index('users')->whereNotIn('status', [1, 2])->get();
+```
+
 ### whereTerm / whereTerms
+
+`whereTerm / whereTerms` 方法分别是 Elasticsearch 的 `Term / Terms` 构造方法。
+
+```php
+Elasticsearch::index('users')->whereTerm('status', 1)->get();
+
+Elasticsearch::index('users')->whereTerms('status', [1, 2])->get();
+
+Elasticsearch::index('users')->whereTerm('status', 1, 'must')->get();
+```
 
 ### whereMatch / whereMatchPhrase
 
+`whereMatch / whereMatchPhrase` 方法分别是 Elasticsearch 的 `match / match_phrase` 构造方法。
+
+```php
+Elasticsearch::index('users')->whereMatch('name', '张三')->get();
+
+Elasticsearch::index('users')->whereMatchPhrase('name', '张三')->get();
+
+Elasticsearch::index('users')->whereMatch('name', '张三', 'must')->get();
+```
+
 ### whereRange / whereBetween
 
-### whereExists / whereNotExists / whereNull
+`whereRange` 方法分别是 Elasticsearch 的 `range` 构造方法。
+
+```php
+Elasticsearch::index('users')->whereRange('age', '>', 3)->get();
+
+Elasticsearch::index('users')->whereRange('age', '<', 3)->get();
+
+Elasticsearch::index('users')->whereRange('age', '>=', 3)->get();
+
+Elasticsearch::index('users')->whereRange('age', '<=', 3)->get();
+
+Elasticsearch::index('users')->whereRange('age', '<=', 3, 'must')->get();
+```
+
+当然，针对区间的，你也可以使用 `whereBetween` 方法：
+
+```php
+// >= 3 and <= 6
+Elasticsearch::index('users')->whereBetween('age', [3, 6])->get();
+
+Elasticsearch::index('users')->whereBetween('age', [3, 6], 'must')->get();
+```
 
 ### addWhere
 
-## orderBy 排序
+如果以上的 `where` 都没有你想要的，那你也可以使用 `addWhere` 方法添加原生的条件查询：
+
+```php
+Elasticsearch::index('users')->addWhere([
+    'term' => [
+        "status" => [
+            "value" => 3,
+            'boost' => 2,
+        ]
+    ]
+])->get();
+
+Elasticsearch::index('users')->addWhere([
+    'term' => [
+        "status" => [
+            "value" => 3,
+            'boost' => 2,
+        ]
+    ]
+], 'must')->get();
+```
+
+## orderBy / orderBy 排序
 
 `orderBy` 方法允许你通过给定字段对结果集进行排序。`orderBy` 的第一个参数是排序的字段，第二个参数是排序的方向，可以是 `asc`(默认) 或 `desc`。等同于 Elasticsearch 的 `sort`
 
@@ -137,12 +226,26 @@ Elasticsearch::index('users')->orderBy('id', 'asc')->first();
 Elasticsearch::index('users')->orderBy('id', 'asc')->orderBy('username', 'desc')->first();
 ```
 
+如果 `orderBy` 满足不了你的排序，也可以使用 `addOrder` 方法，增加原生的排序方法：
+
+```php
+Elasticsearch::index('users')->addOrder([
+    '_script' => [
+        'type'   => 'number',
+        'script' => [
+            'source' => 'doc["age"].value + doc["sex"].value',
+        ],
+        'order' => 'desc',
+    ],
+])->first();
+```
+
 ## skip / take
 
 要限制结果的返回数量，或跳过指定数量的结果，你可以使用 `skip` 和 `take` 方法，等同于 Elasticsearch 的 `from` 和 `size`，范例如下：
 
 ```php
-Elasticsearch::index('users')->skip(10)->size(20)->first();
+Elasticsearch::index('users')->skip(10)->take(20)->first();
 ```
 
 或者使用 `offset` 和 `limit` 代替
@@ -168,7 +271,7 @@ Elasticsearch::index('users')->forPage(2, 15)->get();
 ### paginate 分页
 
 ```php
-Elasticsearch::index('users')->paginate();
+Elasticsearch::index('users')->paginate(20);
 ```
 
 > 等同于 laravel 的 `Model` 或 `DB` 分页
