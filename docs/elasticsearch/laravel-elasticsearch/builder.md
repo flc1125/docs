@@ -216,7 +216,7 @@ Elasticsearch::index('users')->addWhere([
 ], 'must')->get();
 ```
 
-## orderBy / orderBy 排序
+## orderBy / addOrder 排序
 
 `orderBy` 方法允许你通过给定字段对结果集进行排序。`orderBy` 的第一个参数是排序的字段，第二个参数是排序的方向，可以是 `asc`(默认) 或 `desc`。等同于 Elasticsearch 的 `sort`
 
@@ -278,3 +278,117 @@ Elasticsearch::index('users')->paginate(20);
 
 ## toSearch / toBody
 
+`toSearch` 方法是用于查看 Elasticsearch-PHP 用于查询的原始参数：
+
+```php tab="Code"
+$res = Elasticsearch::index('users')
+    ->select('id', 'username', 'password', 'created_at', 'updated_at', 'status', 'deleted')
+    ->whereTerm('status', 1)
+    ->orderBy('id', 'desc')
+    ->take(2)
+    ->toSearch();
+
+print_r($res);
+```
+
+``` tab="Result"
+Array
+(
+    [index] => users
+    [_source] => Array
+        (
+            [0] => id
+            [1] => username
+            [2] => password
+            [3] => created_at
+            [4] => updated_at
+            [5] => status
+            [6] => deleted
+        )
+
+    [size] => 2
+    [body] => Array
+        (
+            [sort] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => desc
+                        )
+
+                )
+
+            [query] => Array
+                (
+                    [bool] => Array
+                        (
+                            [filter] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [term] => Array
+                                                (
+                                                    [status] => 1
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+```
+
+`toBody` 方法是用于查看 Elasticsearch-PHP 用于查询的 `body` 参数：
+
+```php tab="Code"
+$res = Elasticsearch::index('users')
+    ->select('id', 'username', 'password', 'created_at', 'updated_at', 'status', 'deleted')
+    ->whereTerm('status', 1)
+    ->orderBy('id', 'desc')
+    ->take(2)
+    ->toBody();
+
+print_r($res);
+```
+
+``` tab="Result"
+Array
+(
+    [sort] => Array
+        (
+            [0] => Array
+                (
+                    [id] => desc
+                )
+
+        )
+
+    [query] => Array
+        (
+            [bool] => Array
+                (
+                    [filter] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [term] => Array
+                                        (
+                                            [status] => 1
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+```
