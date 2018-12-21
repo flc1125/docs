@@ -247,11 +247,13 @@ select count(id), min(id), max(id), avg(id), sum(id)  from table;
 
 [传送门](builder.md)
 
-## 3. Mysql&Elasticsearch 同步
+## ~~3. Mysql&Elasticsearch 同步~~
+
+> 后续另外补充
 
 ## 4. 作业
 
-??? question "搜索4~5点，每5分钟的总访问量"
+??? question "nginx 日志， 使用 Elasticsearch DSL 语法搜索4~5点，每5分钟的总访问量"
 
     ```js tab="Elasticsearch"
     GET logstash-nginx_access_*/_search
@@ -358,4 +360,137 @@ select count(id), min(id), max(id), avg(id), sum(id)  from table;
         }
       }
     }
+    ```
+
+??? question "分别使用 Elasticsearch-PHP 及 Laravel-Elasticsearch 构建查询开启中的建案ID和建案名，按ID降序，取前2条即可"
+
+    ```php tab="Elasticsearch-PHP"
+    <?php
+
+    use ES;
+
+    $params = [
+        'index' => 'build',
+        'body'  => [
+            'query' => [
+                'bool' => [
+                    'filter' => [
+                        ['term' => ['status' => 2]],
+                        ['term' => ['closed' => 0]],
+                        ['term' => ['checkstatus' => 1]],
+                    ],
+                ],
+            ],
+            '_source' => ['id', 'build_name'],
+            'sort'    => ['id' => 'desc'],
+        ],
+        'size' => 2,
+    ];
+
+    $results = ES::search($params);
+
+    print_r($results);
+    ```
+
+    ``` tab="Elasticsearch-PHP-Result"
+    Array
+    (
+        [took] => 1
+        [timed_out] => 
+        [_shards] => Array
+            (
+                [total] => 5
+                [successful] => 5
+                [skipped] => 0
+                [failed] => 0
+            )
+
+        [hits] => Array
+            (
+                [total] => 121
+                [max_score] => 
+                [hits] => Array
+                    (
+                        [0] => Array
+                            (
+                                [_index] => build
+                                [_type] => _doc
+                                [_id] => 113030
+                                [_score] => 
+                                [_source] => Array
+                                    (
+                                        [id] => 113030
+                                        [build_name] => 測試第三方士大夫
+                                    )
+
+                                [sort] => Array
+                                    (
+                                        [0] => 113030
+                                    )
+
+                            )
+
+                        [1] => Array
+                            (
+                                [_index] => build
+                                [_type] => _doc
+                                [_id] => 113024
+                                [_score] => 
+                                [_source] => Array
+                                    (
+                                        [id] => 113024
+                                        [build_name] => 學坤大神的豪宅
+                                    )
+
+                                [sort] => Array
+                                    (
+                                        [0] => 113024
+                                    )
+
+                            )
+
+                    )
+
+            )
+
+    )
+    ```
+
+    ```php tab="Laravel-Elasticsearch"
+    <?php
+
+    use ES;
+
+    $results = ES::index('build')
+        ->select('id', 'build_name')
+        ->where('status', 2)
+        ->where('closed', 0)
+        ->where('checkstatus', 1)
+        ->take(2)
+        ->orderBy('id', 'desc')
+        ->get();
+
+    print_r($results);
+    ```
+
+    ``` tab="Laravel-Elasticsearch-Result"
+    Illuminate\Support\Collection Object
+    (
+        [items:protected] => Array
+            (
+                [0] => stdClass Object
+                    (
+                        [id] => 113030
+                        [build_name] => 測試第三方士大夫
+                    )
+
+                [1] => stdClass Object
+                    (
+                        [id] => 113024
+                        [build_name] => 學坤大神的豪宅
+                    )
+
+            )
+
+    )
     ```

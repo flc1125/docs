@@ -238,28 +238,10 @@ Array
 
 ## 2. 自研扩展：Laravel Elasticsearch
 
-### 2.1. 安装
+### 2.1. 安装&配置
 
-```bash
-composer require flc/laravel-elasticsearch
-```
+[传送门](../laravel-elasticsearch/introduction.md)
 
-### 2.2. 配置
+### 2.2. 查询构造器
 
-```php
-///
-```
-
-### 2.3. 使用
-
-#### 2.3.1 基础
-
-```php
-<?php
-
-use Elasticsearch;
-
-Elasticsearch::index('index_name');
-```
-
-#### 2.3.2 搜索
+[传送门](../laravel-elasticsearch/builder.md)
