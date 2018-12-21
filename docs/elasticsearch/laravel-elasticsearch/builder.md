@@ -1,5 +1,13 @@
 # 查询构造器
 
+## 指定 connection
+
+```php
+Elasticsearch::connection('node2');
+```
+
+> 默认连接： `config/elasticsearch.php` 中 `default` 对应的连接。
+
 ## 指定 index
 
 ```php
@@ -107,6 +115,16 @@ Elasticsearch::index('users')->where([
     ['status', 1],
     ['closed', '=', 1, 'must']
 ])->get();
+```
+
+还可以使用匿名方法，进行无限级 bool 嵌套：
+
+```php
+// 获取 status = 1 和 closed = 0 
+Elasticsearch::index('users')->where(function ($query) {
+    $query->where('status', 1)
+        ->where('closed', 0);
+})->get();
 ```
 
 ### orWhere
