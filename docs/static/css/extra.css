@@ -2,6 +2,6 @@ body, h1, h2, h3, h4, h5, h6, input { font-family: "Roboto", "Helvetica Neue", H
 
 @media only screen and (min-width: 100em) {
     html {
-        font-size: 62.5%;
+        font-size: 125%;
     }
 }
