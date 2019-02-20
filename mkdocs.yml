@@ -6,6 +6,7 @@ site_url: https://docs.flc.io
 theme:
   name: 'material'
   language: 'zh'
+  favicon: '/favicon.ico'
   feature:
     tabs: true
   palette:
