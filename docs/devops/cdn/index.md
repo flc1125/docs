@@ -31,12 +31,15 @@ CDN 的全称是 Content Delivery Network，即内容分发网络。CDN 是构�
 
 ### CDN 常见功能
 
-1. **自定义缓存过期时间规则：**支持配置自定义资源的缓存过期时间规则, 支持指定路径或者文件名后缀方式
+1. 自定义缓存过期时间规则：支持配置自定义资源的缓存过期时间规则, 支持指定路径或者文件名后缀方式, 支持 Header 输出缓存过期时间
 1. 自定义 header 头：如 `Access-Control-Allow-Origin: *` 以实现跨域
 1. 自定义页面：支持设置404、403、503、504等页面
 1. 页面优化：去除HTML页面页面冗余内容如注释以及重复的空白符
 1. 智能压缩：对静态文件类型进行压缩, 有效减少用户传输内容大小
 1. 访问控制：Refer防盗链、IP 黑/白名单等
+1. HTTPS 支持
+1. 统计分析、日志管理
+1. 人工智能服务：识图、鉴黄等
 
 !!! question "脑回路时间"
     
@@ -105,6 +108,18 @@ CDN 的全称是 Content Delivery Network，即内容分发网络。CDN 是构�
 
 > 图片大多数源站均为 OSS、S3 等内容存储服务，而非具体服务器
 
+**服务说明**
+
+|服务|说明|
+|----|----|
+|[HTTP Headers Accept](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept)|`Accept` 请求头用来告知客户端可以处理的内容类型，这种内容类型用 `MIME` 类型来表示。借助内容协商机制, 服务器可以从诸多备选项中选择一项进行应用，并使用 `Content-Type` 应答头通知客户端它的选择。浏览器会基于请求的上下文来为这个请求头设置合适的值，比如获取一个CSS层叠样式表时值与获取图片、视频或脚本文件时的值是不同的。|
+|[Lambda](https://aws.amazon.com/cn/lambda/)|通过 AWS Lambda，无需预置或管理服务器即可运行代码。您只需按使用的计算时间付费 – 代码未运行时不产生费用。 <br /><br />借助 Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且完全无需管理。只需上传您的代码，Lambda 会处理运行和扩展高可用性代码所需的一切工作。您可以将您的代码设置为自动从其他 AWS 产品触发，或者直接从任何 Web 或移动应用程序调用。<br /><br />支持 `Node.js/Python/Java/Go/C#/PowerShell/Ruby` 语言|
+
+
+**参考文档：**
+
+- HTTP Headers Accept：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept
+- Lambda：https://aws.amazon.com/cn/lambda/
 
 ## 其他
 
