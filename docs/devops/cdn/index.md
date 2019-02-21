@@ -63,17 +63,19 @@ $result = Cache::remember('url', 100, function () {
 
     在实际的应用中，HTTP 请求的**任何参数**均可作为 CDN 缓存的维度，用来组合 Hash 生成唯一字符。
 
-    这些维度包括 URL、参数、Header等。但维度的增加也同样意味着 CDN 缓存命中率的降低。
+    这些维度包括 URL、参数、Header等。**但维度的增加也同样意味着 CDN 缓存命中率的降低。**
 
 
 我们来看个例子：
 
 1. https://docs.flc.io/favicon.ico
-1. https://docs.flc.io/favicon.ico?v=1
-1. https://docs.flc.io/favicon.ico?v=1&b=2
-1. https://docs.flc.io/favicon.ico?b=2&v=1
+2. https://docs.flc.io/favicon.ico?v=1
+3. https://docs.flc.io/favicon.ico?v=1&b=2
+4. https://docs.flc.io/favicon.ico?b=2&v=1
 
 > 以上 4 种情况，如首次访问，即使资源相同，但因为参数的原因， CDN 缓存均未命中。
+>
+> 基于第 3、4 点，有些 CDN 服务商还额外支持参数排序后在 Hash，目的就是为了提高命中率。
 
 ### 2.3 Response Headers
 
