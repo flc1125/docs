@@ -197,3 +197,4 @@ echo 'Hello World!!!!!~';
 ## 五、相关文档
 
 - 名词解释：https://help.aliyun.com/document_detail/27102.html?spm=a2c4g.11186623.6.547.49af777dDujQhC
+- HTTP / 1.1头字段的语法和语义：https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
