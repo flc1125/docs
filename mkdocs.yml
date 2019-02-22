@@ -159,6 +159,7 @@ nav:
   # - Elasticsearch 全/增量同步:
   #   - 概述: 'elasticsearch/elasticsearch-sync/index.md'
 - DevOps:
+  - CDN 科普: 'devops/cdn/index.md'
   - Docker:
     - 概述: 'devops/docker/index.md'
     - Dockerfile:
