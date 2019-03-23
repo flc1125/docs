@@ -165,6 +165,8 @@ nav:
     - Dockerfile:
       - PHP: 'devops/docker/dockerfile/php.md'
   - Redis: 'devops/redis/index.md'
+- 百家“争鸣”:
+  - 推荐博客: 'hundred/blog.md'
 - 更多:
   - Github + Travis + Mkdocs 搭建文档库: 'more/github-travis-mkdocs-document/index.md'
   - Git 常用命令: 'more/git/index.md'
