@@ -1,4 +1,4 @@
-# php-awesome
+# PHP-Awesome
 
 [TOC]
 
@@ -6,7 +6,7 @@
 
 ### 文档
 
-## Composer
+## 扩展库
 
 ### 存储库
 
@@ -16,11 +16,22 @@
 ### 依赖管理工具
 
 - [Composer](https://getcomposer.org) - PHP 的依赖管理器
-- PEAR
+- [PEAR](https://pear.php.net/) - PHP 扩展和应用程序库
+- [PECL](https://pecl.php.net) - 基于 PEAR 打包的 PHP 扩展库仓库
 
-### 常用库
+### Composer 扩展
 
 优质好用的 Composer 扩展库
+
+- [intervention/image](https://github.com/Intervention/image) - PHP图像处理和操作库
+- [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) - PHP图像处理和操作库
+
+### C 扩展
+
+优质好用的 C 扩展库
+
+- [Swoole](https://www.swoole.com) - 面向生产环境的 PHP 异步网络通信引擎
+- [Yaconf](https://github.com/laruence/yaconf) - 一个可扩展的 PHP HTTP 客户端
 
 ## 框架
 
