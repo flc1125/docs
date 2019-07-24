@@ -1,5 +1,7 @@
 # php-awesome
 
+[TOC]
+
 ## 基础
 
 ### 文档

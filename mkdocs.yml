@@ -165,7 +165,7 @@ nav:
     - Dockerfile:
       - PHP: 'devops/docker/dockerfile/php.md'
   - Redis: 'devops/redis/index.md'
-- awesome:
+- Awesome:
   - PHP: 'awesome/php.md'
 # - 百家“争鸣”:
 #   - 推荐博客: 'hundred/blog.md'
