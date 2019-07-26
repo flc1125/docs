@@ -63,7 +63,7 @@ extra:
 nav:
 - 首页: 'index.md'
 - Blog:
-  - 概述: 'blog/index.md'
+  - 首页: 'blog/index.md'
 - PHP:
     - PHP 各版本特性:
       - PHP 7.2.x: 'php/features/7.2.x.md'
