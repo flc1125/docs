@@ -1,8 +1,8 @@
-site_name: 叶子坑-文档库
+site_name: 叶子坑
 site_author: Flc
-site_description: 叶子坑文档库，记录相关技术的教程、代码
+site_description: 我想变成一棵树；开心时，在秋天开花；伤心时，在春天落叶。
 repo_url: https://github.com/flc1125/docs
-site_url: https://docs.flc.io
+site_url: https://flc.io
 theme:
   name: 'material'
   language: 'zh'
@@ -50,18 +50,20 @@ markdown_extensions:
 
 extra_css:
   - static/css/extra.css
-copyright: 'Copyright &copy; 2017-2018 <a href="http://flc.io" target="_black">叶子坑</a>'
+copyright: 'Copyright &copy; 2017-2019 <a href="https://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
 extra:
   social:
     - type: 'home'
-      link: 'http://flc.io'
+      link: 'https://flc.io'
     - type: 'github'
       link: 'https://github.com/flc1125'
   # disqus: 'flc-docs' # 需翻墙
 
 nav:
 - 首页: 'index.md'
+- Blog:
+  - 概述: 'blog/index.md'
 - PHP:
     - PHP 各版本特性:
       - PHP 7.2.x: 'php/features/7.2.x.md'
