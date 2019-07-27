@@ -61,7 +61,9 @@ extra:
   # disqus: 'flc-docs' # 需翻墙
 
 nav:
-- 首页: 'index.md'
+- 首页:
+  - 首页: 'index.md'
+  - 留言: 'message.md'
 - Blog:
   - 目录: 'blog/index.md'
   - 201907:
