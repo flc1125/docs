@@ -64,6 +64,8 @@ nav:
 - 首页: 'index.md'
 - Blog:
   - 目录: 'blog/index.md'
+  - 201907:
+      - 《剑来》 - 摘录: 'blog/201907/sword-coming.md'
 - PHP:
     - PHP 各版本特性:
       - PHP 7.2.x: 'php/features/7.2.x.md'
