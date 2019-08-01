@@ -13,7 +13,7 @@ var gitalk = new Gitalk({
     clientSecret: 'e268d0947b56ee227611ea937b4c0ddb482cf949',
     repo: 'docs',
     owner: 'flc1125',
-    admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
+    admin: ['flc1125'],
     id: location.pathname,      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
 })
