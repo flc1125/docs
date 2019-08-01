@@ -1,9 +1,16 @@
 # 留言
 
-本站台未开放留言功能，如需留言，请前往 [Github Issues](https://github.com/flc1125/docs/issues)。
+我想变成一棵树；
+
+开心时，在秋天开花；
+
+伤心时，在春天落叶。
+
+----
 
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://unpkg.com/md5"></script>
 
 <div id="gitalk-container"></div>
 
@@ -14,7 +21,7 @@ var gitalk = new Gitalk({
     repo: 'docs',
     owner: 'flc1125',
     admin: ['flc1125'],
-    id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
 })
 
