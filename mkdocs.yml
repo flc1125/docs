@@ -50,6 +50,11 @@ markdown_extensions:
 
 extra_css:
   - static/css/extra.css
+  - static/plugins/gitalk/gitalk.css
+extra_javascript:
+  - static/plugins/md5.min.js
+  - static/plugins/gitalk/gitalk.min.js
+  - static/plugins/gitalk/gitalk-render.js
 copyright: 'Copyright &copy; 2017-2019 <a href="https://flc.io" target="_black">叶子坑</a>'
 google_analytics: ['UA-118478085-1', 'auto']
 extra:
