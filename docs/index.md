@@ -35,3 +35,14 @@
 - [Github + Travis + Mkdocs 搭建文档库](more/github-travis-mkdocs-document/index.md)
 - [Git 常用命令](more/git/index.md)
 - [中文技术文档的写作规范](more/document-style-guide/index.md)
+
+## 捐赠
+
+**如果你觉得本站对你有帮助，请捐赠以表支持，谢谢~~**
+
+<table class="no-class">
+    <tr>
+        <td align="center"><img src="https://flc.io/static/images/wechat.jpg" width="220"><p>微信</p></td>
+        <td align="center"><img src="https://flc.io/static/images/alipay.jpg" width="220"><p>支付宝</p></td>
+    </tr>
+</table>

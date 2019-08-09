@@ -10,7 +10,7 @@
 
 **如果你觉得本站对你有帮助，请捐赠以表支持，谢谢~~**
 
-<table>
+<table class="no-class">
     <tr>
         <td align="center"><img src="https://flc.io/static/images/wechat.jpg" width="220"><p>微信</p></td>
         <td align="center"><img src="https://flc.io/static/images/alipay.jpg" width="220"><p>支付宝</p></td>
