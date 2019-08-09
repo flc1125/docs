@@ -9,6 +9,7 @@ before_install:
   - pip install mkdocs-material==4.4.0
   - pip install pygments
   - pip install pymdown-extensions
+  - pip install mkdocs-minify-plugin
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 install:

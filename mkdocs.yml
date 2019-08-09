@@ -65,6 +65,11 @@ extra:
       link: 'https://github.com/flc1125'
   # disqus: 'flc-docs' # 需翻墙
 
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
 nav:
 - 首页:
   - 首页: 'index.md'
