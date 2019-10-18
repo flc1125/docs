@@ -78,6 +78,8 @@ nav:
   - 目录: 'blog/index.md'
   - 201907:
       - 《剑来》 - 摘录: 'blog/201907/sword-coming.md'
+  - 201910:
+      - 死并非生的对立面，而作为生的一部永存: 'blog/201910/death-is-not-the-opposite-of-life-but-as-a-life-forever.md'
 - PHP:
     - PHP 各版本特性:
       - PHP 7.2.x: 'php/features/7.2.x.md'
