@@ -19,4 +19,4 @@
 
 ----
 
-<div id="gitalk-container"></div220
+<div id="gitalk-container"></div>
