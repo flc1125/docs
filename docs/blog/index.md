@@ -12,6 +12,7 @@
 
 - 2019-10-18 [死并非生的对立面，而作为生的一部永存](201910/death-is-not-the-opposite-of-life-but-as-a-life-forever.md)
 - 2019-10-28 [最后的问题](201910/final-question.md)
+- 2019-10-30 [【专栏】笔记《项目管理实战》](project-management/index.md)
 
 ### 2019-07
 
