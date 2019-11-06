@@ -1,4 +1,4 @@
-site_name: 叶子坑
+site_name: 叶子坑 - Flc゛
 site_author: Flc
 site_description: 希言自然。
 repo_url: https://github.com/flc1125/docs
@@ -55,7 +55,7 @@ extra_javascript:
   - static/plugins/md5.min.js
   - static/plugins/gitalk/gitalk.min.js
   - static/plugins/gitalk/gitalk-render.js
-copyright: 'Copyright &copy; 2017-2019 <a href="https://flc.io" target="_black">叶子坑</a>'
+copyright: 'Copyright &copy; 2017-2019 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a>'
 google_analytics: ['UA-118478085-1', 'auto']
 extra:
   social:
