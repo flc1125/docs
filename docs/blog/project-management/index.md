@@ -1,6 +1,6 @@
-# 概述
+# 《项目管理实战 20 讲》概述
 
-> 发布日期：2019-10-30 最后更新时间：2019-11-10 14:12:39
+> 发布日期：2019-10-30 最后更新时间：2019-11-13 00:32:19
 
 ## 简介
 
@@ -16,5 +16,7 @@
     - [01 角色转换：工程师做项目管理的三大误区](common/role-conversion.md)
     - [02 十大领域五大过程组（上）：必须要了解的项目管理常识](common/five-major-process-groups-in-the-top-ten-areas-one.md)
     - [03 十大领域五大过程组（下）：必须要了解的项目管理常识](common/five-major-process-groups-in-the-top-ten-areas-two.md)
+- 硬技能篇
+    - [01 启动：识别项目中的四类干系人](hard-skills-articles/identify-four-types-of-stakeholders-in-the-project.md)
 
 > 未完待更...
