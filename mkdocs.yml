@@ -49,8 +49,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
-  - static/css/extra.css
-  - static/plugins/gitalk/gitalk.css
+  - static/css/extra.css?v=1
+  - static/plugins/gitalk/gitalk.css?v=1
 extra_javascript:
   - static/plugins/md5.min.js
   - static/plugins/gitalk/gitalk.min.js
