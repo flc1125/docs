@@ -8,6 +8,10 @@
 
 ## 归档
 
+### 2019-11
+
+- 2019-11-13 [顺序](201911/order.md)
+
 ### 2019-10
 
 - 2019-10-18 [死并非生的对立面，而作为生的一部永存](201910/death-is-not-the-opposite-of-life-but-as-a-life-forever.md)
