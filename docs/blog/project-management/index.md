@@ -18,5 +18,6 @@
     - [03 十大领域五大过程组（下）：必须要了解的项目管理常识](common/five-major-process-groups-in-the-top-ten-areas-two.md)
 - 硬技能篇
     - [01 启动：识别项目中的四类干系人](hard-skills-articles/identify-four-types-of-stakeholders-in-the-project.md)
+    - [02 规划：排除计划中的“延期地雷”](hard-skills-articles/exclude-the-adeferred-mines-in-the-plan.md)
 
 > 未完待更...
