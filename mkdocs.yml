@@ -85,6 +85,7 @@ nav:
   - 201911:
       - 顺序: 'blog/201911/order.md'
       - 眠: 'blog/201911/mian.md'
+      - 我与你，我与它: 'blog/201911/you-and-me.md'
   - 笔记《项目管理实战》:
     - 概述: 'blog/project-management/index.md'
     - 开篇词 | 为什么说项目管理是每个人的底层能力？: 'blog/project-management/introduction.md'
