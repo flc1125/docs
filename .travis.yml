@@ -6,19 +6,10 @@ python:
 
 before_install:
   - sh ./scripts/build.sh
-  - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
-
-install:
-  - sudo apt-get install -y golang
-  - go get github.com/polym/upx
-  - go version
+  - sudo sh ./scripts/build_upx.sh
 
 script:
-  - mkdocs -V
-  # - mkdocs gh-deploy --force --clean
-  - mkdocs build --clean
-  - upx login "${UPX_SERVICE_NAME}" "${UPX_OPERATOR}" "${UPX_PASSWORD}"
-  - upx sync ./site/
+  - sh ./scripts/deploy.sh
 
 branches:
   only:

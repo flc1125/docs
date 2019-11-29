@@ -2,11 +2,11 @@
 
 set -ev
 
-pip install \
-        mkdocs==1.0.4 \
-        mkdocs-material==4.5.0 \
-        pygments \
-        pymdown-extensions \
-        mkdocs-minify-plugin
+# 安装依赖扩展
+pip install -r ./../requirements.txt
+
+mkdocs -V
+
+# echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 exit 0
