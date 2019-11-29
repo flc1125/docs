@@ -3,9 +3,8 @@
 set -ev
 
 # 安装 UPX 命令工具
-sudo apt-get update
-apt-get install -y golang
-go get github.com/polym/upx
+sudo apt-get install -y golang
+sudo go get github.com/polym/upx
 go version
 
 exit 0
