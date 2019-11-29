@@ -5,7 +5,7 @@ python:
   - "3.6"
 
 before_install:
-  - sh ./script/build.sh
+  - sh ./scripts/build.sh
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 install:
