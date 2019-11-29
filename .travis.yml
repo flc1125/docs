@@ -6,7 +6,9 @@ python:
 
 before_install:
   - sh ./scripts/build.sh
-  - sh ./scripts/build_upx.sh
+  - sudo apt-get install -y golang
+  - go get github.com/polym/upx
+  - go version
 
 script:
   - sh ./scripts/deploy.sh

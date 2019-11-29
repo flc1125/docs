@@ -2,7 +2,7 @@ FROM python:3.7-alpine
 
 MAINTAINER Flc <i@flc.io>
 
-RUN sh ./scripts/build.sh
+RUN ./scripts/build.sh
 
 WORKDIR /docs
 
