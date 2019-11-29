@@ -6,7 +6,7 @@ python:
 
 before_install:
   - sh ./scripts/build.sh
-  - sudo sh ./scripts/build_upx.sh
+  - sh ./scripts/build_upx.sh
 
 script:
   - sh ./scripts/deploy.sh
