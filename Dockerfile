@@ -4,7 +4,7 @@ MAINTAINER Flc <i@flc.io>
 
 COPY requirements.txt requirements.txt
 COPY scripts scripts
-RUN ./scripts/build.sh
+RUN sh ./scripts/build.sh
 
 WORKDIR /docs
 
