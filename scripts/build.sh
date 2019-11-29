@@ -3,7 +3,7 @@
 set -ev
 
 # 安装依赖扩展
-pip install -r ./../requirements.txt
+pip install -r requirements.txt
 
 mkdocs -V
 
