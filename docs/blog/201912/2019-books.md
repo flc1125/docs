@@ -18,7 +18,7 @@
 
 ### 《[流浪地球](https://book.douban.com/subject/30455321/)》——刘慈溪
 
-![](assets/1.jpg!thumb.width.200.height.auto)
+![](assets/1.jpg)
 
 推荐指数：3 星
 
@@ -28,7 +28,7 @@
 
 ### 《时间的形状：相对论史话》——汪洁
 
-![](assets/2.jpg!thumb.width.200.height.auto)
+![](assets/2.jpg)
 
 推荐指数：4 星
 
@@ -46,7 +46,7 @@
 
 ### 《[星空的琴弦：天文学史话](https://book.douban.com/subject/27082359/)》——汪洁
 
-![](assets/3.jpg!thumb.width.200.height.auto)
+![](assets/3.jpg)
 
 推荐指数：3.5 星
 
