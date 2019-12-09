@@ -21,7 +21,7 @@
 
 - 2019-10-18 [死并非生的对立面，而作为生的一部永存](blog/201910/death-is-not-the-opposite-of-life-but-as-a-life-forever.md)
 - 2019-10-28 [最后的问题](blog/201910/final-question.md)
-- 2019-10-30 [【专栏】笔记《项目管理实战》](blog/project-management/index.md)
+- 2019-10-30 [专栏 | 笔记《项目管理实战》](blog/project-management/index.md)
 - 2019-10-30 [自恋](blog/201910/autophilia.md)
 
 ### 2019-07
