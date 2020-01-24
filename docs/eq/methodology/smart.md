@@ -6,6 +6,8 @@
 
     本文基于[百度百科](https://baike.baidu.com/item/SMART%E5%8E%9F%E5%88%99/8575850?fr=aladdin)进行整理，几乎95%以上转载，主要用于记录学习，进行二次整理所得。
 
+    > 另附 XMIND 下载，[传送门](assets/Smart 原则.xmind)。
+
 ## 基础
 
 ### 基础概念
