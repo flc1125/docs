@@ -93,6 +93,8 @@ nav:
   - 202001:
       - 2020 祝福: 'blog/202001/2020.md'
       - 人性与共情: 'blog/202001/humanity-and-empathy.md'
+  - 202002:
+      - 生活的真相 - 自由: 'blog/202002/the-truth-of-life-liberty.md'
   - 笔记《项目管理实战》:
     - 概述: 'blog/project-management/index.md'
     - 开篇词 | 为什么说项目管理是每个人的底层能力？: 'blog/project-management/introduction.md'
@@ -211,7 +213,7 @@ nav:
 #   - 开源工具: 'hundred/open-source.md'
 #   - 知识点: 'hundred/knowledge.md'
 - 软实力:
-  - 方法论: 
+  - 方法论:
     - 目录: eq/methodology/index.md
     - SMART 原则: eq/methodology/smart.md
 - 更多:
