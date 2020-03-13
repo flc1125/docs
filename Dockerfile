@@ -4,6 +4,7 @@ MAINTAINER Flc <i@flc.io>
 
 COPY requirements.txt requirements.txt
 COPY scripts scripts
+run apk update && apk add git
 RUN sh ./scripts/build.sh
 
 WORKDIR /docs
