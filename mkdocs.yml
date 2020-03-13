@@ -68,7 +68,8 @@ extra:
 plugins:
   - search
   - git-revision-date-localized:
-      type: timeago
+      type: iso_datetime
+      locale: zh_CN
   - minify:
       minify_html: true
 
