@@ -4,8 +4,14 @@ MAINTAINER Flc <i@flc.io>
 
 COPY requirements.txt requirements.txt
 COPY scripts scripts
-run apk update && apk add git
+RUN apk add --no-cache \
+    git \
+    git-fast-import \
+    openssh \
+  && apk add --no-cache --virtual .build gcc musl-dev
 RUN sh ./scripts/build.sh
+RUN apk del .build gcc musl-dev \
+  && rm -rf /tmp/*
 
 WORKDIR /docs
 
