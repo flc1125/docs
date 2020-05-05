@@ -1,42 +1,74 @@
+# Site
 site_name: 叶子坑 - Flc゛
 site_author: Flc
 site_description: 希言自然。
-repo_url: https://github.com/flc1125/docs
 site_url: https://flc.io
+copyright: 'Copyright &copy; 2017-2019 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a>'
+
+# Repository
+repo_name: flc1125/docs
+repo_url: https://github.com/flc1125/docs
+edit_uri: ""
+
+# Theme
 theme:
   name: 'material'
   language: 'zh'
   favicon: '/favicon.ico'
-  feature:
-    tabs: true
+  features:
+    - tabs
+    # - instant
   palette:
     primary: red
     accent: red
-  # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
+  icon:
+    logo: logo
+    repo: fontawesome/brands/github-alt
+
+extra_css:
+  # - static/css/extra.css?v=1
+  - static/plugins/gitalk/gitalk.css?v=1
+extra_javascript:
+  - static/plugins/md5.min.js
+  - static/plugins/gitalk/gitalk.min.js
+  - static/plugins/gitalk/gitalk-render.js
+google_analytics: ['UA-118478085-1', 'auto']
+extra:
+  social:
+    - icon: fontawesome/solid/home
+      link: 'https://flc.io'
+    - icon: fontawesome/brands/github
+      link: 'https://github.com/flc1125'
+    - icon: fontawesome/regular/comment-alt
+      link: 'https://flc.io/message/'
+  # disqus: 'flc-docs' # 需翻墙
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
 markdown_extensions:
   - markdown.extensions.admonition
+  - markdown.extensions.attr_list
+  - markdown.extensions.codehilite:
+      guess_lang: false
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
   - markdown.extensions.meta
   - markdown.extensions.toc:
       permalink: "#"
-  # pymdown-extensions
   - pymdownx.arithmatex
   - pymdownx.betterem:
-      smart_enable: none
+      smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       # css_class: codehilite # https://github.com/facelessuser/pymdown-extensions/blob/master/mkdocs.yml
       extend_pygments_lang:
@@ -44,31 +76,21 @@ markdown_extensions:
           lang: php
           options:
             startinline: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
-extra_css:
-  - static/css/extra.css?v=1
-  - static/plugins/gitalk/gitalk.css?v=1
-extra_javascript:
-  - static/plugins/md5.min.js
-  - static/plugins/gitalk/gitalk.min.js
-  - static/plugins/gitalk/gitalk-render.js
-copyright: 'Copyright &copy; 2017-2019 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a>'
-google_analytics: ['UA-118478085-1', 'auto']
-extra:
-  social:
-    - type: 'home'
-      link: 'https://flc.io'
-    - type: 'github'
-      link: 'https://github.com/flc1125'
-  # disqus: 'flc-docs' # 需翻墙
-
-plugins:
-  - search
-  - minify:
-      minify_html: true
 
 nav:
 - 首页:
