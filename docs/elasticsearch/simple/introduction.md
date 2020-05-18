@@ -4,9 +4,9 @@
 
 ### 什么是 Elasticsearch
 
-- 基于 **Apache Lucene** 构建的**开源搜索引擎**
+- 基于 **Apache Lucene** 构建的 **开源搜索引擎**
 - 采用 **Java** 编写，提供简单易用的 **RESTful API**
-- 轻松的**横向扩展**，可支持**PB级**的结构化或非结构化数据处理
+- 轻松的 **横向扩展**，可支持 **PB级** 的结构化或非结构化数据处理
 
 ### 应用场景
 
@@ -392,7 +392,7 @@ select * from table where user = 'Kimchy';
 
 !!! note "为什么 `term` 查询不符合我的文档？"
 
-    **字符串**字段可以是 `text` 类型 （视为全文，如电子邮件正文），或 `keyword` 类型（视为确切的值，如电子邮件地址或邮政编码）。确切的值（如数字，日期和关键字）具有在添加到倒排索引的字段中指定的确切值，以便使它们可搜索。
+    **字符串** 字段可以是 `text` 类型 （视为全文，如电子邮件正文），或 `keyword` 类型（视为确切的值，如电子邮件地址或邮政编码）。确切的值（如数字，日期和关键字）具有在添加到倒排索引的字段中指定的确切值，以便使它们可搜索。
 
     > 官方文档谷歌翻译...仅供参考
 
@@ -404,7 +404,7 @@ select * from table where user = 'Kimchy';
 
 #### terms
 
-通过倒排索引中查找多个**确切**的值，相当于 `in`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html) 
+通过倒排索引中查找多个 **确切** 的值，相当于 `in`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html) 
 
 ```js tab="Elasticsearch"
 GET /_search
