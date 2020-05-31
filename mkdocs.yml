@@ -133,6 +133,9 @@ nav:
       - PHP 5.5.x: 'php/features/5.5.x.md'
       - PHP 5.4.x: 'php/features/5.4.x.md'
       - PHP 5.3.x: 'php/features/5.3.x.md'
+    - Laravel 源码解析:
+      - 概述: 'php/laravel-source/index.md'
+      - Collection 集合: 'php/laravel-source/collection.md'
     - PHP PSR 编码规范:
       - 概述: 'php/psr/index.md'
       - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
