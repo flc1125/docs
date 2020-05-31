@@ -111,7 +111,7 @@ Illuminate\Support\Collection Object
 `all()` 返回集合所有数据
 
 ```php
-collect([1, 2, 3])->all(); [1, 2, 3];
+collect([1, 2, 3])->all(); // [1, 2, 3];
 ```
 
 ### `lazy()`
