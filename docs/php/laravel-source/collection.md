@@ -111,21 +111,12 @@ Illuminate\Support\Collection Object
 `all()` 返回集合所有数据
 
 ```php
-$collect = collect([1, 2, 3]);
-
-print_r($collect->all());
-
-// Array
-// (
-//     [0] => 1
-//     [1] => 2
-//     [2] => 3
-// )
+collect([1, 2, 3])->all(); [1, 2, 3];
 ```
 
 ### `lazy()`
 
-`lazy()` 创建一个懒集合（支持迭代器，性能更优）
+`lazy()` 创建一个惰性集合（支持迭代器，性能更优）
 
 ### `avg()`
 
@@ -163,14 +154,295 @@ collect([
 ])->median('value');  // 222
 ```
 
+### `mode()`
 
+### `collapse()`
 
+### `contains()`
 
+### `crossJoin()`
 
+### `diff()`
 
+### `diffUsing()`
+
+### `diffAssoc()`
+
+### `diffAssocUsing()`
+
+### `diffKeys()`
+
+### `diffKeysUsing()`
+
+### `duplicates()`
+
+### `duplicatesStrict()`
+
+### `except()`
+
+### `filter()`
+
+### `first()`
+
+### `flatten()`
+
+### `flip()`
+
+### `forget()`
+
+### `get()`
+
+### `groupBy()`
+
+### `keyBy()`
+
+### `has()`
+
+### `implode()`
+
+### `intersect()`
+
+### `intersectByKeys()`
+
+### `isEmpty()`
+
+`isEmpty()` 判定数据集合是否为空，如果集合为空，返回 `true` ，否则返回 `false`
+
+```php
+collect([])->isEmpty(); // true
+```
+
+### `join()`
+
+### `keys()`
+
+### `last()`
+
+### `pluck()`
+
+### `map()`
+
+### `mapToDictionary()`
+
+### `mapWithKeys()`
+
+### `merge()`
+
+### `mergeRecursive()`
+
+### `combine()`
+
+### `union()`
+
+### `nth()`
+
+### `only()`
+
+### `pop()`
+
+### `prepend()`
+
+### `push()`
+
+### `concat()`
+
+### `pull()`
+
+### `put()`
+
+### `random()`
+
+### `reduce()`
+
+### `replace()`
+
+### `replaceRecursive()`
+
+### `reverse()`
+
+### `search()`
+
+### `shift()`
+
+### `shuffle()`
+
+### `skip()`
+
+### `skipUntil()`
+
+### `skipWhile()`
+
+### `slice()`
+
+### `split()`
+
+### `chunk()`
+
+`chunk($size)` 针对集合数据进行分组
+
+```php
+$chunks = collect([1, 2, 3, 4, 5, 6, 7])->chunk(3);  // 按三个一组进行拆分
+
+$chunks->toArray(); // [[1, 2, 3], [4, 5, 6], [7]]t
+```
+
+当使用如 `Bootstrap` 那样的栅格系统时，该方法在视图中相当有用。想象一下你有个想在栅格显示的 `Eloquent` 模型：
+
+```php
+@foreach ($products->chunk(3) as $chunk)
+    <div class="row">
+        @foreach ($chunk as $product)
+            <div class="col-xs-4">{{ $product->name }}</div>
+        @endforeach
+    </div>
+@endforeach
+```
+
+### `sort()`
+
+### `sortDesc()`
+
+### `sortBy()`
+
+### `sortByDesc()`
+
+### `sortKeys()`
+
+### `sortKeysDesc()`
+
+### `splice()`
+
+### `take()`
+
+### `takeUntil()`
+
+### `takeWhile()`
+
+### `transform()`
+
+### `values()`
+
+### `zip()`
+
+### `pad()`
+
+`pad($size, $value)` 补足指定数量的指定值到集合数据中
+
+```php
+collect([1, 2, 3])->pad(6, 123); // collect([1, 2, 3, 123, 123, 123])
+```
+
+### `getIterator()`
+
+### `count()`
+
+`count()` 返回集合的总数
+
+```php
+collect([1, 2, 3])->count(); // 3
+```
+
+### `add()`
+
+`add($item)` 追加一个数据到集合中，并返回当前集合
+
+```php
+collect([1, 2, 3])->add(4); // collect([1, 2, 3, 4])
+```
+
+### `toBase()`
+
+`toBase()` 基于当前集合，返回一个新的集合
+
+### `offsetExists()`
+
+`offsetExists($key)` 判定集合的指定下标是否存在
+
+```php
+$collect = collect([
+    'name' => 1,
+    'username' => 222,
+]);
+
+$collect->offsetExists('name');  // 1
+```
+
+### `offsetGet()`
+
+`offsetGet($key)` 获取集合中指定下标的数据
+
+```php
+$collect = collect([
+    'name' => 111,
+    'username' => 222,
+]);
+
+$collect->offsetGet('name');  // 111
+```
+
+### `offsetSet()`
+
+`offsetSet($key, $value)` 向集合设置指定下标的数据；若下标未定义(`null`)，则追加数据
+
+```php
+$collect = collect([
+    'name' => 111,
+    'username' => 222,
+]);
+
+$collect->offsetSet('name', '123123');  // 赋值
+$collect->offsetGet('name');  // 123123
+
+$collect->offsetSet(null, '3234234');  // 追加
+```
+
+### `offsetUnset()`
+
+`offsetUnset($key)` 删除集合中指定下标的数据
+
+```php
+$collect = collect([
+    'name' => 111,
+    'username' => 222,
+]);
+
+$collect->offsetUnset('name');
+```
+
+## 扩展集合
+
+集合都是「可宏扩展」(`macroable`) 的，它允许你在执行时将其它方法添加到 `Collection` 类。
+
+例如，通过下面的代码在 `Collection` 类中添加一个 `prefix` 方法：
+
+```php tab="PHP"
+Collection::macro('prefix', function ($prefix = '') {  // 参数传入位置
+    return $this->map(function ($value) use ($prefix) {  // 注意此处是 $this
+        return $prefix.$value;
+    });
+});
+
+collect([1, 2, 3])->prefix('tests');
+```
+
+``` tab="Result"
+Illuminate\Support\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => tests1
+            [1] => tests2
+            [2] => tests3
+        )
+
+)
+```
+
+> 通常在服务提供者中定义扩展集合方法。
 
 ## 相关文件
 
+- LearnKu：https://learnku.com/docs/laravel/7.x/collections/7483
 - 集合类：`/vendor/laravel/framework/src/Illuminate/Support/Collection.php`
 - 创建集合：`/app/Console/Commands/Collection/Create.php`
 - `/app/Console/Commands/Collection/Functions.php`
