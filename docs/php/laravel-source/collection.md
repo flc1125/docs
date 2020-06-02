@@ -154,6 +154,8 @@ collect([
 ])->median('value');  // 222
 ```
 
+> 源码用了一些技巧，可读源码学习。
+
 ### `mode()`
 
 ### `collapse()`
@@ -190,7 +192,26 @@ collect([
 
 ### `forget()`
 
+`forget($keys)` 删除指定 `keys` 的值，`keys` 可以是数组；并返回当前数组
+
+```php
+collect(['a' => 1, 'b' => 2])->forget(['a', 'b']);
+
+// Illuminate\Support\Collection {
+//     all: [],
+// }
+```
+
 ### `get()`
+
+`get($key, $default = null)` 返回集合中某个元素的值，如果不存在，可获取 `$default` 的值，`$default` 可以为回调函数
+
+```php
+collect(['a' => 1])->get('a');  // 1
+collect(['a' => 1])->get('b');  // null
+collect(['a' => 1])->get('b', 222);  // 222
+collect(['a' => 1])->get('b', fn() => 111); // 111
+```
 
 ### `groupBy()`
 
