@@ -279,15 +279,60 @@ collect([])->isEmpty(); // true
 
 ### `replaceRecursive()`
 
+`replaceRecursive($items)` 递归地使用参数的集合/数组的值替换当前集合的值
+
+```php
+collect(['a' => 1, 'b' => [2, 3]])->replaceRecursive(['a' => 5, 'b' => [4]]);
+
+// collect(['a' => 5, 'b' => [4, 3]])
+```
+
+> 适合配置文件深层继承
+
 ### `reverse()`
+
+`reverse()` 返回逆向排序集合
+
+```php
+collect(['a' => 1, 'b' => 2])->reverse();  // collect(['b' => 2, 'a' => 1])
+```
 
 ### `search()`
 
+`search($value, $strict = false)` 搜索集合中给定的值并返回下标；其中值支持回调函数；`$strict` 为是否精准匹配
+
+```php
+collect(['a' => 1, 'b' => 2])->search(1); // a
+collect(['a' => 1, 'b' => 2])->search(1, true); // a
+collect(['a' => 1, 'b' => 2])->search('1', true); // false
+collect(['a' => 1, 'b' => 2])->search(fn($value) => $value == 1); // a
+```
+
 ### `shift()`
+
+`shift()` 从集合移除并返回第一个值
+
+```php
+collect([1, 2, 3])->shift();  // 1
+```
 
 ### `shuffle()`
 
+`shuffle($seed = null)` 将集合随机打乱，并返回新的集合；`$seed` 给随机数发生器播种。
+
+```php
+collect([1, 2, 3])->shuffle();  // collect([2, 1, 3]) 每次随机
+collect([1, 2, 3])->shuffle(1);  // collect([2, 1, 3]) 每次随机
+```
+
 ### `skip()`
+
+`skip($count)` 跳过指定数量的集合，支持负数
+
+```php
+collect([1, 2, 3])->skip(1);  // collect([2, 3])
+collect([1, 2, 3])->skip(-1);  // collect([3])
+```
 
 ### `skipUntil()`
 
@@ -335,6 +380,13 @@ $chunks->toArray(); // [[1, 2, 3], [4, 5, 6], [7]]t
 
 ### `take()`
 
+`take($limit)` 从集合中获取指定数量的值，支持负数
+
+```php
+collect([1, 2, 3])->take(2); // collect([1, 2])
+collect([1, 2, 3])->take(-2); // collect([2, 3])
+```
+
 ### `takeUntil()`
 
 ### `takeWhile()`
@@ -342,6 +394,19 @@ $chunks->toArray(); // [[1, 2, 3], [4, 5, 6], [7]]t
 ### `transform()`
 
 ### `values()`
+
+`values()` 重置集合数据的下标
+
+```php
+collect(['a' => 1, 'b' => 2])->values();
+
+// Illuminate\Support\Collection {
+//     all: [
+//         1,
+//         2,
+//     ],
+// }
+```
 
 ### `zip()`
 
@@ -354,6 +419,8 @@ collect([1, 2, 3])->pad(6, 123); // collect([1, 2, 3, 123, 123, 123])
 ```
 
 ### `getIterator()`
+
+`getIterator()` 返回当前集合的数组迭代器
 
 ### `count()`
 
