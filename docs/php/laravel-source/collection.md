@@ -182,7 +182,26 @@ collect([
 
 ### `except()`
 
+`except($keys)` 返回排除指定 key 的新集合
+
+```php
+collect(['a' => 1, 'b' => 2, 'c' => 3])->except(['a', 'b']);
+// collect(['c' => 3])
+```
+
 ### `filter()`
+
+`filter(callable $callback = null)` 通过给定的回调函数过滤集合，保留通过了解的集合数据；如果不设置回调函数，则集合中所有值符合 `false` 的将会被移除。
+
+```php
+collect(['a' => 1, 'b' => 2, 'c' => '', 'd' => 0])->filter();
+// collect(['a' => 1, 'b' => 2])
+
+collect(['a' => 1, 'b' => 2, 'c' => '', 'd' => 0])->filter(function ($value) {
+    return $value !== 0;
+});
+// collect(['a' => 1, 'b' => 2, 'c' => ''])
+```
 
 ### `first()`
 
@@ -241,7 +260,36 @@ collect([])->isEmpty(); // true
 
 ### `pluck()`
 
+`pluck($value, $key = null)` 返回集合中指定元素的值，`$key` 的值设置为以下标
+
+```php
+collect([['a' => 1, 'b' => 11], ['a' => 2, 'b' => 22]])->pluck('a');
+// collect([1, 2]);
+
+collect([['a' => 1, 'b' => 11], ['a' => 2, 'b' => 22]])->pluck('a', 'b');
+// collect(['11' => 1, '22' => 2])
+```
+
+如果存在重复的键，则最后一个匹配元素将被插入到弹出的集合中
+
+```php
+collect([['a' => 1, 'b' => 11], ['a' => 2, 'b' => 11]])->pluck('a', 'b');
+// // collect(['11' => 2])
+```
+
 ### `map()`
+
+`map(callable $callback)` 遍历集合并将值和下标，使用回调函数处理集合数据，并返回新的集合
+
+```php
+collect([['a' => 1, 'b' => 11], ['a' => 2, 'b' => 11]])->map(function ($value) {
+    $value['c'] = 1;
+
+    return $value;
+});
+
+// collect([['a' => 1, 'b' => 11, 'c' => 1], ['a' => 2, 'b' => 11, 'c' => 1]]);
+```
 
 ### `mapToDictionary()`
 
