@@ -164,6 +164,81 @@ collect([
 
 ### `crossJoin()`
 
+`crossJoin(...$lists)` 与多个集合互相组合，返回组合后的笛卡尔积集合
+
+```php tab="PHP"
+collect(['X', 'XL'])->crossJoin(['红色', '白色', '紫色'], ['长款', '短款']);
+```
+
+``` tab="Result"
+Illuminate\Support\Collection {#3029
+     all: [
+       [
+         "X",
+         "红色",
+         "长款",
+       ],
+       [
+         "X",
+         "红色",
+         "短款",
+       ],
+       [
+         "X",
+         "白色",
+         "长款",
+       ],
+       [
+         "X",
+         "白色",
+         "短款",
+       ],
+       [
+         "X",
+         "紫色",
+         "长款",
+       ],
+       [
+         "X",
+         "紫色",
+         "短款",
+       ],
+       [
+         "XL",
+         "红色",
+         "长款",
+       ],
+       [
+         "XL",
+         "红色",
+         "短款",
+       ],
+       [
+         "XL",
+         "白色",
+         "长款",
+       ],
+       [
+         "XL",
+         "白色",
+         "短款",
+       ],
+       [
+         "XL",
+         "紫色",
+         "长款",
+       ],
+       [
+         "XL",
+         "紫色",
+         "短款",
+       ],
+     ],
+   }
+```
+
+> 该方法常用于电商。方法存在一些技巧。
+
 ### `diff()`
 
 ### `diffUsing()`
@@ -205,9 +280,45 @@ collect(['a' => 1, 'b' => 2, 'c' => '', 'd' => 0])->filter(function ($value) {
 
 ### `first()`
 
+`first(callable $callback = null, $default = null)` 从集合中返回符合条件的第一个值，支持回调函数；`$default` 为默认值。
+
+```php
+collect()->first(); // null
+collect()->first(null, 1);  // 1
+collect([1, 2])->first(function ($value) {
+    return $value == 2;
+});  // 2
+
+collect([1, 2])->first(function ($value) {
+    return $value == 3;
+});  // null
+
+collect([1, 2])->first(function ($value) {
+    return $value == 3;
+}, function () {
+    return 333;
+});  // 333
+```
+
 ### `flatten()`
 
+`flatten($depth = INF)` 将多维集合转换为一维集合，其中 `$depth` 为转换深度，默认无穷大。
+
+> `INF` 为 PHP 常量，含义：无穷
+
+```php
+collect(['a' => 1, 'b' => [2, 3]])->flatten();  // collect([1, 2, 3])
+collect(['a' => 1, 'b' => [2, 'c' => 3, 'd' => [4, 5]]])->flatten(1);  // collect([1, 2, 3, [4, 5]])
+```
+
 ### `flip()`
+
+`flip()` 将集合的键和对应的值进行互换；转换后，遇到相同的键，后面的值会替换前面的
+
+```php
+collect(['a' => 1, 'b' => 2])->flip(); // collect(['1' => 'a', '2' => 'b'])
+collect(['a' => 1, 'b' => 2 , 'c' => 2])->flip(); // collect(['1' => 'a', '2' => 'c'])
+```
 
 ### `forget()`
 
@@ -238,7 +349,23 @@ collect(['a' => 1])->get('b', fn() => 111); // 111
 
 ### `has()`
 
+`has($key)` 判定键是否存在，支持多个传入，必须所有满足，才能返回 `true`
+
+```php
+collect(['a' => 1, 'b' => 2, 'c' => 2])->has('a'); // true
+collect(['a' => 1, 'b' => 2, 'c' => 2])->has('a', 'b'); // true
+collect(['a' => 1, 'b' => 2, 'c' => 2])->has(['a', 'b']); // true
+collect(['a' => 1, 'b' => 2, 'c' => 2])->has('a', 'd']); // false
+```
+
 ### `implode()`
+
+`implode($value, $glue = null)` 将集合合并为字符串
+
+```php
+collect([1, 2])->implode('##'); // 1##2
+collect([['a' => 11, 'b' => 22], ['a' => 33, 'b' => 44]])->implode('a', '@@'); // 11@@33
+```
 
 ### `intersect()`
 
