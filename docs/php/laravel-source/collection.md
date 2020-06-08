@@ -434,19 +434,83 @@ collect([['a' => 1, 'b' => 11], ['a' => 2, 'b' => 11]])->map(function ($value) {
 
 ### `only()`
 
+`only($keys)` 返回指定键的集合
+
+```php
+collect(['a' => 1, 'b' => 2, 'c' => 3])->only(['a', 'b']);
+collect(['a' => 1, 'b' => 2, 'c' => 3])->only('a', 'b');
+collect(['a' => 1, 'b' => 2, 'c'])->only(collect(['a', 'b']));
+// 三个返回结果一致
+// collect(['a' => 1, 'b' => 2])
+```
+
 ### `pop()`
+
+`pop()` 移除并返回集合中的最后一个值
+
+```php
+$collect = collect([1, 2, 3]);
+$collect->pop(); // 3
+$collect->all(); // [1, 2]
+```
 
 ### `prepend()`
 
+`prepend($value, $key = null)` 在集合开头插入一个值，并返回集合
+
+```php
+collect([1, 2, 3])->prepend(4); // collect([4, 1, 2, 3])
+collect([1, 2, 3])->prepend(4, 'a'); // collect(['a' => 4, 1, 2, 3])
+```
+
 ### `push()`
+
+`push(...$values)` 在集合结尾插入一个或多个值
+
+```php
+collect([1, 2, 3])->push(4, 5);  // collect([1, 2, 3, 4, 5])
+collect([1, 2, 3])->push(4);  // collect([1, 2, 3, 4])
+```
 
 ### `concat()`
 
+`concat($source)` 将新的集合或数组附加到当前集合结尾
+
+```php
+collect([1, 2, 3])->concat([4, 5]);  // collect([1, 2, 3, 4, 5])
+collect([1, 2, 3])->concat(collect([4, 5]));  // collect([1, 2, 3, 4, 5])
+```
+
 ### `pull()`
+
+`pull($key, $default = null)` 从集合中获取并移除指定键的值，如果不存在，可获取默认值（`$default`）
+
+```php
+$collect = collect(['a' => 1, 'b' => 2]);
+$collect->pull('a'); // 1
+$collect->all(); // ['b' => 2]
+$collect->pull('c', '3'); // 3
+$collect->all(); // ['b' => 2]
+```
 
 ### `put()`
 
+`put($key, $value)` 将指定的键和值写入到集合，并返回集合；方法逻辑同 `offsetSet`，区别在于 `put()` 返回当前集合
+
+```php
+collect(['a' => 1])->put('b', 2); // collect(['a' => 1, 'b' => 2])
+```
+
 ### `random()`
+
+`random($number = null)` 随机返回一个值或指定数量值的集合（不返回键）
+
+```php
+collect([1, 2, 3, 4])->random(); // 4(每次随机)
+collect([1, 2, 3, 4])->random(2); // collect([2, 3])(每次随机)
+collect(['a' => 1, 'b' => 2, 'c' => 3])->random();  // 3(每次随机)
+collect(['a' => 1, 'b' => 2, 'c' => 3])->random(2);  // collect([1, 2])(每次随机)
+```
 
 ### `reduce()`
 
