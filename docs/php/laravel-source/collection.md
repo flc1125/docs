@@ -482,13 +482,50 @@ collect([['a' => 1, 'b' => 11], ['a' => 2, 'b' => 11]])->map(function ($value) {
 
 ### `merge()`
 
+`merge($items)` 把一个或多个数组/集合合并为一个集。
+
+```php
+collect(['a' => 1, 'b' => 2])->merge(['a' => 111]); // collect(['a' => 1111, 'b' => 2]);
+collect(['a' => 1, 'b' => 2])->merge(collect(['a' => 111])); // collect(['a' => 1111, 'b' => 2]);
+collect(['a' => ['c' => 1], 'b' => 2])->merge(collect(['a' => 111])); // collect(['a' => 1111, 'b' => 2]);
+```
+
 ### `mergeRecursive()`
+
+`mergeRecursive($items)` 递归地一个或多个数组/集合合并为一个集。
+
+```php
+collect(['a' => 1, 'b' => 2])->mergeRecursive(['a' => 111]); // collect(['a' => [1, 111], 'b' => 2]);
+collect(['a' => 1, 'b' => 2])->mergeRecursive(collect(['a' => 111])); // collect(['a' => [1, 111], 'b' => 2]);
+collect(['a' => ['c' => 1], 'b' => 2])->mergeRecursive(collect(['a' => 111])); // collect(['a' => ['c' => 1, 0 => 111], 'b' => 2]);
+```
 
 ### `combine()`
 
+`combine($values)` 通过合并两个数组/集合（一个为键名数组/集合，一个为键值数组/集合）来创建一个新集合
+
+```php
+collect(['a', 'b'])->combine([1, 2]); // collect(['a' => 1, 'b' => 2])
+collect(['a', 'b'])->combine([1, 2, 3]);  // collect([false])
+```
+
 ### `union()`
 
+`union($items)` 将两个数组或集合进行相加
+
+```php
+collect(['a' => 1, 'b' => 2])->union(['a' => 111, 'c' => 3]); // collect(['a' => 1, 'b' => 2, 'c '=> 3])
+collect(['a' => 1, 'b' => 2])->merge(['a' => 111, 'c' => 3]); // collect(['a' => 111, 'b' => 2, 'c '=> 3])
+```
+
 ### `nth()`
+
+`nth($step, $offset = 0)` 创建由每隔 `$step` 个，并便宜 `$offset` 元素组成的一个新集合
+
+```php
+collect([1, 2, 3, 4, 5, 6, 7, 8])->nth(3); // collect(1, 4, 7)
+collect([1, 2, 3, 4, 5, 6, 7, 8])->nth(3, 2); // collect(3, 6)
+```
 
 ### `only()`
 
