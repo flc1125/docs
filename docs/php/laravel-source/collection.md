@@ -378,6 +378,31 @@ collect(['a' => 1])->get('b', fn() => 111); // 111
 
 ### `keyBy()`
 
+`keyBy($keyBy)` 以指定的键作为集合的键。如果多个集合项具有相同的键，则只有最后一个集合项会显示在新集合中
+
+```php
+collect([
+    ['a' => 11, 'b' => 22],
+    ['a' => 33, 'b' => 44],
+])->keyBy('a');
+// collect([
+//     11 => ['a' => 11, 'b' => 22],
+//     33 => ['a' => 33, 'b' => 44],
+// ])
+
+collect([
+    ['a' => 11, 'b' => 22],
+    ['a' => 33, 'b' => 44],
+])->keyBy(function ($value) {
+    return 'prefix'.$value['a'];
+});
+// collect([
+//     'prefix11' => ['a' => 11, 'b' => 22],
+//     'prefix33' => ['a' => 33, 'b' => 44],
+// ])
+
+```
+
 ### `has()`
 
 `has($key)` 判定键是否存在，支持多个传入，必须所有满足，才能返回 `true`
@@ -400,7 +425,21 @@ collect([['a' => 11, 'b' => 22], ['a' => 33, 'b' => 44]])->implode('a', '@@'); /
 
 ### `intersect()`
 
+`intersect($items)`  比较数组，返回两个数组的交集（只比较键值）
+
+```php
+collect(['a' => 1, 'b' => 2, 'c' => 3])->intersect(['b' => 2, 'c' => 4, 'd' => 3); // collect(['b' => 2, 'c' => 3])
+collect(["red", "green", "blue", "yellow"])->intersect(["red", "green", "yellow"]); // collect(["red", "green", "yellow"])
+```
+
 ### `intersectByKeys()`
+
+`intersectByKeys($items)` 比较数组，返回两个数组的交集（只比较键名）
+
+```php
+collect(['a' => 1, 'b' => 2, 'c' => 3])->intersectByKeys(['b' => 2, 'c' => 4]); // collect(['b' => 2, 'c' => 3])
+collect(["red", "green", "blue", "yellow"])->intersectByKeys(["red", "green", "yellow"]); // collect(["red", "green", "blue"])
+```
 
 ### `isEmpty()`
 
