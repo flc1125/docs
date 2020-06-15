@@ -20,6 +20,7 @@ theme:
   palette:
     primary: red
     accent: red
+    scheme: slate
   include_search_page: false
   search_index_only: true
   icon:
