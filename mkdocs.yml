@@ -49,6 +49,8 @@ plugins:
   - search
   - minify:
       minify_html: true
+  - git-revision-date-localized:
+      type: datetime
 
 markdown_extensions:
   - markdown.extensions.admonition
@@ -233,6 +235,8 @@ nav:
     - Dockerfile:
       - PHP: 'devops/docker/dockerfile/php.md'
   - Redis: 'devops/redis/index.md'
+  - 压测:
+      - 入门: 'devops/stress-test/getting-started.md'
 - Awesome:
   - PHP: 'awesome/php.md'
 # - 百家“争鸣”:
