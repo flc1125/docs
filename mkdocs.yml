@@ -231,6 +231,8 @@ nav:
   #   - 概述: 'elasticsearch/elasticsearch-sync/index.md'
 - DevOps:
   - CDN 科普: 'devops/cdn/index.md'
+  - Linux Command:
+    - sed - 流式文本编辑器: 'devops/linux-command/sed.md'
   - Docker:
     - 概述: 'devops/docker/index.md'
     - Dockerfile:
