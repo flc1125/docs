@@ -52,6 +52,7 @@ plugins:
   - git-revision-date-localized:
       type: datetime
       locale: zh
+      time_zone: Asia/Shanghai
 
 markdown_extensions:
   - markdown.extensions.admonition
