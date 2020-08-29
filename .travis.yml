@@ -7,7 +7,7 @@ python:
 before_install:
   - sh ./scripts/build.sh
   - sudo apt-get install -y golang
-  - go get github.com/polym/upx
+  - go get github.com/upyun/upx
   - go version
 
 script:
