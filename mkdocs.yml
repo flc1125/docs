@@ -238,7 +238,9 @@ nav:
     - 概述: 'devops/docker/index.md'
     - Dockerfile:
       - PHP: 'devops/docker/dockerfile/php.md'
-  - Redis: 'devops/redis/index.md'
+  - Redis: 
+    - 概述: 'devops/redis/index.md'
+    - 慢查询: 'devops/redis/slowlog.md'
   - 压测:
       - 入门: 'devops/stress-test/getting-started.md'
 - Awesome:
