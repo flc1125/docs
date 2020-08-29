@@ -15,7 +15,7 @@
 
 ### 配置介绍
 
-#### slowlog-max-len**
+#### slowlog-max-len
 
 慢查询日志记录条数
 
