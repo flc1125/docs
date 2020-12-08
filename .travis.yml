@@ -7,8 +7,9 @@ python:
 before_install:
   - sh ./scripts/build.sh
   - sudo apt-get install -y golang
-  - GO111MODULE=on go get -u github.com/upyun/upx@v0.3.1
   - go version
+  - export PATH=${PATH}:${HOME}/go/bin
+  - go get -u github.com/upyun/upx@v0.3.1
 
 script:
   - sh ./scripts/deploy.sh

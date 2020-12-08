@@ -12,12 +12,13 @@ repo_url: https://github.com/flc1125/docs
 # Theme
 theme:
   name: 'material'
-  language: 'zh'
+  language: zh
   favicon: '/favicon.ico'
   features:
-    - tabs
-    # - instant
+    - navigation.tabs
+    - navigation.instant
   palette:
+    scheme: preference
     primary: red
     accent: red
     # scheme: slate
@@ -238,7 +239,7 @@ nav:
     - 概述: 'devops/docker/index.md'
     - Dockerfile:
       - PHP: 'devops/docker/dockerfile/php.md'
-  - Redis: 
+  - Redis:
     - 概述: 'devops/redis/index.md'
     - 慢查询: 'devops/redis/slowlog.md'
   - 压测:
