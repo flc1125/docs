@@ -241,15 +241,13 @@ nav:
       - PHP: 'devops/docker/dockerfile/php.md'
   - Redis:
     - 概述: 'devops/redis/index.md'
-    - 慢查询: 'devops/redis/slowlog.md'
+    # - 慢查询: 'devops/redis/slowlog.md'
+    - Redis 配置字段:
+      - info 系统状态说明: 'devops/redis/dict/info.md'
   - 压测:
       - 入门: 'devops/stress-test/getting-started.md'
 - Awesome:
   - PHP: 'awesome/php.md'
-# - 百家“争鸣”:
-#   - 推荐博客: 'hundred/blog.md'
-#   - 开源工具: 'hundred/open-source.md'
-#   - 知识点: 'hundred/knowledge.md'
 - 软实力:
   - 方法论:
     - 目录: eq/methodology/index.md
