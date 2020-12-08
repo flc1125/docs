@@ -8,6 +8,7 @@ before_install:
   - sh ./scripts/build.sh
   - sudo apt-get install -y golang
   - go version
+  - export GO111MODULE=on
   - export PATH=${PATH}:${HOME}/go/bin
   - go get -u github.com/upyun/upx@v0.3.1
 
