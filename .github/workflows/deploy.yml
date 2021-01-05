@@ -29,7 +29,6 @@ jobs:
         run: |
           go version
           GO111MODULE=on GOPROXY=https://goproxy.cn,direct go get -u github.com/upyun/upx
-          # upx -v
 
       - name: Login UPX
         env:
