@@ -1,5 +1,5 @@
 name: Deploy to UPYUN
-# on:
+on: push
 #   push:
 #     branchs: [master]
 
