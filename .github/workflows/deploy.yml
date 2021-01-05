@@ -1,0 +1,25 @@
+name: Deploy to UPYUN
+# on:
+#   push:
+#     branchs: [master]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Python
+        uses: actions/setup-python@v2
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          mkdocs -V
+
+      - name: Build
+        run: |
+          mkdocs build --clean
