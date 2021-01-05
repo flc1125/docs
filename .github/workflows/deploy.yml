@@ -1,6 +1,5 @@
 name: Deploy to UPYUN
 on: push
-env: Prod
 #   push:
 #     branchs: [master]
 
