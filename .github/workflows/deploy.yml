@@ -28,7 +28,7 @@ jobs:
       - name: Install UPX
         run: |
           go version
-          go get -u github.com/upyun/upx@v0.3.1
+          GO111MODULE=on go get -u github.com/upyun/upx@v0.3.1
           upx -v
 
       - name: Build
