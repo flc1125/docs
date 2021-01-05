@@ -28,6 +28,7 @@ jobs:
       - name: Install UPX
         run: |
           go version
+          export GOPROXY=direct
           GO111MODULE=on go get -u github.com/upyun/upx
           upx -v
 
