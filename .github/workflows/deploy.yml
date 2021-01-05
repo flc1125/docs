@@ -1,5 +1,6 @@
 name: Deploy to UPYUN
 on: push
+env: Prod
 #   push:
 #     branchs: [master]
 
@@ -30,7 +31,13 @@ jobs:
           go version
           GO111MODULE=on GOPROXY=https://goproxy.cn,direct go get -u github.com/upyun/upx
           upx -v
+      - name: Login UPX
+        run: |
+          upx login "$UPX_SERVICE_NAME" "$UPX_OPERATOR" "$UPX_PASSWORD"
 
       - name: Build
         run: |
           mkdocs build --clean
+      - name: Deploy
+        run: |
+          upx sync ./site/
