@@ -32,6 +32,10 @@ jobs:
           GO111MODULE=on GOPROXY=https://goproxy.cn,direct go get -u github.com/upyun/upx
           upx -v
       - name: Login UPX
+        env:
+          UPX_SERVICE_NAME: ${{ secrets.UPX_SERVICE_NAME }}
+          UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
+          UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
         run: |
           upx login "$UPX_SERVICE_NAME" "$UPX_OPERATOR" "$UPX_PASSWORD"
 
