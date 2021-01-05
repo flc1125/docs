@@ -5,7 +5,7 @@ on: push
 
 jobs:
   deploy:
-    name: Deploy
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -14,11 +14,21 @@ jobs:
 
       - name: Python
         uses: actions/setup-python@v2
+        run: python -V
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           mkdocs -V
+
+      - name: Golang
+        uses: actions/setup-go@v2
+        run: go version
+
+      - name: Install UPX
+        run: |
+          go get -u github.com/upyun/upx@v0.3.1
+          upx -v
 
       - name: Build
         run: |
