@@ -6,7 +6,7 @@ on: push
 jobs:
   deploy:
     name: Deploy
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -28,7 +28,7 @@ jobs:
       - name: Install UPX
         run: |
           go version
-          GO111MODULE=on go get -u github.com/upyun/upx@v0.3.1
+          GO111MODULE=on go get -u github.com/upyun/upx
           upx -v
 
       - name: Build
