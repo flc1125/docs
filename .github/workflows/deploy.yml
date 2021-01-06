@@ -23,7 +23,7 @@ jobs:
       - name: Python
         uses: actions/setup-python@v2
 
-      - name: Cache Python dependencies
+      - name: Cache Python
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
@@ -58,6 +58,14 @@ jobs:
       - name: Login Upx
         run: |
           ${HOME}/go/bin/upx login "${{ env.UPX_SERVICE_NAME }}" "${{ env.UPX_OPERATOR }}" "${{ env.UPX_PASSWORD }}"
+
+      - name: Cache Site
+        uses: actions/cache@v2
+        with:
+          path: ./site
+          key: ${{ runner.os }}-site
+          restore-keys: |
+            ${{ runner.os }}-site-
 
       - name: Build
         run: |
