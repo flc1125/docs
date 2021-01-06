@@ -34,7 +34,8 @@ jobs:
       - name: Install Upx and Config GOPATH
         run: |
           go version
-          export PATH=${PATH}:`go env GOPATH`/bin
+          echo "::set-env name=GOPATH::${{ github.workspace }}/go"
+          echo "::add-path::${{ github.workspace }}/go/bin"
           GO111MODULE=on go get -u github.com/upyun/upx@v0.3.2
 
       - name: Login Upx
