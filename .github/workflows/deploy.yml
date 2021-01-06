@@ -69,7 +69,7 @@ jobs:
 
       - name: Build
         run: |
-          mkdocs build --clean
+          mkdocs build
 
       - name: Deploy
         run: |
