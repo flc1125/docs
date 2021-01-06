@@ -19,15 +19,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # - name: Python
-      #   uses: actions/setup-python@v2
+      - name: Python
+        uses: actions/setup-python@v2
 
-
-      # - name: Install dependencies
-      #   run: |
-      #     python -V
-      #     pip install -r requirements.txt
-      #     mkdocs -V
+      - name: Install dependencies
+        run: |
+          python -V
+          pip install -r requirements.txt
+          mkdocs -V
 
       - name: Golang
         uses: actions/setup-go@v2
@@ -47,4 +46,4 @@ jobs:
 
       - name: Deploy
         run: |
-          upx sync ./site/
+          ${HOME}/go/bin/upx sync ./site/
