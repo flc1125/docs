@@ -25,12 +25,12 @@ jobs:
       - name: Golang
         uses: actions/setup-go@v2
 
-      - name: Install UPX
+      - name: Install Upx
         run: |
           go version
-          GO111MODULE=on GOPROXY=https://goproxy.cn,direct go get -u github.com/upyun/upx
+          GO111MODULE=on go get -u github.com/upyun/upx@v0.3.2
 
-      - name: Login UPX
+      - name: Login Upx
         env:
           UPX_SERVICE_NAME: ${{ secrets.UPX_SERVICE_NAME }}
           UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
