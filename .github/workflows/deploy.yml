@@ -18,15 +18,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Python
-        uses: actions/setup-python@v2
+      # - name: Python
+      #   uses: actions/setup-python@v2
 
 
-      - name: Install dependencies
-        run: |
-          python -V
-          pip install -r requirements.txt
-          mkdocs -V
+      # - name: Install dependencies
+      #   run: |
+      #     python -V
+      #     pip install -r requirements.txt
+      #     mkdocs -V
 
       - name: Golang
         uses: actions/setup-go@v2
@@ -35,7 +35,7 @@ jobs:
         run: |
           go version
           export PATH=${PATH}:`go env GOPATH`/bin
-          go get -u github.com/upyun/upx@v0.3.2
+          GO111MODULE=on go get -u github.com/upyun/upx@v0.3.2
 
       - name: Login Upx
         run: |
