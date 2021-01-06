@@ -3,6 +3,12 @@ on: push
 #   push:
 #     branchs: [master]
 
+env:
+  UPX_SERVICE_NAME: ${{ secrets.UPX_SERVICE_NAME }}
+  UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
+  UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
+
+
 jobs:
   deploy:
     name: Deploy
@@ -31,12 +37,8 @@ jobs:
           GO111MODULE=on go get -u github.com/upyun/upx@v0.3.2
 
       - name: Login Upx
-        env:
-          UPX_SERVICE_NAME: ${{ secrets.UPX_SERVICE_NAME }}
-          UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
-          UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
         run: |
-          upx login "$UPX_SERVICE_NAME" "$UPX_OPERATOR" "$UPX_PASSWORD"
+          upx login "${{ env.UPX_SERVICE_NAME }}" "${{ env.UPX_OPERATOR }}" "${{ env.UPX_PASSWORD }}"
 
       - name: Build
         run: |
