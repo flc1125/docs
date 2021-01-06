@@ -62,7 +62,7 @@ jobs:
       - name: Cache Site
         uses: actions/cache@v2
         with:
-          path: ./site/
+          path: "**/site"
           key: ${{ runner.os }}-site
           restore-keys: |
             ${{ runner.os }}-site-
