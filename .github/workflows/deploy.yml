@@ -48,10 +48,8 @@ jobs:
         uses: actions/cache@v2
         id: cache-upx
         with:
-          path: ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
+          path: ~/go/
+          key: ${{ runner.os }}-go-upx
 
       - name: Install Upx
         if: steps.cache-upx.outputs.cache-hit != 'true'
