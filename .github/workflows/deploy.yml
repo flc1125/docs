@@ -61,7 +61,7 @@ jobs:
 
       - name: Build
         run: |
-          mkdocs build
+          mkdocs build --clean
 
       - name: Deploy
         run: |
