@@ -59,14 +59,6 @@ jobs:
         run: |
           ${HOME}/go/bin/upx login "${{ env.UPX_SERVICE_NAME }}" "${{ env.UPX_OPERATOR }}" "${{ env.UPX_PASSWORD }}"
 
-      - name: Cache Site
-        uses: actions/cache@v2
-        with:
-          path: "**/site"
-          key: ${{ runner.os }}-site
-          restore-keys: |
-            ${{ runner.os }}-site-
-
       - name: Build
         run: |
           mkdocs build
