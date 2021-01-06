@@ -35,6 +35,7 @@ jobs:
       - name: Install Upx and Config GOPATH
         run: |
           go version
+          export PATH=${PATH}:${HOME}/go/bin
           go get -u github.com/upyun/upx@v0.3.2
 
       - name: Login Upx
