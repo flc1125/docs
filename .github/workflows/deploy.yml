@@ -4,6 +4,7 @@ on: push
 #     branchs: [master]
 
 env:
+  GO111MODULE: "on"
   UPX_SERVICE_NAME: ${{ secrets.UPX_SERVICE_NAME }}
   UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
   UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
@@ -12,7 +13,7 @@ env:
 jobs:
   deploy:
     name: Deploy
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -34,9 +35,7 @@ jobs:
       - name: Install Upx and Config GOPATH
         run: |
           go version
-          echo "::set-env name=GOPATH::${{ github.workspace }}/go"
-          echo "::add-path::${{ github.workspace }}/go/bin"
-          GO111MODULE=on go get -u github.com/upyun/upx@v0.3.2
+          go get -u github.com/upyun/upx@v0.3.2
 
       - name: Login Upx
         run: |
