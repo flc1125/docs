@@ -203,28 +203,36 @@
 
 ### 指定字段
 
-```js tab="Elasticsearch"
-{
-    "_source": ["*", "user", "user.age", 'user*']
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select *, user from table;
-```
+    ```js
+    {
+        "_source": ["*", "user", "user.age", 'user*']
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select *, user from table;
+    ```
 
 ### From / Size ： [传送门](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/search-request-from-size.html)
 
-```js tab="Elasticsearch"
-{
-    "from" : 10,
-    "size" : 20
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select * from table limit 10, 20;
-```
+    ```js
+    {
+        "from" : 10,
+        "size" : 20
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select * from table limit 10, 20;
+    ```
 
 !!! warning ""
     
@@ -234,21 +242,25 @@ select * from table limit 10, 20;
 
 ### 排序
 
-```js  tab="Elasticsearch"
-{
-    "sort" : [
-        {"post_date" : {"order" : "asc"}},
-        "user",
-        {"name" : "desc"},
-        {"age" : "desc" },
-        "_score"
-    ]
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select * from table order by post_date asc, user, name desc, age desc;
-```
+    ```js
+    {
+        "sort" : [
+            {"post_date" : {"order" : "asc"}},
+            "user",
+            {"name" : "desc"},
+            {"age" : "desc" },
+            "_score"
+        ]
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select * from table order by post_date asc, user, name desc, age desc;
+    ```
 
 > 不设置 `sort`, 默认按 `_score` 从高到低排序
 
@@ -259,25 +271,29 @@ select * from table order by post_date asc, user, name desc, age desc;
 #### match
 
 默认匹配：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)
-    
-```js tab="Elasticsearch"
-GET /_search
-{
-    "query": {
-        "match" : {
-            "message" : "this is a test"
+
+=== "Elasticsearch"
+
+    ```js
+    GET /_search
+    {
+        "query": {
+            "match" : {
+                "message" : "this is a test"
+            }
         }
     }
-}
-```
+    ```
 
-```sql tab="SQL"
-select * from table
-where message like '%this%'
-    or message like '%is%'
-    or message like '%a%'
-    or message like '%test%';
-```
+=== "SQL"
+
+    ```sql
+    select * from table
+    where message like '%this%'
+        or message like '%is%'
+        or message like '%a%'
+        or message like '%test%';
+    ```
 
 > 不等价匹配的示例：如 `message` 值为 `this is a test`。去搜索 `st`，Elasticsearch 无法匹配上；但 SQL 可匹配
 
@@ -285,20 +301,24 @@ where message like '%this%'
 
 短语匹配：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase.html)
 
-```js tab="Elasticsearch"
-GET /_search
-{
-    "query": {
-        "match_phrase" : {
-            "message" : "this is a test"
+=== "Elasticsearch"
+
+    ```js
+    GET /_search
+    {
+        "query": {
+            "match_phrase" : {
+                "message" : "this is a test"
+            }
         }
     }
-}
-```
+    ```
 
-```sql tab="SQL"
-select * from table where message like '%this is a test%';
-```
+=== "SQL"
+
+    ```sql
+    select * from table where message like '%this is a test%';
+    ```
 
 > 不等价匹配的示例：如 `message` 值为 `Mozilla/5.0 Windows`。去搜索 `Mozilla 5.0`，Elasticsearch 能匹配上；但 SQL 无法匹配
 
@@ -308,21 +328,25 @@ select * from table where message like '%this is a test%';
 
 > 一般用于搜索框：建议搜索
 
-```js tab="Elasticsearch"
-GET /_search
-{
-    "query": {
-        "match_phrase_prefix" : {
-            "message" : "quick brown f"
-            // "max_expansions": 10
+=== "Elasticsearch"
+
+    ```js
+    GET /_search
+    {
+        "query": {
+            "match_phrase_prefix" : {
+                "message" : "quick brown f"
+                // "max_expansions": 10
+            }
         }
     }
-}
-```
+    ```
 
-```sql tab="SQL"
-select * from table where message like '%quick brown f%';
-```
+=== "SQL"
+
+    ```sql
+    select * from table where message like '%quick brown f%';
+    ```
 
 !!! note "`match_phrase_prefix` 与 `match_phrase` 区别："
 
@@ -341,25 +365,29 @@ select * from table where message like '%quick brown f%';
 
 > 一般用于关键字搜索
 
-```js tab="Elasticsearch"
-GET /_search
-{
-  "query": {
-    "multi_match" : {
-      "query": "this is", 
-      "fields": ["subject", "message"]
-    }
-  }
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select * from table
-where subject like '%this%'
-    or subject like '%is%'
-    or message like '%this%'
-    or message like '%is%';
-```
+    ```js
+    GET /_search
+    {
+        "query": {
+            "multi_match" : {
+                "query": "this is", 
+                "fields": ["subject", "message"]
+            }
+        }
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select * from table
+    where subject like '%this%'
+        or subject like '%is%'
+        or message like '%this%'
+        or message like '%is%';
+    ```
 
 **其他用法**
 
@@ -375,20 +403,24 @@ where subject like '%this%'
 
 #### term
 
-通过倒排索引查找**确切**的值。 相当于 `=`，但不只是 `=`，更像是 PHP 的 `in_array` 的概念：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html) 
+通过倒排索引查找 **确切** 的值。 相当于 `=`，但不只是 `=`，更像是 PHP 的 `in_array` 的概念：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html) 
 
-```js tab="Elasticsearch"
-POST _search
-{
-  "query": {
-    "term" : { "user" : "Kimchy" } 
-  }
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select * from table where user = 'Kimchy';
-```
+    ```js
+    POST _search
+    {
+        "query": {
+            "term" : { "user" : "Kimchy" } 
+        }
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select * from table where user = 'Kimchy';
+    ```
 
 !!! note "为什么 `term` 查询不符合我的文档？"
 
@@ -406,40 +438,48 @@ select * from table where user = 'Kimchy';
 
 通过倒排索引中查找多个 **确切** 的值，相当于 `in`：[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html) 
 
-```js tab="Elasticsearch"
-GET /_search
-{
-    "query": {
-        "terms" : { "user" : ["kimchy", "elasticsearch"]}
-    }
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select * from table where user in ('Kimchy', 'elasticsearch');
-```
+    ```js
+    GET /_search
+    {
+        "query": {
+            "terms" : { "user" : ["kimchy", "elasticsearch"]}
+        }
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select * from table where user in ('Kimchy', 'elasticsearch');
+    ```
 
 #### range
 
 范围区间查询，[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html) 
 
-```js tab="Elasticsearch"
-GET _search
-{
-    "query": {
-        "range" : {
-            "age" : {
-                "gte" : 10,
-                "lte" : 20
+=== "Elasticsearch"
+
+    ```js
+    GET _search
+    {
+        "query": {
+            "range" : {
+                "age" : {
+                    "gte" : 10,
+                    "lte" : 20
+                }
             }
         }
     }
-}
-```
+    ```
 
-```sql tab="SQL"
-select * from table where age >=10 and age <= 20;
-```
+=== "SQL"
+
+    ```sql
+    select * from table where age >=10 and age <= 20;
+    ```
 
 参数说明
 
@@ -458,43 +498,47 @@ select * from table where age >=10 and age <= 20;
 
 |构建语句|说明
 |----|----|
-|`must`|**必须**出现在匹配的文档中的条件。有助于计算得分|
-|`filter`|**必须**出现在匹配的文档中的条件。但是不同于 `must` 查询的分数将被忽略。忽略评分并考虑使用[子句](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/query-filter-context.html)进行**高速缓存**|
+|`must`|**必须** 出现在匹配的文档中的条件。有助于计算得分|
+|`filter`|**必须** 出现在匹配的文档中的条件。但是不同于 `must` 查询的分数将被忽略。忽略评分并考虑使用[子句](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/query-filter-context.html)进行 **高速缓存**|
 |`should`|应出现在匹配的文档中的条件，即满足即可。计算分值|
 |`must_not`|不得出现在匹配的文档中的条件，不计算分值|
 
-```js tab="Elasticsearch"
-POST _search
-{
-  "query": {
-    "bool" : {
-      "must" : {
-        "term" : { "user" : "kimchy" }
-      },
-      "filter": {
-        "term" : { "tag" : "tech" }
-      },
-      "must_not" : {
-        "range" : {
-          "age" : { "gte" : 10, "lte" : 20 }
-        }
-      },
-      "should" : [
-        { "term" : { "tag" : "wow" } },
-        { "term" : { "tag" : "elasticsearch" } }
-      ]
-    }
-  }
-}
-```
+=== "Elasticsearch"
 
-```sql tab="SQL"
-select * from table
-where user = "kimchy"
-    and tag = "tech"
-    and (age < 10 or age > 20) -- not (age >= 10 and age <= 20)
-    and (tag = "wow" or tag = "elasticsearch");
-```
+    ```js
+    POST _search
+    {
+    "query": {
+        "bool" : {
+        "must" : {
+            "term" : { "user" : "kimchy" }
+        },
+        "filter": {
+            "term" : { "tag" : "tech" }
+        },
+        "must_not" : {
+            "range" : {
+            "age" : { "gte" : 10, "lte" : 20 }
+            }
+        },
+        "should" : [
+            { "term" : { "tag" : "wow" } },
+            { "term" : { "tag" : "elasticsearch" } }
+        ]
+        }
+    }
+    }
+    ```
+
+=== "SQL"
+
+    ```sql
+    select * from table
+    where user = "kimchy"
+        and tag = "tech"
+        and (age < 10 or age > 20) -- not (age >= 10 and age <= 20)
+        and (tag = "wow" or tag = "elasticsearch");
+    ```
 
 !!! info ""
 
