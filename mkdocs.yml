@@ -35,8 +35,10 @@ extra_javascript:
   - static/plugins/md5.min.js
   - static/plugins/gitalk/gitalk.min.js
   - static/plugins/gitalk/gitalk-render.js
-google_analytics: ['UA-118478085-1', 'auto']
 extra:
+  analytics:
+    provider: google
+    property: UA-118478085-1
   social:
     - icon: fontawesome/solid/home
       link: 'https://flc.io'
@@ -92,7 +94,8 @@ markdown_extensions:
   - pymdownx.snippets:
       check_paths: true
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
