@@ -3,7 +3,7 @@ site_name: 叶子坑 - Flc゛
 site_author: Flc
 site_description: 希言自然。
 site_url: https://flc.io
-copyright: 'Copyright &copy; 2017-2021 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a>'
+copyright: 'Copyright &copy; 2017-2021 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备15063901号</a>'
 
 # Repository
 repo_name: flc1125/docs
@@ -17,6 +17,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - content.code.annotate
   palette:
     scheme: preference
     primary: red
@@ -35,15 +36,17 @@ extra_javascript:
   - static/plugins/md5.min.js
   - static/plugins/gitalk/gitalk.min.js
   - static/plugins/gitalk/gitalk-render.js
-google_analytics: ['UA-118478085-1', 'auto']
 extra:
-  social:
-    - icon: fontawesome/solid/home
-      link: 'https://flc.io'
-    - icon: fontawesome/brands/github
-      link: 'https://github.com/flc1125'
-    - icon: fontawesome/regular/comment-alt
-      link: 'https://flc.io/message/'
+  analytics:
+    provider: google
+    property: UA-118478085-1
+  # social:
+  #   - icon: fontawesome/solid/home
+  #     link: 'https://flc.io'
+  #   - icon: fontawesome/brands/github
+  #     link: 'https://github.com/flc1125'
+  #   - icon: fontawesome/regular/comment-alt
+  #     link: 'https://flc.io/message/'
   # disqus: 'flc-docs' # 需翻墙
 
 plugins:
@@ -56,14 +59,14 @@ plugins:
       time_zone: Asia/Shanghai
 
 markdown_extensions:
-  - markdown.extensions.admonition
-  - markdown.extensions.attr_list
-  - markdown.extensions.codehilite:
+  - admonition
+  - attr_list
+  - codehilite:
       guess_lang: false
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.meta
-  - markdown.extensions.toc:
+  - def_list
+  - footnotes #脚注
+  - meta
+  - toc:
       permalink: "#"
   - pymdownx.arithmatex
   - pymdownx.betterem:
@@ -74,14 +77,16 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  # 代码高亮
   - pymdownx.highlight:
-      # css_class: codehilite # https://github.com/facelessuser/pymdown-extensions/blob/master/mkdocs.yml
       extend_pygments_lang:
         - name: php
           lang: php
           options:
             startinline: true
   - pymdownx.inlinehilite
+
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
@@ -91,8 +96,12 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       check_paths: true
+
+  # 选项卡
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
+
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
