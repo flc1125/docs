@@ -1,5 +1,5 @@
 mkdocs==1.2.3
-mkdocs-material==8.1.11
+mkdocs-material==8.2.5
 pygments
 pymdown-extensions
 mkdocs-minify-plugin

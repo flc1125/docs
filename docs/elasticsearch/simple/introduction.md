@@ -65,22 +65,22 @@
 
 数据格式：`json`（也支持 `yaml`，接口地址：`?format=yaml`）
 
-|字段|说明|
-|----|----|
-|`took`|请求耗时，单位：毫秒|
-|`timed_out`|是否超时|
-|`_shards.total`|总共查询了多少分片，含跨`index`|
-|`_shards.successful`|查询成功的分片，含跨`index`|
-|`hits`|匹配文档的数据结果|
-|`hits.total`|匹配文档的总记录数|
-|`hits.max_score`|匹配文档的最高分值|
-|`hits.hits`|匹配文档的文档数据|
-|`hits.hits._index`|文档所对应的索引|
-|`hits.hits._type`|文档所对应的索引类型|
-|`hits.hits._id`|文档所对应的文档ID|
-|`hits.hits._score`|文档根据匹配对的分值|
-|`hits.hits._source`|文档原始数据|
-|更多...||
+| 字段                   | 说明                  |
+|----------------------|---------------------|
+| `took`               | 请求耗时，单位：毫秒          |
+| `timed_out`          | 是否超时                |
+| `_shards.total`      | 总共查询了多少分片，含跨`index` |
+| `_shards.successful` | 查询成功的分片，含跨`index`   |
+| `hits`               | 匹配文档的数据结果           |
+| `hits.total`         | 匹配文档的总记录数           |
+| `hits.max_score`     | 匹配文档的最高分值           |
+| `hits.hits`          | 匹配文档的文档数据           |
+| `hits.hits._index`   | 文档所对应的索引            |
+| `hits.hits._type`    | 文档所对应的索引类型          |
+| `hits.hits._id`      | 文档所对应的文档ID          |
+| `hits.hits._score`   | 文档根据匹配对的分值          |
+| `hits.hits._source`  | 文档原始数据              |
+| 更多...                ||
 
 
 ### 索引
