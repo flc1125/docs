@@ -3,7 +3,7 @@ site_name: 叶子坑 - Flc゛
 site_author: Flc
 site_description: 希言自然。
 site_url: https://flc.io
-copyright: 'Copyright &copy; 2017-2021 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备15063901号</a>'
+copyright: 'Copyright &copy; 2017-2022 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备15063901号</a>'
 
 # Repository
 repo_name: flc1125/docs
@@ -40,13 +40,13 @@ extra:
   analytics:
     provider: google
     property: UA-118478085-1
-  # social:
-  #   - icon: fontawesome/solid/home
-  #     link: 'https://flc.io'
-  #   - icon: fontawesome/brands/github
-  #     link: 'https://github.com/flc1125'
-  #   - icon: fontawesome/regular/comment-alt
-  #     link: 'https://flc.io/message/'
+  social:
+     - icon: fontawesome/solid/house-chimney
+       link: https://flc.io
+     - icon: fontawesome/brands/github-square
+       link: https://github.com/flc1125
+     - icon: fontawesome/solid/comments
+       link: https://flc.io/message/
   # disqus: 'flc-docs' # 需翻墙
 
 plugins:
@@ -78,7 +78,7 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
-  # 代码高亮
+      # 代码高亮
   - pymdownx.highlight:
       extend_pygments_lang:
         - name: php
