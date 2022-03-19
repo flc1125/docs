@@ -47,29 +47,33 @@ $client = ClientBuilder::create()           // Instantiate a new ClientBuilder
 
 ##### 索引单文档
 
-```php tab="PHP"
-<?php
-$params = [
-    'index' => 'my_index',
-    'type' => 'my_type',
-    'id' => 'my_id',
-    'body' => ['testField' => 'abc']
-];
+=== "PHP"
 
-$response = $client->index($params);
-print_r($response);
-```
+    ```php
+    <?php
+    $params = [
+        'index' => 'my_index',
+        'type' => 'my_type',
+        'id' => 'my_id',
+        'body' => ['testField' => 'abc']
+    ];
+    
+    $response = $client->index($params);
+    print_r($response);
+    ```
 
-``` tab="Result"
-Array
-(
-    [_index] => my_index
-    [_type] => my_type
-    [_id] => my_id
-    [_version] => 1
-    [created] => 1
-)
-```
+=== "Result"
+
+    ```
+    Array
+    (
+        [_index] => my_index
+        [_type] => my_type
+        [_id] => my_id
+        [_version] => 1
+        [created] => 1
+    )
+    ```
 
 !!! warning ""
 
@@ -149,87 +153,95 @@ $response = $client->update($params);
 
 查询指定 ID 的数据
 
-```php tab="PHP"
-<?php
-$params = [
-    'index' => 'my_index',
-    'type' => 'my_type',
-    'id' => 'my_id'
-];
+=== "PHP"
 
-$response = $client->get($params);
-print_r($response);
-```
+    ```php
+    <?php
+    $params = [
+        'index' => 'my_index',
+        'type' => 'my_type',
+        'id' => 'my_id'
+    ];
+    
+    $response = $client->get($params);
+    print_r($response);
+    ```
 
-``` tab="Result"
-Array
-(
-    [_index] => my_index
-    [_type] => my_type
-    [_id] => my_id
-    [_version] => 1
-    [found] => 1
-    [_source] => Array
-        (
-            [testField] => abc
-        )
+=== "Result"
 
-)
-```
+    ```
+    Array
+    (
+        [_index] => my_index
+        [_type] => my_type
+        [_id] => my_id
+        [_version] => 1
+        [found] => 1
+        [_source] => Array
+            (
+                [testField] => abc
+            )
+    
+    )
+    ```
 
 #### 1.3.4. 搜索文档
 
-```php tab="PHP"
-<?php
-$params = [
-    'index' => 'my_index',
-    'type' => 'my_type',
-    'body' => [
-        'query' => [
-            'match' => [
-                'testField' => 'abc'
+=== "PHP"
+    
+    ```php
+    <?php
+    $params = [
+        'index' => 'my_index',
+        'type' => 'my_type',
+        'body' => [
+            'query' => [
+                'match' => [
+                    'testField' => 'abc'
+                ]
             ]
         ]
-    ]
-];
+    ];
+    
+    $response = $client->search($params);
+    print_r($response);
+    ```
 
-$response = $client->search($params);
-print_r($response);
-```
+=== "Result"
 
-``` tab="Result"
-Array
-(
-    [took] => 1
-    [timed_out] =>
-    [_shards] => Array
-        (
-            [total] => 5
-            [successful] => 5
-            [failed] => 0
-        )
-
-    [hits] => Array
-        (
-            [total] => 1
-            [max_score] => 0.30685282
-            [hits] => Array
-                (
-                    [0] => Array
-                        (
-                            [_index] => my_index
-                            [_type] => my_type
-                            [_id] => my_id
-                            [_score] => 0.30685282
-                            [_source] => Array
-                                (
-                                    [testField] => abc
-                                )
-                        )
-                )
-        )
-)
-```
+    ```
+    Array
+    (
+        [took] => 1
+        [timed_out] =>
+        [_shards] => Array
+            (
+                [total] => 5
+                [successful] => 5
+                [failed] => 0
+            )
+    
+        [hits] => Array
+            (
+                [total] => 1
+                [max_score] => 0.30685282
+                [hits] => Array
+                    (
+                        [0] => Array
+                            (
+                                [_index] => my_index
+                                [_type] => my_type
+                                [_id] => my_id
+                                [_score] => 0.30685282
+                                [_source] => Array
+                                    (
+                                        [testField] => abc
+                                    )
+                            )
+                    )
+            )
+    )
+    ```
 
 ### 1.4. 参考
 
