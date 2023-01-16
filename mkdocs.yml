@@ -3,7 +3,7 @@ site_name: 叶子坑 - Flc゛
 site_author: Flc
 site_description: 希言自然。
 site_url: https://flc.io
-copyright: 'Copyright &copy; 2017-2022 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备15063901号</a>'
+copyright: 'Copyright &copy; 2017-2023 <a href="https://flc.io" target="_black">叶子坑 - Flc゛</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备15063901号</a>'
 
 # Repository
 repo_name: flc1125/docs
@@ -17,11 +17,23 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - toc.follow
     - content.code.annotate
   palette:
-    scheme: preference
-    primary: red
-    accent: red
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
     # scheme: slate
   include_search_page: false
   search_index_only: true
@@ -40,19 +52,34 @@ extra:
   analytics:
     provider: google
     property: UA-118478085-1
+    feedback:
+      title: 这篇文章对你没用吧？
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: 有用
+          data: 1
+          note: >-
+            谢谢您的反馈！可随时给我<a href="/message/" target="_blank" rel="noopener">留言</a>。
+        - icon: material/emoticon-sad-outline
+          name: 没用
+          data: 0
+          note: >-
+            谢谢您的反馈！可随时给我<a href="/message/" target="_blank" rel="noopener">留言</a>。
+
   social:
      - icon: fontawesome/solid/house-chimney
        link: https://flc.io
-     - icon: fontawesome/brands/github-square
+     - icon: fontawesome/brands/github
        link: https://github.com/flc1125
      - icon: fontawesome/solid/comments
        link: https://flc.io/message/
-  # disqus: 'flc-docs' # 需翻墙
+#   # disqus: 'flc-docs' # 需翻墙
 
 plugins:
   - search
   - minify:
       minify_html: true
+
   - git-revision-date-localized:
       type: datetime
       locale: zh

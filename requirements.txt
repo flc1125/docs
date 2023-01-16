@@ -1,6 +1,8 @@
-mkdocs==1.3.0
-mkdocs-material==8.2.5
+mkdocs==1.4.2
+mkdocs-material==9.0.5
 pygments
 pymdown-extensions
 mkdocs-minify-plugin
+mkdocs-redirects
 mkdocs-git-revision-date-localized-plugin
+jinja2
