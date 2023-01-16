@@ -20,14 +20,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Python
-        uses: actions/checkout@v3
-        with:
-          python-version: "3.9"
-          cache: pip
-      - run: |
+      - name: Valid Python
+        run: |
           python -V
           pip -V
+
+      # - name: Install Python
+      #   uses: actions/checkout@v3
+      #   with:
+      #     python-version: "3.9"
+      #     cache: pip
+      # - run: |
+      #     python -V
+      #     pip -V
 
       - name: Install Python dependencies
         run: |
