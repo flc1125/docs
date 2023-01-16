@@ -4,5 +4,5 @@ pygments
 pymdown-extensions
 mkdocs-minify-plugin
 mkdocs-redirects
-# # mkdocs-git-revision-date-localized-plugin
+mkdocs-git-revision-date-localized-plugin
 jinja2

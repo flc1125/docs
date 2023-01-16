@@ -80,10 +80,10 @@ plugins:
   - minify:
       minify_html: true
 
-  # - git-revision-date-localized:
-  #     type: datetime
-  #     locale: zh
-  #     timezone: Asia/Shanghai
+  - git-revision-date-localized:
+      type: datetime
+      locale: zh
+      timezone: Asia/Shanghai
 
 markdown_extensions:
   - admonition
