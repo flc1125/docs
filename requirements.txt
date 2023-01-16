@@ -3,4 +3,4 @@ mkdocs-material==8.2.5
 pygments
 pymdown-extensions
 mkdocs-minify-plugin
-mkdocs-git-revision-date-localized-plugin
+# mkdocs-git-revision-date-localized-plugin
