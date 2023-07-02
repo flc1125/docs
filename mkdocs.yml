@@ -170,6 +170,7 @@ nav:
           - 硬技能篇 | 02 规划：排除计划中的“延期地雷”: 'blog/project-management/hard-skills-articles/exclude-the-adeferred-mines-in-the-plan.md'
   - PHP:
       - PHP 各版本特性:
+          - PHP 8.2.x: 'php/features/8.2.x.md'
           - PHP 8.1.x: 'php/features/8.1.x.md'
           - PHP 8.0.x: 'php/features/8.0.x.md'
           - PHP 7.4.x: 'php/features/7.4.x.md'
