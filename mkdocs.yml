@@ -19,8 +19,11 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.top
+    - navigation.footer
     - toc.follow
     - content.code.annotate
+    - content.code.copy
+    - content.action.edit
   palette:
     - scheme: default
       primary: red
@@ -42,7 +45,7 @@ theme:
     repo: fontawesome/brands/github-alt
 
 extra_css:
-  - static/css/extra.css?v=1
+  - static/css/extra.css?v=2
   - static/plugins/gitalk/gitalk.css?v=1
 extra_javascript:
   - static/plugins/md5.min.js
@@ -67,16 +70,18 @@ extra:
             谢谢您的反馈！可随时给我<a href="/message/" target="_blank" rel="noopener">留言</a>。
 
   social:
-     - icon: fontawesome/solid/house-chimney
-       link: https://flc.io
-     - icon: fontawesome/brands/github
-       link: https://github.com/flc1125
-     - icon: fontawesome/solid/comments
-       link: https://flc.io/message/
+    - icon: fontawesome/solid/house-chimney
+      link: https://flc.io
+    - icon: fontawesome/brands/github
+      link: https://github.com/flc1125
+    - icon: fontawesome/solid/comments
+      link: https://flc.io/message/
 #   # disqus: 'flc-docs' # 需翻墙
 
 plugins:
   - search
+  - tags
+
   - minify:
       minify_html: true
 
@@ -90,21 +95,24 @@ markdown_extensions:
   - codehilite:
       guess_lang: false
   - def_list
-  - footnotes #脚注
+  - footnotes
   - meta
+  - tables
   - toc:
       permalink: "#"
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
   - pymdownx.critic
+  - pymdownx.caret
   - pymdownx.details
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.keys
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
-      # 代码高亮
   - pymdownx.highlight:
       extend_pygments_lang:
         - name: php
@@ -112,194 +120,187 @@ markdown_extensions:
           options:
             startinline: true
   - pymdownx.inlinehilite
-
-  - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
       user: squidfunk
       repo: mkdocs-material
-  - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       check_paths: true
-
-  # 选项卡
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tilde
   - attr_list
   - md_in_html
 
 nav:
-- 首页:
-  - 首页: 'index.md'
-  - 留言: 'message.md'
-- Blog:
-  - 目录: 'blog/index.md'
-  - 201907:
-      - 《剑来》 - 摘录: 'blog/201907/sword-coming.md'
-  - 201910:
-      - 死并非生的对立面，而作为生的一部永存: 'blog/201910/death-is-not-the-opposite-of-life-but-as-a-life-forever.md'
-      - 最后的问题: 'blog/201910/final-question.md'
-      - 自恋: 'blog/201910/autophilia.md'
-  - 201911:
-      - 顺序: 'blog/201911/order.md'
-      - 眠: 'blog/201911/mian.md'
-      - 我与你，我与它: 'blog/201911/you-and-me.md'
-  - 201912:
-      - 心虽有所觉，但亦作不解: 'blog/201912/ponder.md'
-      - 书单 | 我的 2019: 'blog/201912/books-2019-release.md'
-      - 向死而生: 'blog/201912/live-to-death.md'
-  - 202001:
-      - 2020 祝福: 'blog/202001/2020.md'
-      - 人性与共情: 'blog/202001/humanity-and-empathy.md'
-  - 202002:
-      - 生活的真相 - 自由: 'blog/202002/the-truth-of-life-liberty.md'
-  - 笔记《项目管理实战》:
-    - 概述: 'blog/project-management/index.md'
-    - 开篇词 | 为什么说项目管理是每个人的底层能力？: 'blog/project-management/introduction.md'
-    - 常识篇 | 01 角色转换：工程师做项目管理的三大误区: 'blog/project-management/common/role-conversion.md'
-    - 常识篇 | 02 十大领域五大过程组（上）：必须要了解的项目管理常识: 'blog/project-management/common/five-major-process-groups-in-the-top-ten-areas-one.md'
-    - 常识篇 | 03 十大领域五大过程组（下）：必须要了解的项目管理常识: 'blog/project-management/common/five-major-process-groups-in-the-top-ten-areas-two.md'
-    - 硬技能篇 | 01 启动：识别项目中的四类干系人: 'blog/project-management/hard-skills-articles/identify-four-types-of-stakeholders-in-the-project.md'
-    - 硬技能篇 | 02 规划：排除计划中的“延期地雷”: 'blog/project-management/hard-skills-articles/exclude-the-adeferred-mines-in-the-plan.md'
-- PHP:
-    - PHP 各版本特性:
-      - PHP 8.1.x: 'php/features/8.1.x.md'
-      - PHP 8.0.x: 'php/features/8.0.x.md'
-      - PHP 7.4.x: 'php/features/7.4.x.md'
-      - PHP 7.3.x: 'php/features/7.3.x.md'
-      - PHP 7.2.x: 'php/features/7.2.x.md'
-      - PHP 7.1.x: 'php/features/7.1.x.md'
-      - PHP 7.0.x: 'php/features/7.0.x.md'
-      - PHP 5.6.x: 'php/features/5.6.x.md'
-      - PHP 5.5.x: 'php/features/5.5.x.md'
-      - PHP 5.4.x: 'php/features/5.4.x.md'
-      - PHP 5.3.x: 'php/features/5.3.x.md'
-    - Laravel 源码解析:
-      - 概述: 'php/laravel-source/index.md'
-      - Collection 集合: 'php/laravel-source/collection.md'
-    - PHP PSR 编码规范:
-      - 概述: 'php/psr/index.md'
-      - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
-      - PHP PSR-1 基本代码规范: 'php/psr/psr-1.md'
-      - PHP PSR-2 代码风格规范: 'php/psr/psr-2.md'
-      - PHP PSR-3 日志接口规范: 'php/psr/psr-3.md'
-      - PHP PSR-4 自动载入Autoloader: 'php/psr/psr-4.md'
-      - PHP PSR-4 相关示例: 'php/psr/psr-4-examples.md'
-      - PHP PSR-7 HTTP消息接口: 'php/psr/psr-7.md'
-    - PHPDoc 编码注释规范: 'php/phpdoc/index.md'
-    - PHP Coding Standards Fixer: 'php/php-cs-fixer/index.md'
-    - PHP 设计模式全集:
-      - 概述: 'php/php-design-patterns/index.md'
-      - 创建型:
-        - 抽象工厂模式（Abstract Factory）: 'php/php-design-patterns/AbstractFactory.md'
-        - 建造者模式（Builder）: 'php/php-design-patterns/Builder.md'
-        - 工厂方法模式（Factory Method）: 'php/php-design-patterns/FactoryMethod.md'
-        - 多例模式（Multiton）: 'php/php-design-patterns/Multiton.md'
-        - 对象池模式（Pool）: 'php/php-design-patterns/Pool.md'
-        - 原型模式（Prototype）: 'php/php-design-patterns/Prototype.md'
-        - 简单工厂模式（Simple Factory）: 'php/php-design-patterns/SimpleFactory.md'
-        - 单例模式（Singleton）: 'php/php-design-patterns/Singleton.md'
-        - 静态工厂模式（Static Factory）: 'php/php-design-patterns/StaticFactory.md'
-      - 结构型:
-        - 适配器模式（Adapter）: 'php/php-design-patterns/Adapter.md'
-        - 桥梁模式（Bridge）: 'php/php-design-patterns/Bridge.md'
-        - 组合模式（Composite）: 'php/php-design-patterns/Composite.md'
-        - 数据映射模式（Data Mapper）: 'php/php-design-patterns/DataMapper.md'
-        - 装饰模式（Decorator）: 'php/php-design-patterns/Decorator.md'
-        - 依赖注入模式（Dependency Injection）: 'php/php-design-patterns/DependencyInjection.md'
-        - 门面模式（Facade）: 'php/php-design-patterns/Facade.md'
-        - 流接口模式（Fluent Interface）: 'php/php-design-patterns/FluentInterface.md'
-        - 享元模式（Flyweight）: 'php/php-design-patterns/Flyweight.md'
-        - 代理模式（Proxy）: 'php/php-design-patterns/Proxy.md'
-        - 注册模式（Registry）: 'php/php-design-patterns/Registry.md'
-      - 行为型:
-        - 责任链模式（Chain Of Responsibilities）: 'php/php-design-patterns/ChainOfResponsibilities.md'
-        - 命令行模式（Command）: 'php/php-design-patterns/Command.md'
-        - 迭代器模式（Iterator）: 'php/php-design-patterns/Iterator.md'
-        - 中介者模式（Mediator）: 'php/php-design-patterns/Mediator.md'
-        - 备忘录模式（Memento）: 'php/php-design-patterns/Memento.md'
-        - 空对象模式（Null Object）: 'php/php-design-patterns/NullObject.md'
-        - 观察者模式（Observer）: 'php/php-design-patterns/Observer.md'
-        - 规格模式（Specification）: 'php/php-design-patterns/Specification.md'
-        - 状态模式（State）: 'php/php-design-patterns/State.md'
-        - 策略模式（Strategy）: 'php/php-design-patterns/Strategy.md'
-        - 模板方法模式（Template Method）: 'php/php-design-patterns/TemplateMethod.md'
-        - 访问者模式（Visitor）: 'php/php-design-patterns/Visitor.md'
-      - 更多类型:
-        - 委托模式（Delegation）: 'php/php-design-patterns/Delegation.md'
-        - 服务定位器模式（Service Locator）: 'php/php-design-patterns/ServiceLocator.md'
-        - 资源库模式（Repository）: 'php/php-design-patterns/Repository.md'
-        - 实体属性值模式（EAV 模式）: 'php/php-design-patterns/EAV.md'
-      - 附录:
-        - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'
-        - PHP 设计模式阅读清单: 'php/php-design-patterns/design-pattern-reading.md'
-- Elasticsearch:
-  - Elasticsearch 简易教程:
-    - Elasticsearch 入门: 'elasticsearch/simple/introduction.md'
-    - Elasticsearch 入门(二): 'elasticsearch/simple/introduction2.md'
-    - PHP DSL 查修构造器扩展: 'elasticsearch/simple/builder.md'
-  - Laravel-Elasticsearch 扩展文档:
-      - 安装与配置: 'elasticsearch/laravel-elasticsearch/introduction.md'
-      - 查询构造器: 'elasticsearch/laravel-elasticsearch/builder.md'
-  - Elasticsearch-PHP:
-    - 概述: 'elasticsearch/elasticsearch-php/overview.md'
-    - 快速开始: 'elasticsearch/elasticsearch-php/quickstart.md'
-    - 安装: 'elasticsearch/elasticsearch-php/installation.md'
-    - 配置: 'elasticsearch/elasticsearch-php/configuration.md'
-    - 按请求配置: 'elasticsearch/elasticsearch-php/per_request_configuration.md'
-    - Future 模式: 'elasticsearch/elasticsearch-php/future_mode.md'
-    - PHP 处理 JSON 数组或对象: 'elasticsearch/elasticsearch-php/php_json_objects.md'
-    - 索引管理: 'elasticsearch/elasticsearch-php/index_management_operations.md'
-    - 索引文档: 'elasticsearch/elasticsearch-php/indexing_documents.md'
-    - 获取文档: 'elasticsearch/elasticsearch-php/getting_documents.md'
-    - 更新文档: 'elasticsearch/elasticsearch-php/updating_documents.md'
-    - 删除文档: 'elasticsearch/elasticsearch-php/deleting_documents.md'
-    - 搜索操作: 'elasticsearch/elasticsearch-php/search_operations.md'
-    - 命名空间: 'elasticsearch/elasticsearch-php/namespaces.md'
-    - 安全: 'elasticsearch/elasticsearch-php/security.md'
-    - 连接池: 'elasticsearch/elasticsearch-php/connection_pool.md'
-    - 选择器: 'elasticsearch/elasticsearch-php/selectors.md'
-    - 序列化器: 'elasticsearch/elasticsearch-php/serializers.md'
-    - PHP 版本需求: 'elasticsearch/elasticsearch-php/php_version_requirement.md'
-    - 社区 DSLs: 'elasticsearch/elasticsearch-php/community_dsls.md'
-  # - Elasticsearch 全/增量同步:
-  #   - 概述: 'elasticsearch/elasticsearch-sync/index.md'
-- DevOps:
-  - CDN 科普: 'devops/cdn/index.md'
-  - Linux Command:
-    - sed - 流式文本编辑器: 'devops/linux-command/sed.md'
-  - Docker:
-    - 概述: 'devops/docker/index.md'
-    - Dockerfile:
-      - PHP: 'devops/docker/dockerfile/php.md'
-  - Redis:
-    - 概述: 'devops/redis/index.md'
-    # - 慢查询: 'devops/redis/slowlog.md'
-    - Redis 配置字段:
-      - info 系统状态说明: 'devops/redis/dict/info.md'
-  - 压测:
-      - 入门: 'devops/stress-test/getting-started.md'
-- Awesome:
-  - PHP: 'awesome/php.md'
-- 软实力:
-  - 方法论:
-    - 目录: eq/methodology/index.md
-    - SMART 原则: eq/methodology/smart.md
-- 更多:
-  - Github + Travis + Mkdocs 搭建文档库: 'more/github-travis-mkdocs-document/index.md'
-  - Git 常用命令: 'more/git/index.md'
-  - 中文技术文档的写作规范:
-    - 概述: 'more/document-style-guide/index.md'
-    - 标题: 'more/document-style-guide/title.md'
-    - 文本: 'more/document-style-guide/text.md'
-    - 段落: 'more/document-style-guide/paragraph.md'
-    - 数值: 'more/document-style-guide/number.md'
-    - 标点符号: 'more/document-style-guide/marks.md'
-    - 文档体系: 'more/document-style-guide/structure.md'
-    - 参考链接: 'more/document-style-guide/reference.md'
+  - 首页:
+      - 首页: 'index.md'
+      - 留言: 'message.md'
+  - Blog:
+      - 目录: 'blog/index.md'
+      - 201907:
+          - 《剑来》 - 摘录: 'blog/201907/sword-coming.md'
+      - 201910:
+          - 死并非生的对立面，而作为生的一部永存: 'blog/201910/death-is-not-the-opposite-of-life-but-as-a-life-forever.md'
+          - 最后的问题: 'blog/201910/final-question.md'
+          - 自恋: 'blog/201910/autophilia.md'
+      - 201911:
+          - 顺序: 'blog/201911/order.md'
+          - 眠: 'blog/201911/mian.md'
+          - 我与你，我与它: 'blog/201911/you-and-me.md'
+      - 201912:
+          - 心虽有所觉，但亦作不解: 'blog/201912/ponder.md'
+          - 书单 | 我的 2019: 'blog/201912/books-2019-release.md'
+          - 向死而生: 'blog/201912/live-to-death.md'
+      - 202001:
+          - 2020 祝福: 'blog/202001/2020.md'
+          - 人性与共情: 'blog/202001/humanity-and-empathy.md'
+      - 202002:
+          - 生活的真相 - 自由: 'blog/202002/the-truth-of-life-liberty.md'
+      - 笔记《项目管理实战》:
+          - 概述: 'blog/project-management/index.md'
+          - 开篇词 | 为什么说项目管理是每个人的底层能力？: 'blog/project-management/introduction.md'
+          - 常识篇 | 01 角色转换：工程师做项目管理的三大误区: 'blog/project-management/common/role-conversion.md'
+          - 常识篇 | 02 十大领域五大过程组（上）：必须要了解的项目管理常识: 'blog/project-management/common/five-major-process-groups-in-the-top-ten-areas-one.md'
+          - 常识篇 | 03 十大领域五大过程组（下）：必须要了解的项目管理常识: 'blog/project-management/common/five-major-process-groups-in-the-top-ten-areas-two.md'
+          - 硬技能篇 | 01 启动：识别项目中的四类干系人: 'blog/project-management/hard-skills-articles/identify-four-types-of-stakeholders-in-the-project.md'
+          - 硬技能篇 | 02 规划：排除计划中的“延期地雷”: 'blog/project-management/hard-skills-articles/exclude-the-adeferred-mines-in-the-plan.md'
+  - PHP:
+      - PHP 各版本特性:
+          - PHP 8.1.x: 'php/features/8.1.x.md'
+          - PHP 8.0.x: 'php/features/8.0.x.md'
+          - PHP 7.4.x: 'php/features/7.4.x.md'
+          - PHP 7.3.x: 'php/features/7.3.x.md'
+          - PHP 7.2.x: 'php/features/7.2.x.md'
+          - PHP 7.1.x: 'php/features/7.1.x.md'
+          - PHP 7.0.x: 'php/features/7.0.x.md'
+          - PHP 5.6.x: 'php/features/5.6.x.md'
+          - PHP 5.5.x: 'php/features/5.5.x.md'
+          - PHP 5.4.x: 'php/features/5.4.x.md'
+          - PHP 5.3.x: 'php/features/5.3.x.md'
+      - Laravel 源码解析:
+          - 概述: 'php/laravel-source/index.md'
+          - Collection 集合: 'php/laravel-source/collection.md'
+      - PHP PSR 编码规范:
+          - 概述: 'php/psr/index.md'
+          - PHP PSR-0 自动加载规范: 'php/psr/psr-0.md'
+          - PHP PSR-1 基本代码规范: 'php/psr/psr-1.md'
+          - PHP PSR-2 代码风格规范: 'php/psr/psr-2.md'
+          - PHP PSR-3 日志接口规范: 'php/psr/psr-3.md'
+          - PHP PSR-4 自动载入Autoloader: 'php/psr/psr-4.md'
+          - PHP PSR-4 相关示例: 'php/psr/psr-4-examples.md'
+          - PHP PSR-7 HTTP消息接口: 'php/psr/psr-7.md'
+      - PHPDoc 编码注释规范: 'php/phpdoc/index.md'
+      - PHP Coding Standards Fixer: 'php/php-cs-fixer/index.md'
+      - PHP 设计模式全集:
+          - 概述: 'php/php-design-patterns/index.md'
+          - 创建型:
+              - 抽象工厂模式（Abstract Factory）: 'php/php-design-patterns/AbstractFactory.md'
+              - 建造者模式（Builder）: 'php/php-design-patterns/Builder.md'
+              - 工厂方法模式（Factory Method）: 'php/php-design-patterns/FactoryMethod.md'
+              - 多例模式（Multiton）: 'php/php-design-patterns/Multiton.md'
+              - 对象池模式（Pool）: 'php/php-design-patterns/Pool.md'
+              - 原型模式（Prototype）: 'php/php-design-patterns/Prototype.md'
+              - 简单工厂模式（Simple Factory）: 'php/php-design-patterns/SimpleFactory.md'
+              - 单例模式（Singleton）: 'php/php-design-patterns/Singleton.md'
+              - 静态工厂模式（Static Factory）: 'php/php-design-patterns/StaticFactory.md'
+          - 结构型:
+              - 适配器模式（Adapter）: 'php/php-design-patterns/Adapter.md'
+              - 桥梁模式（Bridge）: 'php/php-design-patterns/Bridge.md'
+              - 组合模式（Composite）: 'php/php-design-patterns/Composite.md'
+              - 数据映射模式（Data Mapper）: 'php/php-design-patterns/DataMapper.md'
+              - 装饰模式（Decorator）: 'php/php-design-patterns/Decorator.md'
+              - 依赖注入模式（Dependency Injection）: 'php/php-design-patterns/DependencyInjection.md'
+              - 门面模式（Facade）: 'php/php-design-patterns/Facade.md'
+              - 流接口模式（Fluent Interface）: 'php/php-design-patterns/FluentInterface.md'
+              - 享元模式（Flyweight）: 'php/php-design-patterns/Flyweight.md'
+              - 代理模式（Proxy）: 'php/php-design-patterns/Proxy.md'
+              - 注册模式（Registry）: 'php/php-design-patterns/Registry.md'
+          - 行为型:
+              - 责任链模式（Chain Of Responsibilities）: 'php/php-design-patterns/ChainOfResponsibilities.md'
+              - 命令行模式（Command）: 'php/php-design-patterns/Command.md'
+              - 迭代器模式（Iterator）: 'php/php-design-patterns/Iterator.md'
+              - 中介者模式（Mediator）: 'php/php-design-patterns/Mediator.md'
+              - 备忘录模式（Memento）: 'php/php-design-patterns/Memento.md'
+              - 空对象模式（Null Object）: 'php/php-design-patterns/NullObject.md'
+              - 观察者模式（Observer）: 'php/php-design-patterns/Observer.md'
+              - 规格模式（Specification）: 'php/php-design-patterns/Specification.md'
+              - 状态模式（State）: 'php/php-design-patterns/State.md'
+              - 策略模式（Strategy）: 'php/php-design-patterns/Strategy.md'
+              - 模板方法模式（Template Method）: 'php/php-design-patterns/TemplateMethod.md'
+              - 访问者模式（Visitor）: 'php/php-design-patterns/Visitor.md'
+          - 更多类型:
+              - 委托模式（Delegation）: 'php/php-design-patterns/Delegation.md'
+              - 服务定位器模式（Service Locator）: 'php/php-design-patterns/ServiceLocator.md'
+              - 资源库模式（Repository）: 'php/php-design-patterns/Repository.md'
+              - 实体属性值模式（EAV 模式）: 'php/php-design-patterns/EAV.md'
+          - 附录:
+              - 反面模式（Anti-pattern）: 'php/php-design-patterns/Anti-pattern.md'
+              - PHP 设计模式阅读清单: 'php/php-design-patterns/design-pattern-reading.md'
+  - Elasticsearch:
+      - Elasticsearch 简易教程:
+          - Elasticsearch 入门: 'elasticsearch/simple/introduction.md'
+          - Elasticsearch 入门(二): 'elasticsearch/simple/introduction2.md'
+          - PHP DSL 查修构造器扩展: 'elasticsearch/simple/builder.md'
+      - Laravel-Elasticsearch 扩展文档:
+          - 安装与配置: 'elasticsearch/laravel-elasticsearch/introduction.md'
+          - 查询构造器: 'elasticsearch/laravel-elasticsearch/builder.md'
+      - Elasticsearch-PHP:
+          - 概述: 'elasticsearch/elasticsearch-php/overview.md'
+          - 快速开始: 'elasticsearch/elasticsearch-php/quickstart.md'
+          - 安装: 'elasticsearch/elasticsearch-php/installation.md'
+          - 配置: 'elasticsearch/elasticsearch-php/configuration.md'
+          - 按请求配置: 'elasticsearch/elasticsearch-php/per_request_configuration.md'
+          - Future 模式: 'elasticsearch/elasticsearch-php/future_mode.md'
+          - PHP 处理 JSON 数组或对象: 'elasticsearch/elasticsearch-php/php_json_objects.md'
+          - 索引管理: 'elasticsearch/elasticsearch-php/index_management_operations.md'
+          - 索引文档: 'elasticsearch/elasticsearch-php/indexing_documents.md'
+          - 获取文档: 'elasticsearch/elasticsearch-php/getting_documents.md'
+          - 更新文档: 'elasticsearch/elasticsearch-php/updating_documents.md'
+          - 删除文档: 'elasticsearch/elasticsearch-php/deleting_documents.md'
+          - 搜索操作: 'elasticsearch/elasticsearch-php/search_operations.md'
+          - 命名空间: 'elasticsearch/elasticsearch-php/namespaces.md'
+          - 安全: 'elasticsearch/elasticsearch-php/security.md'
+          - 连接池: 'elasticsearch/elasticsearch-php/connection_pool.md'
+          - 选择器: 'elasticsearch/elasticsearch-php/selectors.md'
+          - 序列化器: 'elasticsearch/elasticsearch-php/serializers.md'
+          - PHP 版本需求: 'elasticsearch/elasticsearch-php/php_version_requirement.md'
+          - 社区 DSLs: 'elasticsearch/elasticsearch-php/community_dsls.md'
+    # - Elasticsearch 全/增量同步:
+    #   - 概述: 'elasticsearch/elasticsearch-sync/index.md'
+  - DevOps:
+      - CDN 科普: 'devops/cdn/index.md'
+      - Linux Command:
+          - sed - 流式文本编辑器: 'devops/linux-command/sed.md'
+      - Docker:
+          - 概述: 'devops/docker/index.md'
+          - Dockerfile:
+              - PHP: 'devops/docker/dockerfile/php.md'
+      - Redis:
+          - 概述: 'devops/redis/index.md'
+          # - 慢查询: 'devops/redis/slowlog.md'
+          - Redis 配置字段:
+              - info 系统状态说明: 'devops/redis/dict/info.md'
+      - 压测:
+          - 入门: 'devops/stress-test/getting-started.md'
+  - Awesome:
+      - PHP: 'awesome/php.md'
+  - 软实力:
+      - 方法论:
+          - 目录: eq/methodology/index.md
+          - SMART 原则: eq/methodology/smart.md
+  - 更多:
+      - Github + Travis + Mkdocs 搭建文档库: 'more/github-travis-mkdocs-document/index.md'
+      - Git 常用命令: 'more/git/index.md'
+      - 中文技术文档的写作规范:
+          - 概述: 'more/document-style-guide/index.md'
+          - 标题: 'more/document-style-guide/title.md'
+          - 文本: 'more/document-style-guide/text.md'
+          - 段落: 'more/document-style-guide/paragraph.md'
+          - 数值: 'more/document-style-guide/number.md'
+          - 标点符号: 'more/document-style-guide/marks.md'
+          - 文档体系: 'more/document-style-guide/structure.md'
+          - 参考链接: 'more/document-style-guide/reference.md'
